@@ -15,7 +15,7 @@ import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.views.actores.ActoresView;
 import org.ieschabas.views.directores.DirectoresView;
 import org.ieschabas.views.empty3.Empty3View;
-import org.ieschabas.views.películas.PelículasView;
+import org.ieschabas.views.películas.PeliculasView;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -55,7 +55,7 @@ public class MainLayout extends AppLayout {
         // For documentation, visit https://github.com/vaadin/vcf-nav#readme
         AppNav nav = new AppNav();
 
-        nav.addItem(new AppNavItem("Películas", PelículasView.class, "la la-film"));
+        nav.addItem(new AppNavItem("Películas", PeliculasView.class, "la la-film"));
         nav.addItem(new AppNavItem("Actores", ActoresView.class, "la la-user"));
         nav.addItem(new AppNavItem("Directores", DirectoresView.class, "la la-user-tie"));
         nav.addItem(new AppNavItem("Empty3", Empty3View.class, "la la-file"));
