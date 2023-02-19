@@ -29,20 +29,19 @@ import org.ieschabas.enums.Valoracion;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.TreeMap;
+
 
 @PageTitle("Películas")
 @Route(value = "Peliculas", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
 public class PeliculasView extends VerticalLayout {
-    TreeMap<Integer, Pelicula> peliculas = new TreeMap<>();
-    Grid<Pelicula> tabla = new Grid<>();
-    Pelicula peliculaSelecionada;
-    Button botonanyadir;
-    HorizontalLayout anyadirBoton = new HorizontalLayout();
-    VerticalLayout anyadirTabla = new VerticalLayout();
-    VerticalLayout anyadirPelicula = new VerticalLayout();
+    private Grid<Pelicula> tabla;
+    private Button botonanyadir;
+    private HorizontalLayout anyadirBoton = new HorizontalLayout();
+    private VerticalLayout anyadirTabla = new VerticalLayout();
+    private VerticalLayout anyadirPelicula = new VerticalLayout();
 
     /**
      * Constructor principal de la clase
@@ -66,7 +65,6 @@ public class PeliculasView extends VerticalLayout {
      * @author Antonio Mas Esteve
      */
     public VerticalLayout tablaLayout() throws IOException {
-
         anyadirTabla.add(botonLayout(), crearTitulo(), crearBuscador(), crearTabla());
 
         anyadirTabla.setVisible(true);
@@ -264,6 +262,13 @@ public class PeliculasView extends VerticalLayout {
             pelicula = new Pelicula(textoId.getValue(), textoTitulo.getValue(), textoDescripcion.getValue(), textoAnyoPublicacion.getValue(), textoDuracion.getValue(), textoCategoria.getValue(), textoFormato.getValue(), textoValoracion.getValue());
             try {
                 GestorPeliculas.modificarPelicula(pelicula);
+                if (GestorPeliculas.modificarPelicula(pelicula)){
+                    Notification notification = Notification.show("película modificada");
+                    notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                } else {
+                    Notification notification = Notification.show("película no fue modificada");
+                    notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+                }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -304,10 +309,8 @@ public class PeliculasView extends VerticalLayout {
      * @throws IOException
      */
     public void rellenarTabla() throws IOException {
-        //añadimos contenido del fichero a la lista:
-        peliculas = GestorPeliculas.listarPeliculas();
-        //añadimos lista a la tabla:
-        tabla.setItems(peliculas.values());
+        //añadimos los valores tipo objeto lista a la tabla:
+        tabla.setItems(GestorPeliculas.listarPeliculas().values());
     }
 
 
