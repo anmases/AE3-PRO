@@ -18,6 +18,7 @@ import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
@@ -28,9 +29,9 @@ import org.ieschabas.enums.Formato;
 import org.ieschabas.enums.Valoracion;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
-
-import java.io.File;
 import java.io.IOException;
+import java.util.*;
+
 
 
 @PageTitle("Películas")
@@ -99,45 +100,176 @@ public class PeliculasView extends VerticalLayout {
      */
     public Component crearBuscador() {
         FormLayout panelBuscador = new FormLayout();
-        IntegerField identificador = new IntegerField("id");
-        TextField titulo = new TextField("Título");
-        TextField anyo = new TextField("Año");
-        ComboBox<String> categorias = new ComboBox<>("Categoría");
-        ComboBox<String> formatos = new ComboBox<>("Formato");
-        ComboBox<String> valoraciones = new ComboBox<>("Estrellas");
-
-        setWidthFull();
+        //Creamos los campos:
+        TextField textTitulo = new TextField("Título");
+        textTitulo.setValue("");
+        IntegerField textAnyo = new IntegerField("Año");
+        ComboBox<Categoria> textCategoria = new ComboBox<>("Categoría");
+        ComboBox<Formato> textFormato = new ComboBox<>("Formato");
+        ComboBox<Valoracion> textValoracion = new ComboBox<>("Estrellas");
         addClassNames(LumoUtility.Padding.Horizontal.LARGE, LumoUtility.Padding.Vertical.MEDIUM,
                 LumoUtility.BoxSizing.BORDER);
-        categorias.setItems("ACCION", "AVENTURAS", "CIENCIA FICCION", "COMEDIA", "DOCUMENTAL", "DRAMA", "FANTASIA", "MUSICAL", "SUSPENSE", "TERROR", "BÉLICA");
-        formatos.setItems("XVID", "DIVX", "MP4", "H264", "FLV");
-        valoraciones.setItems("UNA", "DOS", "TRES", "CUATRO", "CINCO");
-        identificador.setPlaceholder("buscar por id");
-        titulo.setPlaceholder("buscar por título");
-        anyo.setPlaceholder("buscar por año");
-        categorias.setPlaceholder("buscar por categoría");
-        formatos.setPlaceholder("buscar por formato");
-        valoraciones.setPlaceholder("buscar por valoración");
-        identificador.setClearButtonVisible(true);
-        titulo.setClearButtonVisible(true);
-        anyo.setClearButtonVisible(true);
-        categorias.setClearButtonVisible(true);
-        formatos.setClearButtonVisible(true);
-        valoraciones.setClearButtonVisible(true);
+        //Rellenamos los comboBox:
+        textCategoria.setItems(Categoria.values());
+        textFormato.setItems(Formato.values());
+        textValoracion.setItems(Valoracion.values());
+        //Añadimos los títulos:
+        textTitulo.setPlaceholder("buscar por título");
+        textAnyo.setPlaceholder("buscar por año");
+        textCategoria.setPlaceholder("buscar por categoría");
+        textFormato.setPlaceholder("buscar por formato");
+        textValoracion.setPlaceholder("buscar por valoración");
+        //Añadimos a cada uno botón para borrar lo escrito:
+        textTitulo.setClearButtonVisible(true);
+        textAnyo.setClearButtonVisible(true);
+        textCategoria.setClearButtonVisible(true);
+        textFormato.setClearButtonVisible(true);
+        textValoracion.setClearButtonVisible(true);
 
-        Button reset = new Button("Cancelar");
-        reset.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
-        reset.addClickListener(clickEvent -> {
-            identificador.clear();
+        //Agregamos un escuchador de escritura para los campos:
+        textTitulo.setValueChangeMode(ValueChangeMode.EAGER);
+       textTitulo.addValueChangeListener(e-> {
+           String tituloPelicula = e.getValue();
+           ArrayList<Pelicula> listaActualizada = new ArrayList<>();
+           Collection<Pelicula> lista;
+           try {
+               lista = GestorPeliculas.listarPeliculas().values();
+           } catch (IOException ex) {
+               throw new RuntimeException(ex);
+           }
+           Pelicula pelicula;
+           Iterator<Pelicula> iterador = lista.iterator();
+           while(iterador.hasNext()){
+               pelicula = iterador.next();
+               if(pelicula.getTitulo().contains(tituloPelicula)){
+                   listaActualizada.add(pelicula);
+               }
+           }
+           tabla.setItems(listaActualizada);
+           refrescarTabla();
+       });
+        textAnyo.setValueChangeMode(ValueChangeMode.EAGER);
+        textAnyo.addValueChangeListener(e-> {
+            if(e.getValue() != null) {
+                //Es necesario convertirlo a String porque solo así se comprueba si "contiene" un caracter.
+                String anyoEstreno = e.getValue().toString();
+                ArrayList<Pelicula> listaActualizada = new ArrayList<>();
+                Collection<Pelicula> lista;
+                try {
+                    lista = GestorPeliculas.listarPeliculas().values();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Pelicula pelicula;
+                Iterator<Pelicula> iterador = lista.iterator();
+                while (iterador.hasNext()) {
+                    pelicula = iterador.next();
+                    String getAnyo = String.valueOf(pelicula.getAnyoPublicacion());
+                    if (getAnyo.contains(anyoEstreno)) {
+                        listaActualizada.add(pelicula);
+                    }
+                }
+                tabla.setItems(listaActualizada);
+                refrescarTabla();
+            }else{
+                try {
+                    rellenarTabla();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                refrescarTabla();
+            }
+
         });
-        Button buscar = new Button("Buscar");
-        buscar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        buscar.addClickListener(clickEvent -> {
-            identificador.getValue();
-
+        textCategoria.addValueChangeListener(e-> {
+            if(e.getValue() != null) {
+                Categoria categoria = e.getValue();
+                ArrayList<Pelicula> listaActualizada = new ArrayList<>();
+                Collection<Pelicula> lista;
+                try {
+                    lista = GestorPeliculas.listarPeliculas().values();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Pelicula pelicula;
+                Iterator<Pelicula> iterador = lista.iterator();
+                while(iterador.hasNext()){
+                    pelicula = iterador.next();
+                    if(pelicula.getCategoria() == categoria){
+                        listaActualizada.add(pelicula);
+                    }
+                }
+                tabla.setItems(listaActualizada);
+                refrescarTabla();
+            }else{
+                try {
+                    rellenarTabla();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                refrescarTabla();
+            }
+        });
+        textFormato.addValueChangeListener(e-> {
+            if(e.getValue() != null) {
+                Formato formato = e.getValue();
+                ArrayList<Pelicula> listaActualizada = new ArrayList<>();
+                Collection<Pelicula> lista;
+                try {
+                    lista = GestorPeliculas.listarPeliculas().values();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Pelicula pelicula;
+                Iterator<Pelicula> iterador = lista.iterator();
+                while (iterador.hasNext()) {
+                    pelicula = iterador.next();
+                    if (pelicula.getFormato() == formato) {
+                        listaActualizada.add(pelicula);
+                    }
+                }
+                tabla.setItems(listaActualizada);
+                refrescarTabla();
+            }else{
+                try {
+                    rellenarTabla();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                refrescarTabla();
+            }
+        });
+        textValoracion.addValueChangeListener(e-> {
+            if(e.getValue() != null) {
+                Valoracion valoracion = e.getValue();
+                ArrayList<Pelicula> listaActualizada = new ArrayList<>();
+                Collection<Pelicula> lista;
+                try {
+                    lista = GestorPeliculas.listarPeliculas().values();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Pelicula pelicula;
+                Iterator<Pelicula> iterador = lista.iterator();
+                while (iterador.hasNext()) {
+                    pelicula = iterador.next();
+                    if (pelicula.getValoracion() == valoracion) {
+                        listaActualizada.add(pelicula);
+                    }
+                }
+                tabla.setItems(listaActualizada);
+                refrescarTabla();
+            }else{
+                try {
+                    rellenarTabla();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                refrescarTabla();
+            }
         });
 
-        panelBuscador.add(identificador, titulo, anyo, categorias, formatos, valoraciones, reset, buscar);
+        panelBuscador.add(textTitulo, textAnyo, textCategoria, textFormato, textValoracion);
         return panelBuscador;
     }
 
