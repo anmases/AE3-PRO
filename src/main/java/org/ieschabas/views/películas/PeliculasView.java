@@ -392,7 +392,7 @@ public class PeliculasView extends VerticalLayout {
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             } else {
                 //Se muestra la notificación:
-                Notification notification = Notification.show("Error: No se ha añadido ninguna película");
+                Notification notification = Notification.show("Error: Todos los campos deben rellenarse");
                 notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             }
             //Se rellena la tabla:

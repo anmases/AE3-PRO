@@ -49,7 +49,7 @@ public class ActoresView extends VerticalLayout {
         SplitLayout splitLayout = new SplitLayout();
 
         splitLayout.addToPrimary(crearTabla());
-        splitLayout.addToSecondary(crearFormulario());
+        splitLayout.addToSecondary(crearMenuEdicion());
 
         add(splitLayout);
     }
@@ -110,12 +110,58 @@ public class ActoresView extends VerticalLayout {
         });
         guardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         guardar.addClickListener(e->{
+            //Volcamos los datos actualmente presentes en el formulario en on objeto ad-hoc:
+            Actor actor = binder.getBean();
+            //Aquí estableceremos que modifique o añada según el binder arroje un null o no:
+
+            if(actor == null){
+                //Añadir
+                if(textNombre.getValue() != null && textApellidos.getValue() != null && textAnyo.getValue() != null && textPais.getValue() != null) {
+                    try {
+                        GestorActores.anyadirActor(textNombre.getValue(), textApellidos.getValue(), textAnyo.getValue(), textPais.getValue());
+
+                            Notification notification = Notification.show("actor añadido correcamente");
+                            notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }else {
+                    //Se muestra la notificación:
+                    Notification notification = Notification.show("Error: Todos los campos deben rellenarse");
+                    notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+                }
+            }
+            else{
+                //Modificar:
+                try {
+                    GestorActores.modificarActor(actor);
+                    if(GestorActores.modificarActor(actor)){
+                        Notification notification = Notification.show("actor modificado correcamente");
+                        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                    }
+                    else{
+                        Notification notification = Notification.show("Error: Todos los campos deben rellenarse");
+                        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+                    }
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+            //Volvemos a rellenar la tabla:
             try {
                 rellenarTabla();
             } catch (IOException err) {
                 throw new RuntimeException(err);
             }
+            //Refrescamos la tabla
             refrescarTabla();
+            //Vaciamos el formulario:
+            textId.clear();
+            textNombre.clear();
+            textApellidos.clear();
+            textAnyo.clear();
+            textPais.clear();
         });
         eliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
         eliminar.addClickListener(event->{
@@ -151,7 +197,15 @@ public class ActoresView extends VerticalLayout {
         });
         vistaBoton.add(guardar, cancelar, eliminar);
      formLayout.add(textId, textNombre, textApellidos, textAnyo, textPais, vistaBoton);
+
         return formLayout;
+    }
+    public VerticalLayout crearMenuEdicion() throws IOException {
+        VerticalLayout editor = new VerticalLayout();
+        H3 titulo = new H3("Editar Actor");
+        editor.add(titulo, crearFormulario());
+        editor.setPadding(true);
+        return editor;
     }
 
 
