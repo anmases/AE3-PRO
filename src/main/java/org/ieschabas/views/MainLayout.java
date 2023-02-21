@@ -14,7 +14,6 @@ import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.views.actores.ActoresView;
 import org.ieschabas.views.directores.DirectoresView;
-import org.ieschabas.views.empty3.Empty3View;
 import org.ieschabas.views.películas.PeliculasView;
 
 /**
@@ -41,7 +40,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void addDrawerContent() {
-        H1 appName = new H1("AE3-PRO-FRONTEND");
+        H1 appName = new H1("VideoClub Pro");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
         Header header = new Header(appName);
 
@@ -58,7 +57,7 @@ public class MainLayout extends AppLayout {
         nav.addItem(new AppNavItem("Películas", PeliculasView.class, "la la-film"));
         nav.addItem(new AppNavItem("Actores", ActoresView.class, "la la-user"));
         nav.addItem(new AppNavItem("Directores", DirectoresView.class, "la la-user-tie"));
-        nav.addItem(new AppNavItem("Empty3", Empty3View.class, "la la-file"));
+        //nav.addItem(new AppNavItem("Alquileres", AlquileresView.class, "la la-file"));
 
         return nav;
     }

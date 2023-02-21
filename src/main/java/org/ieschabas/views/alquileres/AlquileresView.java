@@ -1,4 +1,4 @@
-package org.ieschabas.views.empty3;
+package org.ieschabas.views.alquileres;
 
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
@@ -11,9 +11,9 @@ import org.ieschabas.views.MainLayout;
 
 @PageTitle("Empty3")
 @Route(value = "empty3", layout = MainLayout.class)
-public class Empty3View extends VerticalLayout {
+public class AlquileresView extends VerticalLayout {
 
-    public Empty3View() {
+    public AlquileresView() {
         setSpacing(false);
 
         Image img = new Image("images/empty-plant.png", "placeholder plant");
