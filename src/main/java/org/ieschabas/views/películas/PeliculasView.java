@@ -5,6 +5,7 @@ import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.combobox.MultiSelectComboBox;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
@@ -14,6 +15,7 @@ import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.listbox.MultiSelectListBox;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -27,10 +29,13 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.theme.lumo.LumoUtility;
+import org.ieschabas.clases.Actor;
+import org.ieschabas.clases.Director;
 import org.ieschabas.clases.Pelicula;
 import org.ieschabas.enums.Categoria;
 import org.ieschabas.enums.Formato;
 import org.ieschabas.enums.Valoracion;
+import org.ieschabas.librerias.GestorActores;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
 import java.io.IOException;
@@ -77,12 +82,15 @@ public class PeliculasView extends VerticalLayout {
     }
 
     /**
-     * Aquí se rellena la ventana con tablas y botones:
+     * Aquí se rellena la ventana emergente con tablas y botones:
      * @param pelicula
      * @return
      */
     public VerticalLayout rellenarVentana(Pelicula pelicula) throws IOException {
         VerticalLayout ventana = new VerticalLayout();
+        VerticalLayout ventanaTabla = new VerticalLayout();
+        FormLayout ventanaFormulario = new FormLayout();
+        ventanaFormulario.setVisible(false);
         HorizontalLayout botones = new HorizontalLayout();
         H4 tituloActores = new H4("Actores:");
         H4 tituloDirectores = new H4("Directores:");
@@ -93,29 +101,87 @@ public class PeliculasView extends VerticalLayout {
                 anyadirVentana.removeAll();
                 anyadirVentana.close();
         });
+        anyadir.addClickListener(event ->{
+            ventanaFormulario.setVisible(true);
+            ventanaTabla.setVisible(false);
+        });
 
-        Grid<String> tablaActores = new Grid<>(String.class, false);
-        tablaActores.addColumn(String::new).setHeader("Nombre").setAutoWidth(true);
-        tablaActores.addColumn(new ComponentRenderer<>(Button::new, ((button, nombreActor) -> {
+        Grid<Actor> tablaActores = new Grid<>(Actor.class, false);
+        tablaActores.addColumn(Actor::getNombre).setHeader("Nombre").setAutoWidth(true);
+        tablaActores.addColumn(Actor::getApellidos).setHeader("apellidos").setAutoWidth(true);
+        tablaActores.addColumn(new ComponentRenderer<>(Button::new, ((button, actor) -> {
             button.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_ERROR, ButtonVariant.LUMO_TERTIARY);
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
+                try {
+                    GestorPeliculas.desvincularActor(pelicula.getId(), actor.getId());
+                    //Rellenar la tabla:
+                    tablaActores.setItems(GestorPeliculas.buscarActoresRelacionados(pelicula));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 //Refrescar la tabla:
                 tablaActores.getDataProvider().refreshAll();
             });
         }))).setHeader("Eliminar").setResizable(true).setAutoWidth(true);
-
-
-
-
         tablaActores.setItems(GestorPeliculas.buscarActoresRelacionados(pelicula));
         tablaActores.recalculateColumnWidths();
         tablaActores.setHeightByRows(true);
 
+        //Creación del formulario anyadir:
+        ArrayList<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
+        Collection<Actor> listaActores = GestorActores.listarActores().values();   //Todos los actores:
+        ArrayList<Actor> actoresPresentes = GestorPeliculas.buscarActoresRelacionados(pelicula); //Actores que ya tiene
+        //Que elimine de la lista los actores que ya están:
+        Iterator<Actor> iteradorActores;
+        Iterator<Actor> iteradorPresentes = actoresPresentes.iterator();
+        Actor actorGeneral;
+        Actor actorPresente;
+        while(iteradorPresentes.hasNext()){
+            iteradorActores = listaActores.iterator();
+           actorPresente = iteradorPresentes.next();
+          while(iteradorActores.hasNext()){
+              actorGeneral = iteradorActores.next();
+              if(actorPresente.getId() == actorGeneral.getId()){
+                  //Si no lo contiene, lo elimina:
+                  iteradorActores.remove();
+              }
+          }
+        }
+
+
+
+        HorizontalLayout botones2 = new HorizontalLayout();
+        //Creamos los MultiSelect:
+        MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>();
+        MultiSelectComboBox<Director> opcionDirector = new MultiSelectComboBox<>();
+        opcionActor.setItems(listaActores);
+        opcionActor.setItemLabelGenerator(actor -> actor.getNombre()+" "+actor.getApellidos());
+
+
+
+
+        Button guardar = new Button("Guardar");
+        Button atras = new Button("Atrás");
+        atras.setWidthFull();
+        guardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        guardar.setWidthFull();
+        guardar.addClickListener(event->{
+            actoresSeleccionados.addAll(opcionActor.getSelectedItems());
+        });
+        atras.addClickListener(click ->{
+            //Aquí irán los clear:
+            ventanaFormulario.setVisible(false);
+            ventanaTabla.setVisible(true);
+        });
+
 
 
         botones.add(anyadir, cancelar);
-        ventana.add(tituloActores, tablaActores, tituloDirectores, botones);
+        botones2.add(guardar, atras);
+        ventanaFormulario.add(opcionActor, opcionDirector, botones2);
+        ventanaTabla.add(tituloActores, tablaActores, tituloDirectores, botones);
+        ventana.add(ventanaTabla,ventanaFormulario);
         return ventana;
     }
 
