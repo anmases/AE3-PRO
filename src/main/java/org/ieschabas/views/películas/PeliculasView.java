@@ -1,13 +1,17 @@
 package org.ieschabas.views.películas;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.editor.Editor;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
@@ -40,7 +44,7 @@ import java.util.*;
 public class PeliculasView extends VerticalLayout {
     private Grid<Pelicula> tabla;
     private Button botonanyadir;
-    private HorizontalLayout anyadirBoton = new HorizontalLayout();
+    private Dialog anyadirVentana;
     private VerticalLayout anyadirTabla = new VerticalLayout();
     private VerticalLayout anyadirPelicula = new VerticalLayout();
 
@@ -54,8 +58,65 @@ public class PeliculasView extends VerticalLayout {
         setSizeFull();
         addClassName("Peliculas-View");
 
-        add(tablaLayout(), formularioLayout());
+        add(tablaLayout(), formularioLayout(), ventanaLayout());
 
+    }
+
+    /**
+     * Aquí se crea la ventana vacía, que por defecto es invisible.
+     * @return
+     */
+    public Dialog ventanaLayout(){
+        anyadirVentana = new Dialog();
+        anyadirVentana.addDialogCloseActionListener(e->{
+            anyadirVentana.close();
+            anyadirVentana.removeAll();
+        });
+        anyadirVentana.setResizable(true);
+        return anyadirVentana;
+    }
+
+    /**
+     * Aquí se rellena la ventana con tablas y botones:
+     * @param pelicula
+     * @return
+     */
+    public VerticalLayout rellenarVentana(Pelicula pelicula) throws IOException {
+        VerticalLayout ventana = new VerticalLayout();
+        HorizontalLayout botones = new HorizontalLayout();
+        H4 tituloActores = new H4("Actores:");
+        H4 tituloDirectores = new H4("Directores:");
+        Button anyadir = new Button("Añadir");
+        Button cancelar = new Button("Cancelar");
+        anyadir.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        cancelar.addClickListener(click->{
+                anyadirVentana.removeAll();
+                anyadirVentana.close();
+        });
+
+        Grid<String> tablaActores = new Grid<>(String.class, false);
+        tablaActores.addColumn(String::new).setHeader("Nombre").setAutoWidth(true);
+        tablaActores.addColumn(new ComponentRenderer<>(Button::new, ((button, nombreActor) -> {
+            button.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_ERROR, ButtonVariant.LUMO_TERTIARY);
+            button.setIcon(new Icon(VaadinIcon.TRASH));
+            button.addClickListener(event -> {
+                //Refrescar la tabla:
+                tablaActores.getDataProvider().refreshAll();
+            });
+        }))).setHeader("Eliminar").setResizable(true).setAutoWidth(true);
+
+
+
+
+        tablaActores.setItems(GestorPeliculas.buscarActoresRelacionados(pelicula));
+        tablaActores.recalculateColumnWidths();
+        tablaActores.setHeightByRows(true);
+
+
+
+        botones.add(anyadir, cancelar);
+        ventana.add(tituloActores, tablaActores, tituloDirectores, botones);
+        return ventana;
     }
 
     /**
@@ -66,31 +127,23 @@ public class PeliculasView extends VerticalLayout {
      * @author Antonio Mas Esteve
      */
     public VerticalLayout tablaLayout() throws IOException {
-        anyadirTabla.add(botonLayout(), crearTitulo(), crearBuscador(), crearTabla());
-
-        anyadirTabla.setVisible(true);
-        return anyadirTabla;
-    }
-
-    /**
-     * Disposición horizontal del botón añadir película que abre el formulario
-     *
-     * @return
-     * @author Antonio Mas Esteve
-     */
-    public HorizontalLayout botonLayout() {
+        /***********Se crea el botón añadir y el título***********/
+        HorizontalLayout anyadirBoton = new HorizontalLayout();
         botonanyadir = new Button("Añadir Película");
         botonanyadir.addThemeVariants(ButtonVariant.LUMO_SUCCESS);
         botonanyadir.setIcon(new Icon(VaadinIcon.PLUS));
         botonanyadir.addClickListener(ClickEvent -> {
             anyadirPelicula.setVisible(true);
             anyadirTabla.setVisible(false);
-
         });
         anyadirBoton.setVisible(true);
         anyadirBoton.add(botonanyadir);
-        return anyadirBoton;
+        H3 tituloVista = new H3("Lista de Películas");
+        anyadirTabla.add(anyadirBoton, tituloVista, crearBuscador(), crearTabla());
+        anyadirTabla.setVisible(true);
+        return anyadirTabla;
     }
+
 
     /**
      * Método que buscará las películas.
@@ -273,14 +326,6 @@ public class PeliculasView extends VerticalLayout {
         return panelBuscador;
     }
 
-    /**
-     * Título de la lista
-     *
-     * @return
-     */
-    public Component crearTitulo() {
-        return new H3("Lista de Películas");
-    }
 
     /**
      * Método que crea la tabla y le da formato.
@@ -304,6 +349,22 @@ public class PeliculasView extends VerticalLayout {
         Grid.Column<Pelicula> campoCategoria = tabla.addColumn(Pelicula::getCategoria).setHeader("Categoría").setAutoWidth(true).setResizable(true);
         Grid.Column<Pelicula> campoFormato = tabla.addColumn(Pelicula::getFormato).setHeader("Formato").setAutoWidth(true).setResizable(true);
         Grid.Column<Pelicula> campoValoracion = tabla.addColumn(Pelicula::getValoracion).setHeader("Estrellas").setAutoWidth(true).setResizable(true);
+        tabla.addColumn(new ComponentRenderer<>(Button::new, ((boton, pelicula) -> {
+            boton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
+            boton.setIcon(new Icon(VaadinIcon.INFO_CIRCLE));
+            boton.addClickListener(event -> {
+                //Aquí es donde se rellena la ventana emergente y además se hace visible:
+
+
+                try {
+                    anyadirVentana.add(rellenarVentana(pelicula));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+                anyadirVentana.open();
+            });
+        }))).setHeader("Equipo").setResizable(true).setAutoWidth(true);
         Grid.Column<Pelicula> campoBotonEditar = tabla.addComponentColumn(pelicula -> {
             Button editButton = new Button();
             editButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
