@@ -239,6 +239,9 @@ public class PeliculasView extends VerticalLayout {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            //Notificación:
+            Notification notification = Notification.show("Se ha guardado correctamente");
+            notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             //Refrescar la tabla:
             tablaActores.getDataProvider().refreshAll();
             tablaDirectores.getDataProvider().refreshAll();
@@ -670,7 +673,7 @@ public class PeliculasView extends VerticalLayout {
      * @author Antonio Mas Esteve
      */
     public VerticalLayout formularioLayout() {
-
+        HorizontalLayout botones = new HorizontalLayout();
         anyadirPelicula.setSizeFull();
         //se crea el título:
         H3 encabezado = new H3("Añadir nueva película");
@@ -765,8 +768,9 @@ public class PeliculasView extends VerticalLayout {
             valoracion.clear();
 
         });
+        botones.add(guardar, cancelar);
         //Se añaden al formulario:
-        formLayout.add(titulo, descripcion, anyoPublicacion, duracion, categoria, formato, valoracion, cancelar, guardar);
+        formLayout.add(titulo, descripcion, anyoPublicacion, duracion, categoria, formato, valoracion, botones);
         //Lo añadimos a la vista:
         anyadirPelicula.add(formLayout);
         anyadirPelicula.setVisible(false);
