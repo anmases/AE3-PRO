@@ -1,11 +1,9 @@
 package org.ieschabas.views.actores;
 
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
@@ -15,35 +13,28 @@ import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.binder.ValidationException;
-import com.vaadin.flow.data.selection.SingleSelect;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Actor;
-
 import org.ieschabas.librerias.GestorActores;
-
 import org.ieschabas.views.MainLayout;
 import java.io.IOException;
 
-import static org.ieschabas.librerias.GestorActores.borrarActor;
-
+/**
+ * Vista de los actores
+ * @author Antonio Mas Esteve
+ */
 @PageTitle("Actores")
 @Route(value = "Actores", layout = MainLayout.class)
 public class ActoresView extends VerticalLayout {
 
     //tabla:
     private Grid<Actor> tabla;
-    //objeto actor:
-    private Actor actorSeleccionado;
-    //Disposición de la tabla:
-    //private VerticalLayout anyadirTabla = new VerticalLayout();
-    //Disposición del editor:
-    //private VerticalLayout anyadirEditor = new VerticalLayout();
-    //Vista principal partida:
 
-
-    //private Actor actor;
+    /**
+     * Constructor de la vista actores
+     * @throws IOException
+     */
     public ActoresView() throws IOException {
       addClassName("actores-view");
         SplitLayout splitLayout = new SplitLayout();
@@ -54,6 +45,12 @@ public class ActoresView extends VerticalLayout {
         add(splitLayout);
     }
 
+    /**
+     * Crea el componente tabla.
+     * @author Antonio Mas Esteve
+     * @return
+     * @throws IOException
+     */
     public Grid<Actor> crearTabla() throws IOException {
         tabla = new Grid<>(Actor.class, false);
         tabla.setAllRowsVisible(true);
@@ -66,6 +63,13 @@ public class ActoresView extends VerticalLayout {
         refrescarTabla();
         return tabla;
     }
+
+    /**
+     * Crea el componente formulario
+     * @author Antonio Mas Esteve
+     * @return
+     * @throws IOException
+     */
    public FormLayout crearFormulario() throws IOException {
 
         FormLayout formLayout = new FormLayout();
@@ -200,6 +204,13 @@ public class ActoresView extends VerticalLayout {
 
         return formLayout;
     }
+
+    /**
+     * Crea el menú edición título+formulario
+     * @author Antonio Mas Esteve
+     * @return
+     * @throws IOException
+     */
     public VerticalLayout crearMenuEdicion() throws IOException {
         VerticalLayout editor = new VerticalLayout();
         H3 titulo = new H3("Editar Actor");
@@ -208,11 +219,20 @@ public class ActoresView extends VerticalLayout {
         return editor;
     }
 
-
+    /**
+     * Método para rellenar la tabla desde el backend.
+     * @author Antonio Mas Esteve
+     * @throws IOException
+     */
     public void rellenarTabla() throws IOException {
         //añadimos los valores tipo objeto lista a la tabla:
         tabla.setItems(GestorActores.listarActores().values());
     }
+
+    /**
+     * Método para refrescar la tabla
+     * @author Antonio Mas Esteve
+     */
     public void refrescarTabla() {
         tabla.select(null);
         tabla.getDataProvider().refreshAll();

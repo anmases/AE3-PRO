@@ -1,6 +1,5 @@
 package org.ieschabas.views.directores;
 
-
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -21,6 +20,10 @@ import org.ieschabas.librerias.GestorDirectores;
 import org.ieschabas.views.MainLayout;
 import java.io.IOException;
 
+/**
+ * Vista de los directores
+ * @author Antonio Mas Esteve
+ */
 @PageTitle("Directores")
 @Route(value = "Directores", layout = MainLayout.class)
 public class DirectoresView extends VerticalLayout {
@@ -30,9 +33,10 @@ public class DirectoresView extends VerticalLayout {
     //objeto actor:
     private Director actorSeleccionado;
 
-
-
-    //private Actor actor;
+    /**
+     * Constructor de la vista directores
+     * @throws IOException
+     */
     public DirectoresView() throws IOException {
         addClassName("directores-view");
         SplitLayout splitLayout = new SplitLayout();
@@ -43,6 +47,12 @@ public class DirectoresView extends VerticalLayout {
         add(splitLayout);
     }
 
+    /**
+     * Creación de la tabla.
+     * @author Antonio Mas Esteve
+     * @return
+     * @throws IOException
+     */
     public Grid<Director> crearTabla() throws IOException {
         tabla = new Grid<>(Director.class, false);
         tabla.setAllRowsVisible(true);
@@ -55,6 +65,13 @@ public class DirectoresView extends VerticalLayout {
         refrescarTabla();
         return tabla;
     }
+
+    /**
+     * Creación del formulario lateral
+     * @author Antonio Mas Esteve
+     * @return
+     * @throws IOException
+     */
     public FormLayout crearFormulario() throws IOException {
 
         FormLayout formLayout = new FormLayout();
@@ -187,6 +204,12 @@ public class DirectoresView extends VerticalLayout {
 
         return formLayout;
     }
+
+    /**
+     * Menú edición: título+formulario
+     * @return
+     * @throws IOException
+     */
     public VerticalLayout crearMenuEdicion() throws IOException {
         VerticalLayout editor = new VerticalLayout();
         H3 titulo = new H3("Editar Director");
@@ -195,11 +218,18 @@ public class DirectoresView extends VerticalLayout {
         return editor;
     }
 
-
+    /**
+     * Método para rellenar la tabla.
+     * @throws IOException
+     */
     public void rellenarTabla() throws IOException {
         //añadimos los valores tipo objeto lista a la tabla:
         tabla.setItems(GestorDirectores.listarDirectores().values());
     }
+
+    /**
+     * Método para refrescar la tabla.
+     */
     public void refrescarTabla() {
         tabla.select(null);
         tabla.getDataProvider().refreshAll();

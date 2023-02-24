@@ -40,7 +40,10 @@ import java.io.IOException;
 import java.util.*;
 
 
-
+/**
+ * Vista de las películas
+ * @author Antonio Mas Esteve
+ */
 @PageTitle("Películas")
 @Route(value = "Peliculas", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
@@ -52,8 +55,7 @@ public class PeliculasView extends VerticalLayout {
     private VerticalLayout anyadirPelicula = new VerticalLayout();
 
     /**
-     * Constructor principal de la clase
-     *
+     * Constructor principal de la clase Películas.
      * @throws IOException
      * @author Antonio Mas Esteve
      */
@@ -66,7 +68,8 @@ public class PeliculasView extends VerticalLayout {
     }
 
     /**
-     * Aquí se crea la ventana vacía, que por defecto es invisible.
+     * Aquí se crea la ventana vacía emergente, que por defecto es invisible.
+     * @author Antonio Mas Esteve
      * @return
      */
     public Dialog ventanaLayout(){
@@ -81,6 +84,7 @@ public class PeliculasView extends VerticalLayout {
 
     /**
      * Aquí se rellena la ventana emergente con tablas y botones:
+     * @author Antonio Mas Esteve
      * @param pelicula
      * @return
      */
@@ -202,8 +206,6 @@ public class PeliculasView extends VerticalLayout {
         opcionDirector.setItems(listaDirectores);
         opcionDirector.setItemLabelGenerator(director -> director.getNombre()+" "+director.getApellidos());
 
-
-
         Button guardar = new Button("Guardar");
         Button atras = new Button("Atrás");
         atras.setWidthFull();
@@ -267,8 +269,6 @@ public class PeliculasView extends VerticalLayout {
             ventanaTabla.setVisible(true);
         });
 
-
-
         botones.add(anyadir, cancelar);
         botones2.add(guardar, atras);
         ventanaFormulario.add(opcionActor, opcionDirector, botones2);
@@ -304,7 +304,7 @@ public class PeliculasView extends VerticalLayout {
 
 
     /**
-     * Método que buscará las películas.
+     * Método que crea el formulario que buscará las películas.
      *
      * @return
      * @author Antonio Mas Esteve
@@ -487,7 +487,7 @@ public class PeliculasView extends VerticalLayout {
 
     /**
      * Método que crea la tabla y le da formato.
-     *
+     * @author antonio Mas Esteve
      * @return tabla
      */
     public Component crearTabla() throws IOException {
@@ -645,6 +645,7 @@ public class PeliculasView extends VerticalLayout {
 
     /**
      * Método para refrescar la tabla:
+     * @author Antonio Mas Esteve
      */
     public void refrescarTabla() {
         tabla.getDataProvider().refreshAll();
@@ -653,7 +654,7 @@ public class PeliculasView extends VerticalLayout {
     /**
      * Método que carga los datos que obtiene el backend desde
      * el fichero en una colección local y rellena la tabla:
-     *
+     * @author Antonio Mas Esteve
      * @throws IOException
      */
     public void rellenarTabla() throws IOException {

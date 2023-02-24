@@ -23,12 +23,18 @@ public class MainLayout extends AppLayout {
 
     private H2 viewTitle;
 
+    /**
+     * Constructor principal de la vista principal.
+     */
     public MainLayout() {
         setPrimarySection(Section.DRAWER);
         addDrawerContent();
         addHeaderContent();
     }
 
+    /**
+     * Crea el Header
+     */
     private void addHeaderContent() {
         DrawerToggle toggle = new DrawerToggle();
         toggle.getElement().setAttribute("aria-label", "Menu toggle");
@@ -39,6 +45,9 @@ public class MainLayout extends AppLayout {
         addToNavbar(true, toggle, viewTitle);
     }
 
+    /**
+     * Crea el contenido de la página.
+     */
     private void addDrawerContent() {
         H1 appName = new H1("VideoClub Pro");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
@@ -49,6 +58,10 @@ public class MainLayout extends AppLayout {
         addToDrawer(header, scroller, createFooter());
     }
 
+    /**
+     * Crea el menú de navegación
+     * @return
+     */
     private AppNav createNavigation() {
         // AppNav is not yet an official component.
         // For documentation, visit https://github.com/vaadin/vcf-nav#readme
