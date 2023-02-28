@@ -343,7 +343,7 @@ public class PeliculasView extends VerticalLayout {
         //Agregamos un escuchador de escritura para los campos:
         textTitulo.setValueChangeMode(ValueChangeMode.EAGER);
        textTitulo.addValueChangeListener(e-> {
-           String tituloPelicula = e.getValue();
+           String tituloPelicula = e.getValue().toLowerCase();
            ArrayList<Pelicula> listaActualizada = new ArrayList<>();
            Collection<Pelicula> lista;
            try {
@@ -355,7 +355,7 @@ public class PeliculasView extends VerticalLayout {
            Iterator<Pelicula> iterador = lista.iterator();
            while(iterador.hasNext()){
                pelicula = iterador.next();
-               if(pelicula.getTitulo().contains(tituloPelicula)){
+               if(pelicula.getTitulo().toLowerCase().contains(tituloPelicula)){
                    listaActualizada.add(pelicula);
                }
            }
