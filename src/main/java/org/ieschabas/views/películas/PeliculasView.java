@@ -116,7 +116,7 @@ public class PeliculasView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 try {
-                    GestorPeliculas.desvincularActor(pelicula.getId(), actor.getId());
+                    GestorPeliculas.desvincularActor(pelicula, actor);
                     //Rellenar la tabla:
                     tablaActores.setItems(GestorPeliculas.buscarActoresRelacionados(pelicula));
                 } catch (IOException e) {
@@ -138,7 +138,7 @@ public class PeliculasView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 try {
-                    GestorPeliculas.desvincularDirector(pelicula.getId(), director.getId());
+                    GestorPeliculas.desvincularDirector(pelicula, director);
                     //Rellenar la tabla:
                     tablaDirectores.setItems(GestorPeliculas.buscarDirectoresRelacionados(pelicula));
                 } catch (IOException e) {
@@ -538,6 +538,9 @@ public class PeliculasView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 try {
+                    //Elimina la película y las relaciones asociadas;
+                    GestorPeliculas.desvincularActor(pelicula);
+                    GestorPeliculas.desvincularDirector(pelicula);
                     GestorPeliculas.borrarPelicula(pelicula.getId());
                     if (GestorPeliculas.borrarPelicula(pelicula.getId()) == true) {
                         Notification notification = Notification.show("película borrada correcamente");

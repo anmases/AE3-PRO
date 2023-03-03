@@ -17,6 +17,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Director;
 import org.ieschabas.librerias.GestorDirectores;
+import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
 import java.io.IOException;
 
@@ -172,6 +173,8 @@ public class DirectoresView extends VerticalLayout {
             //Volcamos los datos actualmente presentes en el formulario en on objeto ad-hoc:
             Director director = binder.getBean();
             try {
+                //Borramos el director y todas sus relaciones asociadas:
+                GestorPeliculas.desvincularDirector(director);
                 GestorDirectores.borrarDirector(director.getId());
                 //Como el método es booleano, si lo hace muestra un mensaje de aceptación y si no lo hace, de error.
                 if (GestorDirectores.borrarDirector(director.getId())){

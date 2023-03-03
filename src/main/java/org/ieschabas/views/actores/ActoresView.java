@@ -17,6 +17,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Actor;
 import org.ieschabas.librerias.GestorActores;
+import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
 import java.io.IOException;
 
@@ -172,6 +173,8 @@ public class ActoresView extends VerticalLayout {
            //Volcamos los datos actualmente presentes en el formulario en on objeto ad-hoc:
             Actor actor = binder.getBean();
             try {
+                //Borra el actor y todas las relaciones con películas asociadas:
+                GestorPeliculas.desvincularActor(actor);
                 GestorActores.borrarActor(actor.getId());
                 //Como el método es booleano, si lo hace muestra un mensaje de aceptación y si no lo hace, de error.
                 if (GestorActores.borrarActor(actor.getId())){
