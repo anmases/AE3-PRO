@@ -19,6 +19,8 @@ import org.ieschabas.clases.Director;
 import org.ieschabas.librerias.GestorDirectores;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
+
+import javax.annotation.security.RolesAllowed;
 import java.io.IOException;
 
 /**
@@ -27,6 +29,7 @@ import java.io.IOException;
  */
 @PageTitle("Directores")
 @Route(value = "Directores", layout = MainLayout.class)
+@RolesAllowed("ADMIN")
 public class DirectoresView extends VerticalLayout {
 
     //tabla:

@@ -36,6 +36,8 @@ import org.ieschabas.librerias.GestorActores;
 import org.ieschabas.librerias.GestorDirectores;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
+
+import javax.annotation.security.RolesAllowed;
 import java.io.IOException;
 import java.util.*;
 
@@ -47,6 +49,7 @@ import java.util.*;
 @PageTitle("Películas")
 @Route(value = "Peliculas", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
+@RolesAllowed("ADMIN")
 public class PeliculasView extends VerticalLayout {
     private Grid<Pelicula> tabla;
     private Button botonanyadir;

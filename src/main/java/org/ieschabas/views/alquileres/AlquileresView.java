@@ -9,8 +9,11 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import org.ieschabas.views.MainLayout;
 
+import javax.annotation.security.RolesAllowed;
+
 @PageTitle("Empty3")
 @Route(value = "empty3", layout = MainLayout.class)
+@RolesAllowed("ADMIN")
 public class AlquileresView extends VerticalLayout {
 
     public AlquileresView() {

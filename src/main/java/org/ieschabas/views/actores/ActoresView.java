@@ -19,6 +19,8 @@ import org.ieschabas.clases.Actor;
 import org.ieschabas.librerias.GestorActores;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
+
+import javax.annotation.security.RolesAllowed;
 import java.io.IOException;
 
 /**
@@ -27,6 +29,7 @@ import java.io.IOException;
  */
 @PageTitle("Actores")
 @Route(value = "Actores", layout = MainLayout.class)
+@RolesAllowed("ADMIN")
 public class ActoresView extends VerticalLayout {
 
     //tabla:
