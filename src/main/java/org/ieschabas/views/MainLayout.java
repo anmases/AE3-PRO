@@ -10,6 +10,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.views.actores.ActoresView;
+import org.ieschabas.views.alquileres.AlquileresView;
 import org.ieschabas.views.directores.DirectoresView;
 import org.ieschabas.views.películas.PeliculasView;
 
@@ -65,23 +66,34 @@ public class MainLayout extends AppLayout {
         nav.addItem(new AppNavItem("Películas", PeliculasView.class, "la la-film"));
         nav.addItem(new AppNavItem("Actores", ActoresView.class, "la la-user"));
         nav.addItem(new AppNavItem("Directores", DirectoresView.class, "la la-user-tie"));
-        //nav.addItem(new AppNavItem("Alquileres", AlquileresView.class, "la la-file"));
+        nav.addItem(new AppNavItem("Alquileres", AlquileresView.class, "la la-file"));
 
         return nav;
     }
 
+    /**
+     * Crea el footer (no en uso)
+     * @return
+     */
     private Footer createFooter() {
         Footer layout = new Footer();
 
         return layout;
     }
 
+    /**
+     *
+     */
     @Override
     protected void afterNavigation() {
         super.afterNavigation();
         viewTitle.setText(getCurrentPageTitle());
     }
 
+    /**
+     * Devuelve el título de la página actual.
+     * @return
+     */
     private String getCurrentPageTitle() {
         PageTitle title = getContent().getClass().getAnnotation(PageTitle.class);
         return title == null ? "" : title.value();
