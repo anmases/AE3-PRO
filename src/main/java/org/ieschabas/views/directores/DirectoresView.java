@@ -34,14 +34,11 @@ public class DirectoresView extends VerticalLayout {
 
     //tabla:
     private Grid<Director> tabla;
-    //objeto actor:
-    private Director actorSeleccionado;
 
     /**
-     * Constructor de la vista directores
-     * @throws IOException
+     * Constructor de la vista de directores
      */
-    public DirectoresView() throws IOException {
+    public DirectoresView() {
         addClassName("directores-view");
         SplitLayout splitLayout = new SplitLayout();
 
@@ -54,10 +51,9 @@ public class DirectoresView extends VerticalLayout {
     /**
      * Creación de la tabla.
      * @author Antonio Mas Esteve
-     * @return
-     * @throws IOException
+     * @return Grid
      */
-    public Grid<Director> crearTabla() throws IOException {
+    public Grid<Director> crearTabla() {
         tabla = new Grid<>(Director.class, false);
         tabla.setAllRowsVisible(true);
         tabla.addColumn(Director::getId).setAutoWidth(true).setHeader("Id");
@@ -73,10 +69,9 @@ public class DirectoresView extends VerticalLayout {
     /**
      * Creación del formulario lateral
      * @author Antonio Mas Esteve
-     * @return
-     * @throws IOException
+     * @return FormLayout
      */
-    public FormLayout crearFormulario() throws IOException {
+    public FormLayout crearFormulario() {
 
         FormLayout formLayout = new FormLayout();
         Binder<Director> binder = new Binder<>();
@@ -125,15 +120,12 @@ public class DirectoresView extends VerticalLayout {
             if(director == null){
                 //Añadir
                 if(textNombre.getValue() != null && textApellidos.getValue() != null && textAnyo.getValue() != null && textPais.getValue() != null) {
-                    try {
-                        GestorDirectores.anyadirDirector(textNombre.getValue(), textApellidos.getValue(), textAnyo.getValue(), textPais.getValue());
+                        GestorDirectores.insertarDirector(director);
+                        if(GestorDirectores.insertarDirector(director)) {
+                            Notification notification = Notification.show("Director añadido correcamente");
+                            notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                        }
 
-                        Notification notification = Notification.show("Director añadido correcamente");
-                        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
                 }else {
                     //Se muestra la notificación:
                     Notification notification = Notification.show("Error: Todos los campos deben rellenarse");
@@ -142,7 +134,7 @@ public class DirectoresView extends VerticalLayout {
             }
             else{
                 //Modificar:
-                try {
+
                     GestorDirectores.modificarDirector(director);
                     if(GestorDirectores.modificarDirector(director)){
                         Notification notification = Notification.show("Director modificado correcamente");
@@ -152,16 +144,9 @@ public class DirectoresView extends VerticalLayout {
                         Notification notification = Notification.show("Error: Todos los campos deben rellenarse");
                         notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
                     }
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
             }
             //Volvemos a rellenar la tabla:
-            try {
                 rellenarTabla();
-            } catch (IOException err) {
-                throw new RuntimeException(err);
-            }
             //Refrescamos la tabla
             refrescarTabla();
             //Vaciamos el formulario:
@@ -178,9 +163,9 @@ public class DirectoresView extends VerticalLayout {
             try {
                 //Borramos el director y todas sus relaciones asociadas:
                 GestorPeliculas.desvincularDirector(director);
-                GestorDirectores.borrarDirector(director.getId());
+                GestorDirectores.eliminarDirector(director.getId());
                 //Como el método es booleano, si lo hace muestra un mensaje de aceptación y si no lo hace, de error.
-                if (GestorDirectores.borrarDirector(director.getId())){
+                if (GestorDirectores.eliminarDirector(director.getId())){
                     Notification notification = Notification.show("Director Borrado correctamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 } else {
@@ -191,11 +176,7 @@ public class DirectoresView extends VerticalLayout {
                 throw new RuntimeException(e);
             }
             //Volvemos a rellenar la tabla:
-            try {
                 rellenarTabla();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
             //Refrescamos la tabla
             refrescarTabla();
             //Vaciamos el formulario:
@@ -213,10 +194,9 @@ public class DirectoresView extends VerticalLayout {
 
     /**
      * Menú edición: título+formulario
-     * @return
-     * @throws IOException
+     * @return VerticalLayout
      */
-    public VerticalLayout crearMenuEdicion() throws IOException {
+    public VerticalLayout crearMenuEdicion() {
         VerticalLayout editor = new VerticalLayout();
         H3 titulo = new H3("Editar Director");
         editor.add(titulo, crearFormulario());
@@ -226,11 +206,10 @@ public class DirectoresView extends VerticalLayout {
 
     /**
      * Método para rellenar la tabla.
-     * @throws IOException
      */
-    public void rellenarTabla() throws IOException {
+    public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(GestorDirectores.listarDirectores().values());
+        tabla.setItems(GestorDirectores.listarDirectores());
     }
 
     /**

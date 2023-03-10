@@ -25,6 +25,7 @@ import java.io.IOException;
 
 /**
  * Vista de los actores
+ *
  * @author Antonio Mas Esteve
  */
 @PageTitle("Actores")
@@ -37,10 +38,11 @@ public class ActoresView extends VerticalLayout {
 
     /**
      * Constructor de la vista actores
+     *
      * @throws IOException
      */
     public ActoresView() throws IOException {
-      addClassName("actores-view");
+        addClassName("actores-view");
         SplitLayout splitLayout = new SplitLayout();
 
         splitLayout.addToPrimary(crearTabla());
@@ -51,9 +53,10 @@ public class ActoresView extends VerticalLayout {
 
     /**
      * Crea el componente tabla.
-     * @author Antonio Mas Esteve
+     *
      * @return
      * @throws IOException
+     * @author Antonio Mas Esteve
      */
     public Grid<Actor> crearTabla() throws IOException {
         tabla = new Grid<>(Actor.class, false);
@@ -70,11 +73,12 @@ public class ActoresView extends VerticalLayout {
 
     /**
      * Crea el componente formulario
-     * @author Antonio Mas Esteve
+     *
      * @return
      * @throws IOException
+     * @author Antonio Mas Esteve
      */
-   public FormLayout crearFormulario() throws IOException {
+    public FormLayout crearFormulario() throws IOException {
 
         FormLayout formLayout = new FormLayout();
         Binder<Actor> binder = new Binder<>();
@@ -98,15 +102,15 @@ public class ActoresView extends VerticalLayout {
         binder.forField(textPais).bind(Actor::getPais, Actor::setPais);
         //definimos el selector:
         tabla.setSelectionMode(Grid.SelectionMode.SINGLE);
-       tabla.asSingleSelect().addValueChangeListener(e->{
+        tabla.asSingleSelect().addValueChangeListener(e -> {
             Actor actor = e.getValue();
             //Vuelca los datos del ítem de la tabla (objeto) al formulario (que está correlacionado con binder).
-                binder.setBean(actor);
+            binder.setBean(actor);
 
         });
         //Definimos los botones:
         cancelar.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
-        cancelar.addClickListener(buttonClickEvent->{
+        cancelar.addClickListener(buttonClickEvent -> {
             refrescarTabla();
             textId.clear();
             textNombre.clear();
@@ -117,51 +121,38 @@ public class ActoresView extends VerticalLayout {
             notification.addThemeVariants(NotificationVariant.LUMO_CONTRAST);
         });
         guardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        guardar.addClickListener(e->{
+        guardar.addClickListener(e -> {
             //Volcamos los datos actualmente presentes en el formulario en on objeto ad-hoc:
             Actor actor = binder.getBean();
             //Aquí estableceremos que modifique o añada según el binder arroje un null o no:
 
-            if(actor == null){
+            if (actor == null) {
                 //Añadir
-                if(textNombre.getValue() != null && textApellidos.getValue() != null && textAnyo.getValue() != null && textPais.getValue() != null) {
-                    try {
-                        GestorActores.anyadirActor(textNombre.getValue(), textApellidos.getValue(), textAnyo.getValue(), textPais.getValue());
+                if (textNombre.getValue() != null && textApellidos.getValue() != null && textAnyo.getValue() != null && textPais.getValue() != null) {
 
-                            Notification notification = Notification.show("actor añadido correcamente");
-                            notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
+                    GestorActores.insertarActor(actor);
+                    if (GestorActores.insertarActor(actor)) {
+                        Notification notification = Notification.show("actor añadido correcamente");
+                        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                     }
-                }else {
+                } else {
                     //Se muestra la notificación:
                     Notification notification = Notification.show("Error: Todos los campos deben rellenarse");
                     notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
                 }
-            }
-            else{
+            } else {
                 //Modificar:
-                try {
-                    GestorActores.modificarActor(actor);
-                    if(GestorActores.modificarActor(actor)){
-                        Notification notification = Notification.show("actor modificado correcamente");
-                        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-                    }
-                    else{
-                        Notification notification = Notification.show("Error: Todos los campos deben rellenarse");
-                        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
-                    }
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
+                GestorActores.modificarActor(actor);
+                if (GestorActores.modificarActor(actor)) {
+                    Notification notification = Notification.show("actor modificado correcamente");
+                    notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                } else {
+                    Notification notification = Notification.show("Error: Todos los campos deben rellenarse");
+                    notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
                 }
             }
             //Volvemos a rellenar la tabla:
-            try {
-                rellenarTabla();
-            } catch (IOException err) {
-                throw new RuntimeException(err);
-            }
+            rellenarTabla();
             //Refrescamos la tabla
             refrescarTabla();
             //Vaciamos el formulario:
@@ -172,15 +163,15 @@ public class ActoresView extends VerticalLayout {
             textPais.clear();
         });
         eliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
-        eliminar.addClickListener(event->{
-           //Volcamos los datos actualmente presentes en el formulario en on objeto ad-hoc:
+        eliminar.addClickListener(event -> {
+            //Volcamos los datos actualmente presentes en el formulario en on objeto ad-hoc:
             Actor actor = binder.getBean();
             try {
                 //Borra el actor y todas las relaciones con películas asociadas:
                 GestorPeliculas.desvincularActor(actor);
-                GestorActores.borrarActor(actor.getId());
+                GestorActores.eliminarActor(actor.getId());
                 //Como el método es booleano, si lo hace muestra un mensaje de aceptación y si no lo hace, de error.
-                if (GestorActores.borrarActor(actor.getId())){
+                if (GestorActores.eliminarActor(actor.getId())) {
                     Notification notification = Notification.show("Actor Borrado correctamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 } else {
@@ -191,11 +182,7 @@ public class ActoresView extends VerticalLayout {
                 throw new RuntimeException(e);
             }
             //Volvemos a rellenar la tabla:
-            try {
                 rellenarTabla();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
             //Refrescamos la tabla
             refrescarTabla();
             //Vaciamos el formulario:
@@ -206,16 +193,17 @@ public class ActoresView extends VerticalLayout {
             textPais.clear();
         });
         vistaBoton.add(guardar, cancelar, eliminar);
-     formLayout.add(textId, textNombre, textApellidos, textAnyo, textPais, vistaBoton);
+        formLayout.add(textId, textNombre, textApellidos, textAnyo, textPais, vistaBoton);
 
         return formLayout;
     }
 
     /**
      * Crea el menú edición título+formulario
-     * @author Antonio Mas Esteve
+     *
      * @return
      * @throws IOException
+     * @author Antonio Mas Esteve
      */
     public VerticalLayout crearMenuEdicion() throws IOException {
         VerticalLayout editor = new VerticalLayout();
@@ -228,15 +216,15 @@ public class ActoresView extends VerticalLayout {
     /**
      * Método para rellenar la tabla desde el backend.
      * @author Antonio Mas Esteve
-     * @throws IOException
      */
-    public void rellenarTabla() throws IOException {
+    public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(GestorActores.listarActores().values());
+        tabla.setItems(GestorActores.listarActores());
     }
 
     /**
      * Método para refrescar la tabla
+     *
      * @author Antonio Mas Esteve
      */
     public void refrescarTabla() {

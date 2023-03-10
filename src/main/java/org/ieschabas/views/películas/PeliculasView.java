@@ -157,7 +157,7 @@ public class PeliculasView extends VerticalLayout {
         /**************Creación del formulario Añadir*****************/
         //Información para los actores:
         ArrayList<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
-        Collection<Actor> listaActores = GestorActores.listarActores().values();   //Todos los actores:
+        ArrayList<Actor> listaActores = GestorActores.listarActores();   //Todos los actores:
         ArrayList<Actor> actoresPresentes = GestorPeliculas.buscarActoresRelacionados(pelicula); //Actores que ya tiene
         //Que elimine de la lista los actores que ya están:
         Iterator<Actor> iteradorActores;
@@ -179,7 +179,7 @@ public class PeliculasView extends VerticalLayout {
         //Información para los directores:
         //Información para los actores:
         ArrayList<Director> directoresSeleccionados = new ArrayList<>();   //Directores seleccionados en el Multiselect:
-        Collection<Director> listaDirectores = GestorDirectores.listarDirectores().values();   //Todos los directores:
+        Collection<Director> listaDirectores = GestorDirectores.listarDirectores();   //Todos los directores:
         ArrayList<Director> directoresPresentes = GestorPeliculas.buscarDirectoresRelacionados(pelicula); //Directores que ya tiene
         //Que elimine de la lista los actores que ya están:
         Iterator<Director> iteradorDirectores;
