@@ -15,6 +15,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import org.ieschabas.clases.Actor;
 import org.ieschabas.clases.Director;
 import org.ieschabas.librerias.GestorDirectores;
 import org.ieschabas.librerias.GestorPeliculas;
@@ -120,7 +121,8 @@ public class DirectoresView extends VerticalLayout {
             if(director == null){
                 //Añadir
                 if(textNombre.getValue() != null && textApellidos.getValue() != null && textAnyo.getValue() != null && textPais.getValue() != null) {
-                        GestorDirectores.insertarDirector(director);
+                    //Se crea un director con los campos del formuario como argumentos. El id por defecto es 0, luego la BD lo rellenará automáticamente.
+                    director = new Director(0, textNombre.getValue(), textApellidos.getValue(), textAnyo.getValue(), textPais.getValue());
                         if(GestorDirectores.insertarDirector(director)) {
                             Notification notification = Notification.show("Director añadido correcamente");
                             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);

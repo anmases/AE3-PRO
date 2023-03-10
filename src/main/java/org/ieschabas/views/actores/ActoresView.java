@@ -78,7 +78,7 @@ public class ActoresView extends VerticalLayout {
      * @throws IOException
      * @author Antonio Mas Esteve
      */
-    public FormLayout crearFormulario() throws IOException {
+    public FormLayout crearFormulario() {
 
         FormLayout formLayout = new FormLayout();
         Binder<Actor> binder = new Binder<>();
@@ -117,8 +117,6 @@ public class ActoresView extends VerticalLayout {
             textApellidos.clear();
             textAnyo.clear();
             textPais.clear();
-            Notification notification = Notification.show("Se ha hecho!");
-            notification.addThemeVariants(NotificationVariant.LUMO_CONTRAST);
         });
         guardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         guardar.addClickListener(e -> {
@@ -129,8 +127,8 @@ public class ActoresView extends VerticalLayout {
             if (actor == null) {
                 //Añadir
                 if (textNombre.getValue() != null && textApellidos.getValue() != null && textAnyo.getValue() != null && textPais.getValue() != null) {
-
-                    GestorActores.insertarActor(actor);
+                    //Se crea un actor con los campos del formuario como argumentos. El id por defecto es 0, luego la BD lo rellenará automáticamente.
+                    actor = new Actor(0, textNombre.getValue(), textApellidos.getValue(), textAnyo.getValue(), textPais.getValue());
                     if (GestorActores.insertarActor(actor)) {
                         Notification notification = Notification.show("actor añadido correcamente");
                         notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
@@ -182,7 +180,7 @@ public class ActoresView extends VerticalLayout {
                 throw new RuntimeException(e);
             }
             //Volvemos a rellenar la tabla:
-                rellenarTabla();
+            rellenarTabla();
             //Refrescamos la tabla
             refrescarTabla();
             //Vaciamos el formulario:
@@ -215,6 +213,7 @@ public class ActoresView extends VerticalLayout {
 
     /**
      * Método para rellenar la tabla desde el backend.
+     *
      * @author Antonio Mas Esteve
      */
     public void rellenarTabla() {
