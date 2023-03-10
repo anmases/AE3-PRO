@@ -301,6 +301,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.httpcomponents.client5:httpclient5:5.1.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.httpcomponents.core5:httpcore5:5.1.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.httpcomponents.core5:httpcore5-h2:5.1.5" level="project" />
-    <orderEntry type="module" module-name="AE3-PRO-BACKEND" />
+    <orderEntry type="module" module-name="AE3-PRO-BACKEND" scope="PROVIDED" />
+    <orderEntry type="library" name="Maven: com.mysql:mysql-connector-j:8.0.32" level="project" />
   </component>
 </module>

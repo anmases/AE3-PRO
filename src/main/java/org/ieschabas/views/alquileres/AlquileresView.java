@@ -17,11 +17,13 @@ import org.ieschabas.clases.Pelicula;
 import org.ieschabas.enums.Categoria;
 import org.ieschabas.enums.Formato;
 import org.ieschabas.enums.Valoracion;
+import org.ieschabas.librerias.GestorAlquileres;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
 
 import javax.annotation.security.RolesAllowed;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -41,7 +43,7 @@ public class AlquileresView extends VerticalLayout {
      * Constructor principal de la vista de alquileres.
      * @throws IOException
      */
-    public AlquileresView() throws IOException {
+    public AlquileresView() {
         setSizeFull();
         addClassName("Alquileres-View");
       H3 titulo = new H3("Historial de alquileres");
@@ -54,14 +56,14 @@ public class AlquileresView extends VerticalLayout {
      * @return
      * @throws IOException
      */
-    public Grid<Alquiler> crearTabla() throws IOException {
+    public Grid<Alquiler> crearTabla() {
         tabla = new Grid<>(Alquiler.class, false);
         tabla.setAllRowsVisible(true);
-        tabla.addColumn(Alquiler::getId).setAutoWidth(true).setHeader("Id");
-        //tabla.addColumn().setAutoWidth(true).setHeader("Cliente");
-        tabla.addColumn(Alquiler::getTituloPelicula).setAutoWidth(true).setHeader("Película");
-        tabla.addColumn(Alquiler::getFechaAlquiler).setAutoWidth(true).setHeader("Fecha Alquiler");
-        tabla.addColumn(Alquiler::getFechaAlquiler).setAutoWidth(true).setHeader("Fecha Devolución");
+        tabla.addColumn(Alquiler::getId).setAutoWidth(true).setResizable(true).setHeader("Id");
+        tabla.addColumn(Alquiler::getNombreCliente).setAutoWidth(true).setHeader("Cliente");
+        tabla.addColumn(Alquiler::getTituloPelicula).setAutoWidth(true).setResizable(true).setHeader("Película");
+        tabla.addColumn(Alquiler::getFechaAlquiler).setAutoWidth(true).setResizable(true).setHeader("Fecha Alquiler");
+        tabla.addColumn(Alquiler::getFechaAlquiler).setAutoWidth(true).setResizable(true).setHeader("Fecha Devolución");
         rellenarTabla();
         refrescarTabla();
         return tabla;
@@ -172,10 +174,9 @@ public class AlquileresView extends VerticalLayout {
      * @author Antonio Mas Esteve
      * @throws IOException
      */
-    public void rellenarTabla() throws IOException {
+    public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems();
+        tabla.setItems(GestorAlquileres.listarAlquileres());
     }
-
 
 }
