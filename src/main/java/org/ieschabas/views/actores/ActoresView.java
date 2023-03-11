@@ -39,7 +39,6 @@ public class ActoresView extends VerticalLayout {
     /**
      * Constructor de la vista actores
      *
-     * @throws IOException
      */
     public ActoresView() throws IOException {
         addClassName("actores-view");
@@ -54,11 +53,10 @@ public class ActoresView extends VerticalLayout {
     /**
      * Crea el componente tabla.
      *
-     * @return
-     * @throws IOException
+     * @return Grid
      * @author Antonio Mas Esteve
      */
-    public Grid<Actor> crearTabla() throws IOException {
+    public Grid<Actor> crearTabla() {
         tabla = new Grid<>(Actor.class, false);
         tabla.setAllRowsVisible(true);
         tabla.addColumn(Actor::getId).setAutoWidth(true).setHeader("Id");
@@ -74,8 +72,7 @@ public class ActoresView extends VerticalLayout {
     /**
      * Crea el componente formulario
      *
-     * @return
-     * @throws IOException
+     * @return FormLayout
      * @author Antonio Mas Esteve
      */
     public FormLayout crearFormulario() {
@@ -127,7 +124,7 @@ public class ActoresView extends VerticalLayout {
             if (actor == null) {
                 //Añadir
                 if (textNombre.getValue() != null && textApellidos.getValue() != null && textAnyo.getValue() != null && textPais.getValue() != null) {
-                    //Se crea un actor con los campos del formuario como argumentos. El id por defecto es 0, luego la BD lo rellenará automáticamente.
+                    //Se crea un actor con los campos del formuario como argumentos. El "id" es por defecto 0, luego la BD lo rellenará automáticamente.
                     actor = new Actor(0, textNombre.getValue(), textApellidos.getValue(), textAnyo.getValue(), textPais.getValue());
                     if (GestorActores.insertarActor(actor)) {
                         Notification notification = Notification.show("actor añadido correcamente");
@@ -199,11 +196,10 @@ public class ActoresView extends VerticalLayout {
     /**
      * Crea el menú edición título+formulario
      *
-     * @return
-     * @throws IOException
+     * @return VeticalLayout
      * @author Antonio Mas Esteve
      */
-    public VerticalLayout crearMenuEdicion() throws IOException {
+    public VerticalLayout crearMenuEdicion() {
         VerticalLayout editor = new VerticalLayout();
         H3 titulo = new H3("Editar Actor");
         editor.add(titulo, crearFormulario());
