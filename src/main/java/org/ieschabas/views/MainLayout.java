@@ -12,7 +12,7 @@ import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.views.actores.ActoresView;
 import org.ieschabas.views.alquileres.AlquileresView;
 import org.ieschabas.views.directores.DirectoresView;
-import org.ieschabas.views.películas.PeliculasView;
+import org.ieschabas.views.peliculas.PeliculasView;
 
 /**
  * The main view is a top-level placeholder for other views.

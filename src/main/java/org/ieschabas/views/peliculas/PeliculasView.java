@@ -1,4 +1,4 @@
-package org.ieschabas.views.películas;
+package org.ieschabas.views.peliculas;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
@@ -32,18 +32,16 @@ import org.ieschabas.clases.Pelicula;
 import org.ieschabas.enums.Categoria;
 import org.ieschabas.enums.Formato;
 import org.ieschabas.enums.Valoracion;
-import org.ieschabas.librerias.GestorActores;
-import org.ieschabas.librerias.GestorDirectores;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
 
 import javax.annotation.security.RolesAllowed;
-import java.io.IOException;
 import java.util.*;
 
 
 /**
- * Vista de las películas
+ * Vista de las peliculas
+ *
  * @author Antonio Mas Esteve
  */
 @PageTitle("Películas")
@@ -52,17 +50,16 @@ import java.util.*;
 @RolesAllowed("ADMIN")
 public class PeliculasView extends VerticalLayout {
     private Grid<Pelicula> tabla;
-    private Button botonanyadir;
     private Dialog anyadirVentana;
     private VerticalLayout anyadirTabla = new VerticalLayout();
     private VerticalLayout anyadirPelicula = new VerticalLayout();
 
     /**
      * Constructor principal de la clase Películas.
-     * @throws IOException
+     *
      * @author Antonio Mas Esteve
      */
-    public PeliculasView() throws IOException {
+    public PeliculasView() {
         setSizeFull();
         addClassName("Peliculas-View");
 
@@ -72,12 +69,13 @@ public class PeliculasView extends VerticalLayout {
 
     /**
      * Aquí se crea la ventana vacía emergente, que por defecto es invisible.
+     *
+     * @return Dialog
      * @author Antonio Mas Esteve
-     * @return
      */
-    public Dialog ventanaLayout(){
+    public Dialog ventanaLayout() {
         anyadirVentana = new Dialog();
-        anyadirVentana.addDialogCloseActionListener(e->{
+        anyadirVentana.addDialogCloseActionListener(e -> {
             anyadirVentana.close();
             anyadirVentana.removeAll();
         });
@@ -87,11 +85,11 @@ public class PeliculasView extends VerticalLayout {
 
     /**
      * Aquí se rellena la ventana emergente con tablas y botones:
+     *
+     * @return VerticalLayout
      * @author Antonio Mas Esteve
-     * @param pelicula
-     * @return
      */
-    public VerticalLayout rellenarVentana(Pelicula pelicula) throws IOException {
+    public VerticalLayout rellenarVentana(Pelicula pelicula) {
         VerticalLayout ventana = new VerticalLayout();
         VerticalLayout ventanaTabla = new VerticalLayout();
         FormLayout ventanaFormulario = new FormLayout();
@@ -102,14 +100,38 @@ public class PeliculasView extends VerticalLayout {
         Button anyadir = new Button("Añadir");
         Button cancelar = new Button("Cancelar");
         anyadir.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        cancelar.addClickListener(click->{
-                anyadirVentana.removeAll();
-                anyadirVentana.close();
+        cancelar.addClickListener(click -> {
+            anyadirVentana.removeAll();
+            anyadirVentana.close();
         });
-        anyadir.addClickListener(event ->{
+        anyadir.addClickListener(event -> {
             ventanaFormulario.setVisible(true);
             ventanaTabla.setVisible(false);
         });
+
+
+/////////////////////////////////////////Creación del formulario Añadir/////////////////////////////////////////////////
+        //Información para los actores:
+        ArrayList<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
+        ArrayList<Actor> listaActoresRestantes = GestorPeliculas.listarActoresNoRelacionados(pelicula.getId());   //Actores restantes:
+
+
+        //Información para los directores:
+        ArrayList<Director> directoresSeleccionados = new ArrayList<>();   //Directores seleccionados en el Multiselect:
+        Collection<Director> listaDirectoresRestantes = GestorPeliculas.listarDirectoresNoRelacionados(pelicula.getId());   //Directores restantes:
+
+
+        //Creamos los MultiSelect:
+        HorizontalLayout botones2 = new HorizontalLayout();
+        MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>("Añadir actores a la película");
+        opcionActor.setPlaceholder("Añada los actores");
+        MultiSelectComboBox<Director> opcionDirector = new MultiSelectComboBox<>("Añadir directores a la película");
+        opcionDirector.setPlaceholder("Añada los actores");
+        opcionActor.setItems(listaActoresRestantes);
+        opcionActor.setItemLabelGenerator(actor -> actor.getNombre() + " " + actor.getApellidos());
+        opcionDirector.setItems(listaDirectoresRestantes);
+        opcionDirector.setItemLabelGenerator(director -> director.getNombre() + " " + director.getApellidos());
+///////////////////////////////////////Creamos Las tablas//////////////////////////////////////////////////////////////
         //Tabla de actores:
         Grid<Actor> tablaActores = new Grid<>(Actor.class, false);
         tablaActores.addColumn(Actor::getNombre).setHeader("Nombre").setAutoWidth(true);
@@ -118,20 +140,21 @@ public class PeliculasView extends VerticalLayout {
             button.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_ERROR, ButtonVariant.LUMO_TERTIARY);
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
-                try {
-                    GestorPeliculas.desvincularActor(pelicula, actor);
-                    //Rellenar la tabla:
-                    tablaActores.setItems(GestorPeliculas.buscarActoresRelacionados(pelicula));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                GestorPeliculas.eliminarActorRelacionado(pelicula.getId(), actor.getId());
+                //Rellenar la tabla:
+                tablaActores.setItems(GestorPeliculas.listarActoresRelacionados(pelicula.getId()));
                 //Refrescar la tabla:
                 tablaActores.getDataProvider().refreshAll();
+                //Rellenamos el multiselect;
+                opcionActor.setItems(GestorPeliculas.listarActoresNoRelacionados(pelicula.getId()));
+                //Refrescamos el multiSelect:
+                opcionActor.getDataProvider().refreshAll();
             });
         }))).setHeader("Eliminar").setResizable(true).setAutoWidth(true);
-        tablaActores.setItems(GestorPeliculas.buscarActoresRelacionados(pelicula));
+        tablaActores.setItems(GestorPeliculas.listarActoresRelacionados(pelicula.getId()));
         tablaActores.recalculateColumnWidths();
         tablaActores.setHeightByRows(true);
+
         //Tabla de directores:
         Grid<Director> tablaDirectores = new Grid<>(Director.class, false);
         tablaDirectores.addColumn(Director::getNombre).setHeader("Nombre").setAutoWidth(true);
@@ -140,136 +163,70 @@ public class PeliculasView extends VerticalLayout {
             button.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_ERROR, ButtonVariant.LUMO_TERTIARY);
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
-                try {
-                    GestorPeliculas.desvincularDirector(pelicula, director);
-                    //Rellenar la tabla:
-                    tablaDirectores.setItems(GestorPeliculas.buscarDirectoresRelacionados(pelicula));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                GestorPeliculas.eliminarDirectorRelacionado(pelicula.getId(), director.getId());
+                //Rellenar la tabla:
+                tablaDirectores.setItems(GestorPeliculas.listarDirectoresRelacionados(pelicula.getId()));
                 //Refrescar la tabla:
                 tablaDirectores.getDataProvider().refreshAll();
+                //Rellenamos el multiselect;
+                opcionDirector.setItems(GestorPeliculas.listarDirectoresNoRelacionados(pelicula.getId()));
+                //Refrescamos el multiSelect:
+                opcionDirector.getDataProvider().refreshAll();
             });
         }))).setHeader("Eliminar").setResizable(true).setAutoWidth(true);
-        tablaDirectores.setItems(GestorPeliculas.buscarDirectoresRelacionados(pelicula));
+        tablaDirectores.setItems(GestorPeliculas.listarDirectoresRelacionados(pelicula.getId()));
         tablaDirectores.recalculateColumnWidths();
         tablaDirectores.setHeightByRows(true);
-        /**************Creación del formulario Añadir*****************/
-        //Información para los actores:
-        ArrayList<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
-        ArrayList<Actor> listaActores = GestorActores.listarActores();   //Todos los actores:
-        ArrayList<Actor> actoresPresentes = GestorPeliculas.buscarActoresRelacionados(pelicula); //Actores que ya tiene
-        //Que elimine de la lista los actores que ya están:
-        Iterator<Actor> iteradorActores;
-        Iterator<Actor> iteradorPresentes = actoresPresentes.iterator();
-        Actor actorGeneral;
-        Actor actorPresente;
-        while(iteradorPresentes.hasNext()){
-            iteradorActores = listaActores.iterator();
-           actorPresente = iteradorPresentes.next();
-          while(iteradorActores.hasNext()){
-              actorGeneral = iteradorActores.next();
-              if(actorPresente.getId() == actorGeneral.getId()){
-                  //Si no lo contiene, lo elimina:
-                  iteradorActores.remove();
-              }
-          }
-        }
-
-        //Información para los directores:
-        //Información para los actores:
-        ArrayList<Director> directoresSeleccionados = new ArrayList<>();   //Directores seleccionados en el Multiselect:
-        Collection<Director> listaDirectores = GestorDirectores.listarDirectores();   //Todos los directores:
-        ArrayList<Director> directoresPresentes = GestorPeliculas.buscarDirectoresRelacionados(pelicula); //Directores que ya tiene
-        //Que elimine de la lista los actores que ya están:
-        Iterator<Director> iteradorDirectores;
-        Iterator<Director> iteradorDirPresentes = directoresPresentes.iterator();
-        Director directorGeneral;
-        Director directorPresente;
-        while(iteradorDirPresentes.hasNext()){
-            iteradorDirectores = listaDirectores.iterator();
-            directorPresente = iteradorDirPresentes.next();
-            while(iteradorDirectores.hasNext()){
-                directorGeneral = iteradorDirectores.next();
-                if(directorPresente.getId() == directorGeneral.getId()){
-                    //Si no lo contiene, lo elimina:
-                    iteradorDirectores.remove();
-                }
-            }
-        }
-
-        HorizontalLayout botones2 = new HorizontalLayout();
-        //Creamos los MultiSelect:
-        MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>("Añadir actores a la película");
-        opcionActor.setPlaceholder("Añada los actores");
-        MultiSelectComboBox<Director> opcionDirector = new MultiSelectComboBox<>("Añadir directores a la película");
-        opcionDirector.setPlaceholder("Añada los actores");
-        opcionActor.setItems(listaActores);
-        opcionActor.setItemLabelGenerator(actor -> actor.getNombre()+" "+actor.getApellidos());
-        opcionDirector.setItems(listaDirectores);
-        opcionDirector.setItemLabelGenerator(director -> director.getNombre()+" "+director.getApellidos());
 
         Button guardar = new Button("Guardar");
         Button atras = new Button("Atrás");
         atras.setWidthFull();
         guardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         guardar.setWidthFull();
-        guardar.addClickListener(event->{
-            if(opcionDirector != null){
+        guardar.addClickListener(event -> {
+            if (opcionDirector.isEmpty() == false) {
                 directoresSeleccionados.addAll(opcionDirector.getSelectedItems());
-                try {
-                    GestorPeliculas.anyadirRelDirector(directoresSeleccionados, pelicula);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                GestorPeliculas.insertarDirectoresRelacionados(directoresSeleccionados, pelicula.getId());
             }
-            if(opcionActor != null) {
+            if (opcionActor.isEmpty() == false) {
                 actoresSeleccionados.addAll(opcionActor.getSelectedItems());
-                try {
-                    GestorPeliculas.anyadirRelActor(actoresSeleccionados, pelicula);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                GestorPeliculas.insertarActoresRelacionados(actoresSeleccionados, pelicula.getId());
             }
-            try {
-                //Rellenar la tabla:
-                tablaActores.setItems(GestorPeliculas.buscarActoresRelacionados(pelicula));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                tablaDirectores.setItems(GestorPeliculas.buscarDirectoresRelacionados(pelicula));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            //Rellenar la tabla:
+            tablaActores.setItems(GestorPeliculas.listarActoresRelacionados(pelicula.getId()));
+            tablaDirectores.setItems(GestorPeliculas.listarDirectoresRelacionados(pelicula.getId()));
             //Notificación:
             Notification notification = Notification.show("Se ha guardado correctamente");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             //Refrescar la tabla:
             tablaActores.getDataProvider().refreshAll();
             tablaDirectores.getDataProvider().refreshAll();
+            //Rellenamos el multiselect;
+            opcionActor.setItems(GestorPeliculas.listarActoresNoRelacionados(pelicula.getId()));
+            opcionDirector.setItems(GestorPeliculas.listarDirectoresNoRelacionados(pelicula.getId()));
+            //Refrescamos el multiSelect:
+            opcionActor.getDataProvider().refreshAll();
+            opcionDirector.getDataProvider().refreshAll();
             //Limpiamos el campo:
             opcionActor.clear();
             opcionDirector.clear();
         });
-        atras.addClickListener(click ->{
+        atras.addClickListener(click -> {
             //Aquí irán los clear:
             opcionActor.clear();
             opcionDirector.clear();
-            try {
-                //Rellenar la tabla:
-                tablaActores.setItems(GestorPeliculas.buscarActoresRelacionados(pelicula));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                tablaDirectores.setItems(GestorPeliculas.buscarDirectoresRelacionados(pelicula));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            //Rellenar la tabla:
+            tablaActores.setItems(GestorPeliculas.listarActoresRelacionados(pelicula.getId()));
+            tablaDirectores.setItems(GestorPeliculas.listarDirectoresRelacionados(pelicula.getId()));
             //Refrescar la tabla:
             tablaActores.getDataProvider().refreshAll();
             tablaDirectores.getDataProvider().refreshAll();
+            //Rellenamos el multiselect;
+            opcionActor.setItems(GestorPeliculas.listarActoresNoRelacionados(pelicula.getId()));
+            opcionDirector.setItems(GestorPeliculas.listarDirectoresNoRelacionados(pelicula.getId()));
+            //Refrescamos el multiSelect:
+            opcionActor.setItems(listaActoresRestantes);
+            opcionDirector.setItems(listaDirectoresRestantes);
             //Volvemos a la tabla:
             ventanaFormulario.setVisible(false);
             ventanaTabla.setVisible(true);
@@ -279,21 +236,20 @@ public class PeliculasView extends VerticalLayout {
         botones2.add(guardar, atras);
         ventanaFormulario.add(opcionActor, opcionDirector, botones2);
         ventanaTabla.add(tituloActores, tablaActores, tituloDirectores, tablaDirectores, botones);
-        ventana.add(ventanaTabla,ventanaFormulario);
+        ventana.add(ventanaTabla, ventanaFormulario);
         return ventana;
     }
 
     /**
      * Crea la disposición de la tabla y sus distintos ecomponentes.
      *
-     * @return
-     * @throws IOException
+     * @return VerticalLayout
      * @author Antonio Mas Esteve
      */
-    public VerticalLayout tablaLayout() throws IOException {
-        /***********Se crea el botón añadir y el título***********/
+    public VerticalLayout tablaLayout() {
+//////////////////////////////////////Se crea el botón añadir y el título////////////////////////////////////////////////
         HorizontalLayout anyadirBoton = new HorizontalLayout();
-        botonanyadir = new Button("Añadir Película");
+        Button botonanyadir = new Button("Añadir Película");
         botonanyadir.addThemeVariants(ButtonVariant.LUMO_SUCCESS);
         botonanyadir.setIcon(new Icon(VaadinIcon.PLUS));
         botonanyadir.addClickListener(ClickEvent -> {
@@ -310,9 +266,9 @@ public class PeliculasView extends VerticalLayout {
 
 
     /**
-     * Método que crea el formulario que buscará las películas.
+     * Método que crea el formulario que buscará las peliculas.
      *
-     * @return
+     * @return Component
      * @author Antonio Mas Esteve
      */
     public Component crearBuscador() {
@@ -345,42 +301,32 @@ public class PeliculasView extends VerticalLayout {
 
         //Agregamos un escuchador de escritura para los campos:
         textTitulo.setValueChangeMode(ValueChangeMode.EAGER);
-       textTitulo.addValueChangeListener(e-> {
-           String tituloPelicula = e.getValue().toLowerCase();
-           ArrayList<Pelicula> listaActualizada = new ArrayList<>();
-           Collection<Pelicula> lista;
-           try {
-               lista = GestorPeliculas.listarPeliculas().values();
-           } catch (IOException ex) {
-               throw new RuntimeException(ex);
-           }
-           Pelicula pelicula;
-           Iterator<Pelicula> iterador = lista.iterator();
-           while(iterador.hasNext()){
-               pelicula = iterador.next();
-               if(pelicula.getTitulo().toLowerCase().contains(tituloPelicula)){
-                   listaActualizada.add(pelicula);
-               }
-           }
-           tabla.setItems(listaActualizada);
-           refrescarTabla();
-       });
+        textTitulo.addValueChangeListener(e -> {
+            String tituloPelicula = e.getValue().toLowerCase();
+            ArrayList<Pelicula> listaActualizada = new ArrayList<>();
+            Collection<Pelicula> lista;
+            lista = GestorPeliculas.listarPeliculas();
+            Pelicula pelicula;
+            for (Pelicula valor : lista) {
+                pelicula = valor;
+                if (pelicula.getTitulo().toLowerCase().contains(tituloPelicula)) {
+                    listaActualizada.add(pelicula);
+                }
+            }
+            tabla.setItems(listaActualizada);
+            refrescarTabla();
+        });
         textAnyo.setValueChangeMode(ValueChangeMode.EAGER);
-        textAnyo.addValueChangeListener(e-> {
-            if(e.getValue() != null) {
+        textAnyo.addValueChangeListener(e -> {
+            if (e.getValue() != null) {
                 //Es necesario convertirlo a String porque solo así se comprueba si "contiene" un caracter.
                 String anyoEstreno = e.getValue().toString();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 Collection<Pelicula> lista;
-                try {
-                    lista = GestorPeliculas.listarPeliculas().values();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                lista = GestorPeliculas.listarPeliculas();
                 Pelicula pelicula;
-                Iterator<Pelicula> iterador = lista.iterator();
-                while (iterador.hasNext()) {
-                    pelicula = iterador.next();
+                for (Pelicula valor : lista) {
+                    pelicula = valor;
                     String getAnyo = String.valueOf(pelicula.getAnyoPublicacion());
                     if (getAnyo.contains(anyoEstreno)) {
                         listaActualizada.add(pelicula);
@@ -388,100 +334,69 @@ public class PeliculasView extends VerticalLayout {
                 }
                 tabla.setItems(listaActualizada);
                 refrescarTabla();
-            }else{
-                try {
-                    rellenarTabla();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+            } else {
+                rellenarTabla();
                 refrescarTabla();
             }
 
         });
-        textCategoria.addValueChangeListener(e-> {
-            if(e.getValue() != null) {
+        textCategoria.addValueChangeListener(e -> {
+            if (e.getValue() != null) {
                 Categoria categoria = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 Collection<Pelicula> lista;
-                try {
-                    lista = GestorPeliculas.listarPeliculas().values();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                lista = GestorPeliculas.listarPeliculas();
                 Pelicula pelicula;
-                Iterator<Pelicula> iterador = lista.iterator();
-                while(iterador.hasNext()){
-                    pelicula = iterador.next();
-                    if(pelicula.getCategoria() == categoria){
+                for (Pelicula valor : lista) {
+                    pelicula = valor;
+                    if (pelicula.getCategoria() == categoria) {
                         listaActualizada.add(pelicula);
                     }
                 }
                 tabla.setItems(listaActualizada);
                 refrescarTabla();
-            }else{
-                try {
-                    rellenarTabla();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+            } else {
+                rellenarTabla();
                 refrescarTabla();
             }
         });
-        textFormato.addValueChangeListener(e-> {
-            if(e.getValue() != null) {
+        textFormato.addValueChangeListener(e -> {
+            if (e.getValue() != null) {
                 Formato formato = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 Collection<Pelicula> lista;
-                try {
-                    lista = GestorPeliculas.listarPeliculas().values();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                lista = GestorPeliculas.listarPeliculas();
                 Pelicula pelicula;
-                Iterator<Pelicula> iterador = lista.iterator();
-                while (iterador.hasNext()) {
-                    pelicula = iterador.next();
+                for (Pelicula valor : lista) {
+                    pelicula = valor;
                     if (pelicula.getFormato() == formato) {
                         listaActualizada.add(pelicula);
                     }
                 }
                 tabla.setItems(listaActualizada);
                 refrescarTabla();
-            }else{
-                try {
-                    rellenarTabla();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+            } else {
+                rellenarTabla();
                 refrescarTabla();
             }
         });
-        textValoracion.addValueChangeListener(e-> {
-            if(e.getValue() != null) {
+        textValoracion.addValueChangeListener(e -> {
+            if (e.getValue() != null) {
                 Valoracion valoracion = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 Collection<Pelicula> lista;
-                try {
-                    lista = GestorPeliculas.listarPeliculas().values();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                lista = GestorPeliculas.listarPeliculas();
                 Pelicula pelicula;
-                Iterator<Pelicula> iterador = lista.iterator();
-                while (iterador.hasNext()) {
-                    pelicula = iterador.next();
+                for (Pelicula valor : lista) {
+                    pelicula = valor;
                     if (pelicula.getValoracion() == valoracion) {
                         listaActualizada.add(pelicula);
                     }
                 }
                 tabla.setItems(listaActualizada);
                 refrescarTabla();
-            }else{
-                try {
-                    rellenarTabla();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+            } else {
+                rellenarTabla();
                 refrescarTabla();
             }
         });
@@ -493,10 +408,11 @@ public class PeliculasView extends VerticalLayout {
 
     /**
      * Método que crea la tabla y le da formato.
-     * @author antonio Mas Esteve
+     *
      * @return tabla
+     * @author antonio Mas Esteve
      */
-    public Component crearTabla() throws IOException {
+    public Component crearTabla() {
         tabla = new Grid<>(Pelicula.class, false);
         Editor<Pelicula> editor = tabla.getEditor();
         Binder<Pelicula> binder = new Binder<>(Pelicula.class);
@@ -518,11 +434,7 @@ public class PeliculasView extends VerticalLayout {
             boton.setIcon(new Icon(VaadinIcon.INFO_CIRCLE));
             boton.addClickListener(event -> {
                 //Aquí es donde se rellena la ventana emergente y además se hace visible:
-                try {
-                    anyadirVentana.add(rellenarVentana(pelicula));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                anyadirVentana.add(rellenarVentana(pelicula));
                 anyadirVentana.open();
             });
         }))).setHeader("Equipo").setResizable(true).setAutoWidth(true);
@@ -530,9 +442,7 @@ public class PeliculasView extends VerticalLayout {
             Button editButton = new Button();
             editButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
             editButton.setIcon(new Icon(VaadinIcon.EDIT));
-            editButton.addClickListener(Event -> {
-                tabla.getEditor().editItem(pelicula);
-            });
+            editButton.addClickListener(Event -> tabla.getEditor().editItem(pelicula));
             return editButton;
         }).setHeader("Editar").setResizable(true).setWidth("150px");
 
@@ -540,26 +450,16 @@ public class PeliculasView extends VerticalLayout {
             button.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_ERROR, ButtonVariant.LUMO_TERTIARY);
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
-                try {
-                    //Elimina la película y las relaciones asociadas;
-                    GestorPeliculas.desvincularActor(pelicula);
-                    GestorPeliculas.desvincularDirector(pelicula);
-                    GestorPeliculas.borrarPelicula(pelicula.getId());
-                    if (GestorPeliculas.borrarPelicula(pelicula.getId()) == true) {
-                        Notification notification = Notification.show("película borrada correcamente");
-                        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-                    } else {
-                        Notification notification = Notification.show("película no fue borrada");
-                        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
-                    }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                //Elimina la película y las relaciones asociadas;
+                GestorPeliculas.eliminarPelicula(pelicula.getId());
+                if (GestorPeliculas.eliminarPelicula(pelicula.getId())) {
+                    Notification notification = Notification.show("película borrada correcamente");
+                    notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                } else {
+                    Notification notification = Notification.show("película no fue borrada");
+                    notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
                 }
-                try {
-                    rellenarTabla();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                rellenarTabla();
 
                 refrescarTabla();
             });
@@ -617,24 +517,20 @@ public class PeliculasView extends VerticalLayout {
             Pelicula pelicula;
             editor.save();
             pelicula = new Pelicula(textoId.getValue(), textoTitulo.getValue(), textoDescripcion.getValue(), textoAnyoPublicacion.getValue(), textoDuracion.getValue(), textoCategoria.getValue(), textoFormato.getValue(), textoValoracion.getValue());
-            try {
-                GestorPeliculas.modificarPelicula(pelicula);
-                if (GestorPeliculas.modificarPelicula(pelicula)){
-                    Notification notification = Notification.show("película modificada");
-                    notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-                } else {
-                    Notification notification = Notification.show("película no fue modificada");
-                    notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
-                }
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
+            GestorPeliculas.modificarPelicula(pelicula);
+            if (GestorPeliculas.modificarPelicula(pelicula)) {
+                Notification notification = Notification.show("película modificada");
+                notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+            } else {
+                Notification notification = Notification.show("película no fue modificada");
+                notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             }
         });
         botonGuardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         botonGuardar.setIcon(new Icon(VaadinIcon.ADD_DOCK));
 
         Button botonCancelar = new Button();
-        botonCancelar.addClickListener(e->editor.cancel());
+        botonCancelar.addClickListener(e -> editor.cancel());
         botonCancelar.addThemeVariants(ButtonVariant.LUMO_ERROR);
         botonCancelar.setIcon(new Icon(VaadinIcon.CLOSE));
         //La disposición con los dos botones:
@@ -654,6 +550,7 @@ public class PeliculasView extends VerticalLayout {
 
     /**
      * Método para refrescar la tabla:
+     *
      * @author Antonio Mas Esteve
      */
     public void refrescarTabla() {
@@ -663,19 +560,19 @@ public class PeliculasView extends VerticalLayout {
     /**
      * Método que carga los datos que obtiene el backend desde
      * el fichero en una colección local y rellena la tabla:
+     *
      * @author Antonio Mas Esteve
-     * @throws IOException
      */
-    public void rellenarTabla() throws IOException {
+    public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(GestorPeliculas.listarPeliculas().values());
+        tabla.setItems(GestorPeliculas.listarPeliculas());
     }
 
 
     /**
      * Creación de la disposición vertical formulario añadir película:
      *
-     * @return
+     * @return VerticalLayout
      * @author Antonio Mas Esteve
      */
     public VerticalLayout formularioLayout() {
@@ -738,13 +635,10 @@ public class PeliculasView extends VerticalLayout {
         });
         guardar.addClickListener(e -> {
 
-            if (titulo.getValue() != null && descripcion.getValue() != null && anyoPublicacion.getValue() != null && duracion.getValue() != null && categoria.getValue() != null && formato.getValue() != null && valoracion != null) {
+            if (titulo.getValue() != null && descripcion.getValue() != null && anyoPublicacion.getValue() != null && duracion.getValue() != null && categoria.getValue() != null && formato.getValue() != null) {
                 //Añade al fichero el contenido del formulario:
-                try {
-                    GestorPeliculas.anyadirPelicula(titulo.getValue(), descripcion.getValue(), anyoPublicacion.getValue(), duracion.getValue(), categoria.getValue(), formato.getValue(), valoracion.getValue());
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                Pelicula pelicula = new Pelicula(0, titulo.getValue(), descripcion.getValue(), anyoPublicacion.getValue(), duracion.getValue(), categoria.getValue(), formato.getValue(), valoracion.getValue());
+                GestorPeliculas.insertarPelicula(pelicula);
                 //Se muestra la notificación:
                 Notification notification = Notification.show("película guardada correcamente");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
@@ -754,11 +648,7 @@ public class PeliculasView extends VerticalLayout {
                 notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             }
             //Se rellena la tabla:
-            try {
-                rellenarTabla();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
+            rellenarTabla();
             //se refresca la tabla:
             refrescarTabla();
             //vuelve a la tabla:

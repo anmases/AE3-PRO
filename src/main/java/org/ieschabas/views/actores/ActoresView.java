@@ -17,7 +17,6 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Actor;
 import org.ieschabas.librerias.GestorActores;
-import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
 
 import javax.annotation.security.RolesAllowed;
@@ -161,9 +160,7 @@ public class ActoresView extends VerticalLayout {
         eliminar.addClickListener(event -> {
             //Volcamos los datos actualmente presentes en el formulario en on objeto ad-hoc:
             Actor actor = binder.getBean();
-            try {
-                //Borra el actor y todas las relaciones con películas asociadas:
-                GestorPeliculas.desvincularActor(actor);
+                //Borra el actor y todas las relaciones con peliculas asociadas:
                 GestorActores.eliminarActor(actor.getId());
                 //Como el método es booleano, si lo hace muestra un mensaje de aceptación y si no lo hace, de error.
                 if (GestorActores.eliminarActor(actor.getId())) {
@@ -173,9 +170,6 @@ public class ActoresView extends VerticalLayout {
                     Notification notification = Notification.show("Actor no borrado");
                     notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
             //Volvemos a rellenar la tabla:
             rellenarTabla();
             //Refrescamos la tabla
