@@ -1,32 +1,22 @@
 package org.ieschabas.views.alquileres;
 
 
+import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
-import com.vaadin.flow.function.ValueProvider;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.clases.Alquiler;
-import org.ieschabas.clases.Cliente;
-import org.ieschabas.clases.Pelicula;
-import org.ieschabas.enums.Categoria;
-import org.ieschabas.enums.Formato;
-import org.ieschabas.enums.Valoracion;
 import org.ieschabas.librerias.GestorAlquileres;
-import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainLayout;
 
 import javax.annotation.security.RolesAllowed;
-import java.io.IOException;
-import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 
 /**
  * Vista del historial de alquileres.
@@ -41,7 +31,7 @@ public class AlquileresView extends VerticalLayout {
 
     /**
      * Constructor principal de la vista de alquileres.
-     * @throws IOException
+     *
      */
     public AlquileresView() {
         setSizeFull();
@@ -53,8 +43,7 @@ public class AlquileresView extends VerticalLayout {
     /**
      * Crea la tabla con los datos del alquiler.
      * @author Antonio Mas Esteve
-     * @return
-     * @throws IOException
+     * @return Grid
      */
     public Grid<Alquiler> crearTabla() {
         tabla = new Grid<>(Alquiler.class, false);
@@ -63,7 +52,7 @@ public class AlquileresView extends VerticalLayout {
         tabla.addColumn(Alquiler::getNombreCliente).setAutoWidth(true).setHeader("Cliente");
         tabla.addColumn(Alquiler::getTituloPelicula).setAutoWidth(true).setResizable(true).setHeader("Película");
         tabla.addColumn(Alquiler::getFechaAlquiler).setAutoWidth(true).setResizable(true).setHeader("Fecha Alquiler");
-        tabla.addColumn(Alquiler::getFechaAlquiler).setAutoWidth(true).setResizable(true).setHeader("Fecha Devolución");
+        tabla.addColumn(Alquiler::getFechaRetorno).setAutoWidth(true).setResizable(true).setHeader("Fecha Devolución");
         rellenarTabla();
         refrescarTabla();
         return tabla;
@@ -72,19 +61,19 @@ public class AlquileresView extends VerticalLayout {
     /**
      * Crea los campos de búsqueda.
      * @author Antonio Mas Esteve
-     * @return
+     * @return FormLayout
      */
     public FormLayout crearBuscador() {
         FormLayout panelBuscador = new FormLayout();
         //Creamos los campos:
         TextField textPelicula = new TextField("Pelicula");
         TextField textCliente = new TextField("Cliente");
-        TextField textAlquilado = new TextField("Fecha de alquiler");
-        TextField textDevolucion = new TextField("Fecha de devolución");
+        DatePicker textAlquilado = new DatePicker("Fecha de alquiler");
+        DatePicker textDevolucion = new DatePicker("Fecha de devolución");
         textPelicula.setValue("");
         textCliente.setValue("");
-        textAlquilado.setValue("");
-        textDevolucion.setValue("");
+        textAlquilado.setValue(null);
+        textDevolucion.setValue(null);
 
         //Añadimos los títulos:
         textPelicula.setPlaceholder("buscar por título");
@@ -97,64 +86,72 @@ public class AlquileresView extends VerticalLayout {
         textAlquilado.setClearButtonVisible(true);
         textDevolucion.setClearButtonVisible(true);
 
-       /** //Agregamos un escuchador de escritura para los campos:
+ //Agregamos un escuchador de escritura para los campos:
         textPelicula.setValueChangeMode(ValueChangeMode.EAGER);
         textPelicula.addValueChangeListener(e-> {
             String tituloPelicula = e.getValue().toLowerCase();
-            ArrayList<Pelicula> listaActualizada = new ArrayList<>();
-            Collection<Pelicula> lista;
-            try {
-                lista = GestorPeliculas.listarPeliculas().values();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-            Pelicula pelicula;
-            Iterator<Pelicula> iterador = lista.iterator();
-            while(iterador.hasNext()){
-                pelicula = iterador.next();
-                if(pelicula.getTitulo().toLowerCase().contains(tituloPelicula)){
-                    listaActualizada.add(pelicula);
+            ArrayList<Alquiler> listaActualizada = new ArrayList<>();
+            ArrayList<Alquiler> lista = GestorAlquileres.listarAlquileres();
+            for (Alquiler alquiler : lista) {
+                if (alquiler.getTituloPelicula().toLowerCase().contains(tituloPelicula)) {
+                    listaActualizada.add(alquiler);
                 }
             }
             tabla.setItems(listaActualizada);
             refrescarTabla();
         });
-
-
-
-        textAnyo.setValueChangeMode(ValueChangeMode.EAGER);
-        textAnyo.addValueChangeListener(e-> {
-            if(e.getValue() != null) {
-                //Es necesario convertirlo a String porque solo así se comprueba si "contiene" un caracter.
-                String anyoEstreno = e.getValue().toString();
-                ArrayList<Pelicula> listaActualizada = new ArrayList<>();
-                Collection<Pelicula> lista;
-                try {
-                    lista = GestorPeliculas.listarPeliculas().values();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
+        textCliente.setValueChangeMode(ValueChangeMode.EAGER);
+        textCliente.addValueChangeListener(e->{
+            String nombreCliente = e.getValue().toLowerCase();
+            ArrayList<Alquiler> listaActualizada = new ArrayList<>();
+            ArrayList<Alquiler> lista = GestorAlquileres.listarAlquileres();
+            for (Alquiler alquiler : lista) {
+                if (alquiler.getNombreCliente().toLowerCase().contains(nombreCliente)) {
+                    listaActualizada.add(alquiler);
                 }
-                Pelicula pelicula;
-                Iterator<Pelicula> iterador = lista.iterator();
-                while (iterador.hasNext()) {
-                    pelicula = iterador.next();
-                    String getAnyo = String.valueOf(pelicula.getAnyoPublicacion());
-                    if (getAnyo.contains(anyoEstreno)) {
-                        listaActualizada.add(pelicula);
+            }
+            tabla.setItems(listaActualizada);
+            refrescarTabla();
+        });
+        textAlquilado.addValueChangeListener(e->{
+            LocalDate fechaAlquiler = e.getValue();
+            ArrayList<Alquiler> listaActualizada = new ArrayList<>();
+            ArrayList<Alquiler> lista = GestorAlquileres.listarAlquileres();
+            //Si no está vacío, que reescriba la tabla.
+            if(textAlquilado.isEmpty() == false) {
+                for (Alquiler alquiler : lista) {
+                    if (alquiler.getFechaAlquiler().equals(fechaAlquiler)) {
+                        listaActualizada.add(alquiler);
                     }
                 }
                 tabla.setItems(listaActualizada);
                 refrescarTabla();
-            }else{
-                try {
-                    rellenarTabla();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+            }
+            else{
+                tabla.setItems(lista);
                 refrescarTabla();
             }
+        });
+        textDevolucion.addValueChangeListener(e->{
+            LocalDate fechaDevolucion = e.getValue();
+            ArrayList<Alquiler> listaActualizada = new ArrayList<>();
+            ArrayList<Alquiler> lista = GestorAlquileres.listarAlquileres();
+            //Si no está vacío, que reescriba la tabla.
+            if(textDevolucion.isEmpty() == false) {
+                for (Alquiler alquiler : lista) {
+                    if (alquiler.getFechaRetorno().equals(fechaDevolucion)) {
+                        listaActualizada.add(alquiler);
+                    }
+                }
+                tabla.setItems(listaActualizada);
+                refrescarTabla();
+            }
+            else{
+                tabla.setItems(lista);
+                refrescarTabla();
+            }
+        });
 
-        });**/
 
         panelBuscador.add(textPelicula, textCliente, textAlquilado, textDevolucion);
         return panelBuscador;
@@ -172,7 +169,6 @@ public class AlquileresView extends VerticalLayout {
      * Método que carga los datos que obtiene el backend desde
      * el fichero en una colección local y rellena la tabla:
      * @author Antonio Mas Esteve
-     * @throws IOException
      */
     public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
