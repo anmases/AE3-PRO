@@ -17,7 +17,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Director;
 import org.ieschabas.librerias.GestorDirectores;
-import org.ieschabas.views.MainLayout;
+import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
 
@@ -26,7 +26,7 @@ import javax.annotation.security.RolesAllowed;
  * @author Antonio Mas Esteve
  */
 @PageTitle("Directores")
-@Route(value = "Directores", layout = MainLayout.class)
+@Route(value = "Directores", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class DirectoresView extends VerticalLayout {
 

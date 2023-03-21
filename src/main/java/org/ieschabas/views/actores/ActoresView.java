@@ -17,7 +17,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Actor;
 import org.ieschabas.librerias.GestorActores;
-import org.ieschabas.views.MainLayout;
+import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
 import java.io.IOException;
@@ -28,7 +28,7 @@ import java.io.IOException;
  * @author Antonio Mas Esteve
  */
 @PageTitle("Actores")
-@Route(value = "Actores", layout = MainLayout.class)
+@Route(value = "Actores", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class ActoresView extends VerticalLayout {
 

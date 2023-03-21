@@ -1,30 +1,36 @@
 package org.ieschabas.views;
 
-
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.Scroller;
-import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.*;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.views.actores.ActoresView;
 import org.ieschabas.views.alquileres.AlquileresView;
+import org.ieschabas.views.cliente.ClienteView;
 import org.ieschabas.views.directores.DirectoresView;
+import org.ieschabas.views.login.LoginView;
 import org.ieschabas.views.peliculas.PeliculasView;
+
 
 /**
  * The main view is a top-level placeholder for other views.
  */
-public class MainLayout extends AppLayout {
-
+@Route("main")
+public class MainView extends AppLayout implements BeforeEnterObserver {
     private H2 viewTitle;
 
     /**
      * Constructor principal de la vista principal.
      */
-    public MainLayout() {
+    public MainView() {
         setPrimarySection(Section.DRAWER);
         addDrawerContent();
         addHeaderContent();
@@ -36,11 +42,19 @@ public class MainLayout extends AppLayout {
     private void addHeaderContent() {
         DrawerToggle toggle = new DrawerToggle();
         toggle.getElement().setAttribute("aria-label", "Menu toggle");
-
         viewTitle = new H2();
         viewTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
 
-        addToNavbar(true, toggle, viewTitle);
+        VerticalLayout header = new VerticalLayout();
+        HorizontalLayout usuario = new HorizontalLayout();
+        header.setWidthFull();
+        header.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
+        Button logout = new Button("Cerrar Sesión");
+        usuario.add(logout);
+        header.add(usuario);
+        logout.addClickListener(e->LoginView.cerrarSesion());
+
+        addToNavbar(true, toggle,viewTitle, header);
     }
 
     /**
@@ -67,6 +81,9 @@ public class MainLayout extends AppLayout {
         nav.addItem(new AppNavItem("Actores", ActoresView.class, "la la-user"));
         nav.addItem(new AppNavItem("Directores", DirectoresView.class, "la la-user-tie"));
         nav.addItem(new AppNavItem("Alquileres", AlquileresView.class, "la la-file"));
+
+        //Vista de cliente (A borrar luego)
+        nav.addItem(new AppNavItem("Cliente", ClienteView.class, "la la-user"));
 
         return nav;
     }
@@ -97,5 +114,11 @@ public class MainLayout extends AppLayout {
     private String getCurrentPageTitle() {
         PageTitle title = getContent().getClass().getAnnotation(PageTitle.class);
         return title == null ? "" : title.value();
+    }
+
+    @Override
+    public void beforeEnter(BeforeEnterEvent event) {
+        if(LoginView.comprobarEstado() == false)
+        event.rerouteTo(LoginView.class);
     }
 }

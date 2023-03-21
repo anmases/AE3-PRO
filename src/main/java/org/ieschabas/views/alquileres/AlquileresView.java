@@ -12,7 +12,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Alquiler;
 import org.ieschabas.librerias.GestorAlquileres;
-import org.ieschabas.views.MainLayout;
+import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
 import java.time.LocalDate;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * @author Antonio Mas Esteve
  */
 @PageTitle("Alquileres")
-@Route(value = "Alquileres", layout = MainLayout.class)
+@Route(value = "Alquileres", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class AlquileresView extends VerticalLayout {
 

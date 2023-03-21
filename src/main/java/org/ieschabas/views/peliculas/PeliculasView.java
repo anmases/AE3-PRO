@@ -33,7 +33,7 @@ import org.ieschabas.enums.Categoria;
 import org.ieschabas.enums.Formato;
 import org.ieschabas.enums.Valoracion;
 import org.ieschabas.librerias.GestorPeliculas;
-import org.ieschabas.views.MainLayout;
+import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
 import java.util.*;
@@ -45,8 +45,8 @@ import java.util.*;
  * @author Antonio Mas Esteve
  */
 @PageTitle("Películas")
-@Route(value = "Peliculas", layout = MainLayout.class)
-@RouteAlias(value = "", layout = MainLayout.class)
+@Route(value = "Peliculas", layout = MainView.class)
+@RouteAlias(value = "", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class PeliculasView extends VerticalLayout {
     private Grid<Pelicula> tabla;
