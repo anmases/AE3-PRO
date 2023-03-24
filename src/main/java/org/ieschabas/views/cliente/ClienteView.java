@@ -1,8 +1,9 @@
 package org.ieschabas.views.cliente;
 
 
+import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.applayout.AppLayout;
-import com.vaadin.flow.component.applayout.DrawerToggle;
+
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
@@ -18,6 +19,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.clases.*;
 import org.ieschabas.enums.Valoracion;
@@ -35,6 +37,10 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Vista de los clientes. Aquí se pueden alquilar las películas.
+ * @author Antonio mas Esteve
+ */
 @PageTitle("Cliente")
 @Route(value = "Cliente")
 @RolesAllowed("USER")
@@ -47,6 +53,10 @@ public class ClienteView extends AppLayout {
       private Image caratula;
       private Icon estrella;
 
+    /**
+     * Constructor principal de la vista Clientes.
+     * @author Antonio Mas Esteve
+     */
     public ClienteView() {
         //setSizeFull();
         addClassName("Cliente-View");
@@ -54,8 +64,7 @@ public class ClienteView extends AppLayout {
         vistaAlquiler.setVisible(false);
         Div contenido = new Div(listadoLayout(), vistaAlquiler);
 
-       // DrawerToggle toggle = new DrawerToggle();
-       // toggle.getElement().setAttribute("aria-label", "Menu toggle");
+
         Image logo = new Image("images/PRO_LOGO.png", "VideoClub");
         logo.setMaxWidth("140px");
         logo.setMaxHeight("90px");
@@ -65,6 +74,11 @@ public class ClienteView extends AppLayout {
 
     }
 
+    /**
+     * Método que crea la cabecera de la página.
+     * @author Antonio Mas Esteve.
+     * @return VerticalLayout
+     */
     private VerticalLayout crearCabecera(){
         VerticalLayout cabecera = new VerticalLayout();
         HorizontalLayout usuario = new HorizontalLayout();
@@ -83,6 +97,12 @@ public class ClienteView extends AppLayout {
         cabecera.add(usuario);
         return cabecera;
     }
+
+    /**
+     * Método que crea la vista principal de las películas disponibles.
+     * @author Antonio Mas Esteve
+     * @return Div
+     */
     public Div listadoLayout(){
         listaPeliculas = GestorPeliculas.listarPeliculas();
 
@@ -129,16 +149,38 @@ public class ClienteView extends AppLayout {
 
            return vistaPeliculas;
     }
+
+    /**
+     * Método que crea la vista de la ficha de la película.
+     * @author Antonio Mas Esteve
+     * @return
+     */
     public HorizontalLayout alquilerLayout(Pelicula pelicula){
         //Se inicializa el contenedor de la imagen:
+        vistaAlquiler.removeAll();
         Div contenedorImagen = new Div();
         contenedorImagen.setMaxHeight("1000px");
         contenedorImagen.setWidth("750px");
         caratula = convertirImagenVaadin(pelicula);
         caratula.setSizeFull();
         contenedorImagen.add(caratula);
+        //Se instancian los botones:
+        Button alquilar = new Button("Alquilar");
+        alquilar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        alquilar.setWidthFull();
 
-        //Creamos el cuadro de diálogo:
+        Button volver = new Button("Volver");
+        volver.addThemeVariants(ButtonVariant.LUMO_CONTRAST);
+        volver.setWidthFull();
+
+        Button ver = new Button("Ver Película");
+        ver.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
+        ver.setWidthFull();
+        //Muestra uno u otro botón si está o no alquilada:
+        ver.setVisible(estaAlquilada(pelicula));
+        alquilar.setVisible(!estaAlquilada(pelicula));
+
+        //Creamos el cuadro de diálogo del alquiler:
         Dialog dialogo = new Dialog();
         H3 texto = new H3("¿Desea realmente alquilar la película?");
         Paragraph devolucion = new Paragraph("La fecha de devolución será dentro de dos meses desde hoy");
@@ -165,8 +207,23 @@ public class ClienteView extends AppLayout {
             Notification notification = Notification.show("Se ha alquilado correctamente");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
         }
-        dialogo.close();
+            ver.setVisible(true);
+            alquilar.setVisible(false);
+            dialogo.close();
         });
+        //Creamos la ventana del video:
+        Dialog videoLayout = new Dialog();
+        VerticalLayout disposicionVideo = new VerticalLayout();
+        disposicionVideo.setHorizontalComponentAlignment(FlexComponent.Alignment.END);
+        Button cerrar = new Button();
+        cerrar.setIcon(new Icon(VaadinIcon.CLOSE));
+        Html video = new Html("<video width=\"640\" height=\"360\" src=\""+pelicula.getUrl()+"\" controls></video>");
+        //Html video = new Html("<iframe width=\"640\" height=\"360\" frameborder=\"0\" src=\""+pelicula.getUrl()+"\" allowfullscreen ></iframe>");
+        disposicionVideo.add(cerrar, video);
+        videoLayout.add(disposicionVideo);
+        cerrar.addClickListener(e->videoLayout.close());
+
+
         //Creamos el contenedor de los datos:
         VerticalLayout datosLayout = new VerticalLayout();
         H1 titulo = new H1(pelicula.getTitulo()+" "+"("+pelicula.getAnyoPublicacion()+")");
@@ -179,21 +236,20 @@ public class ClienteView extends AppLayout {
         Button duracion = new Button("Duración : "+pelicula.getDuracion()+"min");
         caracteristicas.add(categoria, formato, duracion);
         HorizontalLayout botones = new HorizontalLayout();
-        Button alquilar = new Button("Alquilar");
-        alquilar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        alquilar.setWidthFull();
-        Button volver = new Button("Volver");
-        volver.addThemeVariants(ButtonVariant.LUMO_CONTRAST);
-        volver.setWidthFull();
+
+
+
+
         botones.setWidthFull();
-        botones.add(alquilar,volver);
         volver.addClickListener(event->{
             vistaPeliculas.setVisible(true);
             vistaAlquiler.setVisible(false);
             vistaAlquiler.removeAll();
         });
-
         alquilar.addClickListener(event->dialogo.open());
+        ver.addClickListener(event->videoLayout.open());
+
+        botones.add(ver,alquilar,volver);
 
 
 
@@ -237,6 +293,27 @@ public String obtenerNombresActores(Pelicula pelicula){
         }
         nombreDirector = nombreDirector.substring(0, nombreDirector.length()-1) + ".\n ";
         return nombreDirector;
+    }
+    public boolean estaAlquilada(Pelicula pelicula){
+        //Establecemos la lista de alquileres:
+        ArrayList<Alquiler> alquileres = GestorAlquileres.listarAlquileres();
+        //establecemos la fecha.
+        fecha = fecha.now();
+        //Establecemos el cliente actual.
+        int idCliente = LoginView.comprobarIdUsuario();
+        //Buscaremos en la lista si cumple los requisitos de: 1. la fecha de retorno ser mayor que la actual, 2.el cliente, 3.la película:
+        for(Alquiler alquiler: alquileres){
+            if(alquiler!=null) {
+                if(alquiler.getIdCliente()==idCliente){
+                    if(alquiler.getIdPelicula()==pelicula.getId()){
+                       if(alquiler.getFechaRetorno().isAfter(fecha)){
+                           return true;
+                       }
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 }

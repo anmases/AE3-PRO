@@ -184,11 +184,11 @@ public class PeliculasView extends VerticalLayout {
         guardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         guardar.setWidthFull();
         guardar.addClickListener(event -> {
-            if (opcionDirector.isEmpty() == false) {
+            if (!opcionDirector.isEmpty()) {
                 directoresSeleccionados.addAll(opcionDirector.getSelectedItems());
                 GestorPeliculas.insertarDirectoresRelacionados(directoresSeleccionados, pelicula.getId());
             }
-            if (opcionActor.isEmpty() == false) {
+            if (!opcionActor.isEmpty()) {
                 actoresSeleccionados.addAll(opcionActor.getSelectedItems());
                 GestorPeliculas.insertarActoresRelacionados(actoresSeleccionados, pelicula.getId());
             }

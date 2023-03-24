@@ -81,8 +81,8 @@
     <dependencies>
         <dependency>
             <groupId>com.vaadin</groupId>
-            <!-- Replace artifactId with vaadin-core to use only free components -->
-            <artifactId>vaadin</artifactId>
+            <artifactId>vaadin-core</artifactId>
+            <version>23.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>

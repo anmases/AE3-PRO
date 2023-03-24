@@ -2,11 +2,9 @@ package org.ieschabas.views.login;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.login.LoginForm;
-import com.vaadin.flow.component.login.LoginI18n;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import org.ieschabas.clases.Administrador;
 import org.ieschabas.clases.Usuario;
 import org.ieschabas.login.Login;
 
@@ -14,6 +12,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Properties;
 
+/**
+ * Vista de login
+ * @author Antonio Mas Esteve
+ */
 @AnonymousAllowed
 @PageTitle("Login")
 @Route(value = "login")
@@ -37,7 +39,7 @@ public class LoginView extends VerticalLayout {
         vistaLogin.addLoginListener(e-> {
 
             inicioSesion(e.getUsername(),e.getPassword());
-            if(Login.login(e.getUsername(),e.getPassword())==false){
+            if(!Login.login(e.getUsername(), e.getPassword())){
                 vistaLogin.setError(true);
             }
 

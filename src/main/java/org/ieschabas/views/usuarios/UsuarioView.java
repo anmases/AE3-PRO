@@ -18,13 +18,10 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.binder.ValidationException;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.ieschabas.clases.Pelicula;
 import org.ieschabas.clases.Usuario;
-import org.ieschabas.enums.Categoria;
 import org.ieschabas.enums.Rol;
 import org.ieschabas.librerias.GestorUsuarios;
 import org.ieschabas.views.MainView;
@@ -32,7 +29,7 @@ import org.ieschabas.views.MainView;
 import javax.annotation.security.RolesAllowed;
 
 /**
- * Vista de los actores
+ * Vista de los Usuarios
  *
  * @author Antonio Mas Esteve
  */
@@ -41,6 +38,11 @@ import javax.annotation.security.RolesAllowed;
 @RolesAllowed("ADMIN")
 public class UsuarioView extends VerticalLayout {
     private Grid<Usuario> tabla;
+
+    /**
+     * Constructor principal.
+     * @author Antonio Mas Esteve
+     */
     public UsuarioView(){
         setSizeFull();
         addClassName("Usuarios-View");
@@ -48,6 +50,11 @@ public class UsuarioView extends VerticalLayout {
 
     }
 
+    /**
+     * Método que crea la tabla y el editor.
+     * @author Antonio Mas Esteve
+     * @return Component
+     */
     private Component crearTabla(){
         tabla = new Grid<>(Usuario.class, false);
         Editor<Usuario> editor = tabla.getEditor();
