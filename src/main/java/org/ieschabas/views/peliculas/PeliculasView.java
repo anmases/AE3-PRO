@@ -425,10 +425,11 @@ public class PeliculasView extends VerticalLayout {
         Grid.Column<Pelicula> campoTitulo = tabla.addColumn(Pelicula::getTitulo).setHeader("Título").setAutoWidth(true).setResizable(true);
         Grid.Column<Pelicula> campoDescripcion = tabla.addColumn(Pelicula::getDescripcion).setHeader("Descripción").setResizable(true);
         Grid.Column<Pelicula> campoAnyoPublicacion = tabla.addColumn(Pelicula::getAnyoPublicacion).setHeader("Año").setAutoWidth(true).setResizable(true);
-        Grid.Column<Pelicula> campoDuracion = tabla.addColumn(Pelicula::getDuracion).setHeader("Duración").setAutoWidth(true).setResizable(true);
+        Grid.Column<Pelicula> campoDuracion = tabla.addColumn(Pelicula::getDuracion).setHeader("minutos").setAutoWidth(true).setResizable(true);
         Grid.Column<Pelicula> campoCategoria = tabla.addColumn(Pelicula::getCategoria).setHeader("Categoría").setAutoWidth(true).setResizable(true);
         Grid.Column<Pelicula> campoFormato = tabla.addColumn(Pelicula::getFormato).setHeader("Formato").setAutoWidth(true).setResizable(true);
         Grid.Column<Pelicula> campoValoracion = tabla.addColumn(Pelicula::getValoracion).setHeader("Estrellas").setAutoWidth(true).setResizable(true);
+        //Botón de equipo:
         tabla.addColumn(new ComponentRenderer<>(Button::new, ((boton, pelicula) -> {
             boton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
             boton.setIcon(new Icon(VaadinIcon.INFO_CIRCLE));
@@ -438,14 +439,7 @@ public class PeliculasView extends VerticalLayout {
                 anyadirVentana.open();
             });
         }))).setHeader("Equipo").setResizable(true).setAutoWidth(true);
-        Grid.Column<Pelicula> campoBotonEditar = tabla.addComponentColumn(pelicula -> {
-            Button editButton = new Button();
-            editButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
-            editButton.setIcon(new Icon(VaadinIcon.EDIT));
-            editButton.addClickListener(Event -> tabla.getEditor().editItem(pelicula));
-            return editButton;
-        }).setHeader("Editar").setResizable(true).setWidth("150px");
-
+        //Botón eliminar:
         tabla.addColumn(new ComponentRenderer<>(Button::new, ((button, pelicula) -> {
             button.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_ERROR, ButtonVariant.LUMO_TERTIARY);
             button.setIcon(new Icon(VaadinIcon.TRASH));
@@ -463,7 +457,16 @@ public class PeliculasView extends VerticalLayout {
 
                 refrescarTabla();
             });
-        }))).setHeader("Eliminar").setResizable(true).setAutoWidth(true);
+        }))).setHeader("Borrar").setResizable(true).setAutoWidth(true);
+        //Botón editar
+        Grid.Column<Pelicula> campoBotonEditar = tabla.addComponentColumn(pelicula -> {
+            Button editButton = new Button();
+            editButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_CONTRAST, ButtonVariant.LUMO_TERTIARY);
+            editButton.setIcon(new Icon(VaadinIcon.EDIT));
+            editButton.addClickListener(Event -> tabla.getEditor().editItem(pelicula));
+            return editButton;
+        }).setHeader("Editar").setResizable(true).setWidth("150px");
+
 
 
         //Creamos los campos de texto del editor:
@@ -517,7 +520,6 @@ public class PeliculasView extends VerticalLayout {
             Pelicula pelicula;
             editor.save();
             pelicula = new Pelicula(textoId.getValue(), textoTitulo.getValue(), textoDescripcion.getValue(), textoAnyoPublicacion.getValue(), textoDuracion.getValue(), textoCategoria.getValue(), textoFormato.getValue(), textoValoracion.getValue());
-            GestorPeliculas.modificarPelicula(pelicula);
             if (GestorPeliculas.modificarPelicula(pelicula)) {
                 Notification notification = Notification.show("película modificada");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
@@ -525,6 +527,8 @@ public class PeliculasView extends VerticalLayout {
                 Notification notification = Notification.show("película no fue modificada");
                 notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
             }
+            //Forzamos el editor a cerrarse pase lo que pase:
+            editor.cancel();
         });
         botonGuardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         botonGuardar.setIcon(new Icon(VaadinIcon.ADD_DOCK));
@@ -558,8 +562,8 @@ public class PeliculasView extends VerticalLayout {
     }
 
     /**
-     * Método que carga los datos que obtiene el backend desde
-     * el fichero en una colección local y rellena la tabla:
+     * Método que carga los datos que obtiene datos del backend desde
+     * y rellena la tabla:
      *
      * @author Antonio Mas Esteve
      */

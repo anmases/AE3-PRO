@@ -4,20 +4,25 @@ import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.theme.lumo.LumoUtility;
+import org.ieschabas.clases.Usuario;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
+import org.ieschabas.librerias.GestorUsuarios;
 import org.ieschabas.views.actores.ActoresView;
 import org.ieschabas.views.alquileres.AlquileresView;
 import org.ieschabas.views.cliente.ClienteView;
 import org.ieschabas.views.directores.DirectoresView;
 import org.ieschabas.views.login.LoginView;
 import org.ieschabas.views.peliculas.PeliculasView;
+import org.ieschabas.views.usuarios.UsuarioView;
 
 
 /**
@@ -48,12 +53,19 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         VerticalLayout header = new VerticalLayout();
         HorizontalLayout usuario = new HorizontalLayout();
         header.setWidthFull();
-        header.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
-        Button logout = new Button("Cerrar Sesión");
-        usuario.add(logout);
-        header.add(usuario);
-        logout.addClickListener(e->LoginView.cerrarSesion());
 
+        int id = LoginView.comprobarIdUsuario();
+        if(id != 0) {
+            Usuario user = GestorUsuarios.buscarUsuario(id);
+            Icon admin = new Icon(VaadinIcon.USER_STAR);
+            H4 nombreUsuario = new H4(user.getNombre() + " " + user.getApellidos());
+            header.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
+            Button logout = new Button("Cerrar Sesión");
+            usuario.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
+            usuario.add(admin, nombreUsuario, logout);
+            header.add(usuario);
+            logout.addClickListener(e -> LoginView.cerrarSesion());
+        }
         addToNavbar(true, toggle,viewTitle, header);
     }
 
@@ -81,9 +93,8 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         nav.addItem(new AppNavItem("Actores", ActoresView.class, "la la-user"));
         nav.addItem(new AppNavItem("Directores", DirectoresView.class, "la la-user-tie"));
         nav.addItem(new AppNavItem("Alquileres", AlquileresView.class, "la la-file"));
+        nav.addItem(new AppNavItem("Usuarios", UsuarioView.class, "la la-users"));
 
-        //Vista de cliente (A borrar luego)
-        nav.addItem(new AppNavItem("Cliente", ClienteView.class, "la la-user"));
 
         return nav;
     }
@@ -118,7 +129,13 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-        if(LoginView.comprobarEstado() == false)
-        event.rerouteTo(LoginView.class);
+        if(LoginView.comprobarLogIn()){
+            if(LoginView.comprobarAdmin()==false){
+                event.rerouteTo(ClienteView.class);
+            }
+
+        }else {
+            event.rerouteTo(LoginView.class);
+        }
     }
 }
