@@ -14,23 +14,19 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.StreamResource;
-import com.vaadin.flow.theme.lumo.LumoIcon;
-import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.clases.*;
+import org.ieschabas.daos.AlquilerDAO;
 import org.ieschabas.enums.Valoracion;
-import org.ieschabas.librerias.GestorAlquileres;
 import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.librerias.GestorUsuarios;
 import org.ieschabas.views.login.LoginView;
 
 import javax.annotation.security.RolesAllowed;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -153,7 +149,7 @@ public class ClienteView extends AppLayout {
     /**
      * Método que crea la vista de la ficha de la película.
      * @author Antonio Mas Esteve
-     * @return
+     * @return HorizontalLayout
      */
     public HorizontalLayout alquilerLayout(Pelicula pelicula){
         //Se inicializa el contenedor de la imagen:
@@ -190,9 +186,7 @@ public class ClienteView extends AppLayout {
         cancelar.addThemeVariants(ButtonVariant.LUMO_ERROR);
         HorizontalLayout confirmacion = new HorizontalLayout(confirmar, cancelar);
         dialogo.add(texto, devolucion, confirmacion);
-        cancelar.addClickListener(e->{
-            dialogo.close();
-        });
+        cancelar.addClickListener(e-> dialogo.close());
         confirmar.addClickListener(e->{
             fecha = fecha.now();
             Alquiler alquiler = new Alquiler();
@@ -203,7 +197,7 @@ public class ClienteView extends AppLayout {
             //Se añaden 2 meses:
             alquiler.setFechaRetorno(fecha.plusMonths(2));
             //Se añade a la BD:
-        if(GestorAlquileres.insertarAlquiler(alquiler)) {
+        if(AlquilerDAO.insertar(alquiler)) {
             Notification notification = Notification.show("Se ha alquilado correctamente");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
         }
@@ -296,7 +290,7 @@ public String obtenerNombresActores(Pelicula pelicula){
     }
     public boolean estaAlquilada(Pelicula pelicula){
         //Establecemos la lista de alquileres:
-        ArrayList<Alquiler> alquileres = GestorAlquileres.listarAlquileres();
+        ArrayList<Alquiler> alquileres = AlquilerDAO.listar();
         //establecemos la fecha.
         fecha = fecha.now();
         //Establecemos el cliente actual.

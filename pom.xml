@@ -125,16 +125,53 @@
             <version>5.1.1</version>
             <scope>test</scope>
         </dependency>
+        <!--Dependencia al proyecto backend-->
         <dependency>
             <groupId>org.ieschabas</groupId>
             <artifactId>AE3-PRO-BACKEND</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <!--Dependencia al driver mySQL connector-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.32</version>
+        </dependency>
+        <!--Dependencia del JPA de jakarta-->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!--Complementa la JPA con una serie de anotaciones de control de datos-->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+        <!--Framework de JPA Hibernate. Proporciona la interfaz entitity manager, que permite realizar operaciones CRUD (Create, Read, Update, Delete)-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.6.15.Final</version>
+        </dependency>
+        <!--Implementación de javax validation en Hibernate-->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.0.Final</version>
+        </dependency>
+        <!--Registra en ficheros Log información sobre el comportamiento de la aplicación, lo que ayuda a depurar y desarrollar la misma-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>2.0.7</version>
         </dependency>
     </dependencies>
 
