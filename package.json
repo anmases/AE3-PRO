@@ -202,8 +202,8 @@
     "@vaadin/tabsheet": "$@vaadin/tabsheet",
     "@vaadin/tooltip": "$@vaadin/tooltip",
     "@fontsource/arvo": "$@fontsource/arvo",
-    "line-awesome": "$line-awesome",
-    "@vaadin-component-factory/vcf-nav": "$@vaadin-component-factory/vcf-nav"
+    "@vaadin-component-factory/vcf-nav": "$@vaadin-component-factory/vcf-nav",
+    "line-awesome": "$line-awesome"
   },
   "vaadin": {
     "dependencies": {

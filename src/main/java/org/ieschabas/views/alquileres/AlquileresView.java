@@ -1,6 +1,7 @@
 package org.ieschabas.views.alquileres;
 
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
@@ -27,7 +28,6 @@ import java.util.List;
 @Route(value = "Alquileres", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class AlquileresView extends VerticalLayout {
-
     private Grid <Alquiler> tabla;
 
     /**
@@ -46,7 +46,7 @@ public class AlquileresView extends VerticalLayout {
      * @author Antonio Mas Esteve
      * @return Grid
      */
-    public Grid<Alquiler> crearTabla() {
+    public Component crearTabla() {
         tabla = new Grid<>(Alquiler.class, false);
         tabla.setAllRowsVisible(true);
         tabla.addColumn(Alquiler::getId).setAutoWidth(true).setResizable(true).setHeader("Id");
@@ -92,7 +92,7 @@ public class AlquileresView extends VerticalLayout {
         textPelicula.addValueChangeListener(e-> {
             String tituloPelicula = e.getValue().toLowerCase();
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
-            ArrayList<Alquiler> lista = AlquilerDAO.listar();
+            List<Alquiler> lista = AlquilerDAO.listar();
             for (Alquiler alquiler : lista) {
                 if (alquiler.getTituloPelicula().toLowerCase().contains(tituloPelicula)) {
                     listaActualizada.add(alquiler);
@@ -105,7 +105,7 @@ public class AlquileresView extends VerticalLayout {
         textCliente.addValueChangeListener(e->{
             String nombreCliente = e.getValue().toLowerCase();
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
-            ArrayList<Alquiler> lista = AlquilerDAO.listar();
+            List<Alquiler> lista = AlquilerDAO.listar();
             for (Alquiler alquiler : lista) {
                 if (alquiler.getNombreCliente().toLowerCase().contains(nombreCliente)) {
                     listaActualizada.add(alquiler);
@@ -117,7 +117,7 @@ public class AlquileresView extends VerticalLayout {
         textAlquilado.addValueChangeListener(e->{
             LocalDate fechaAlquiler = e.getValue();
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
-            ArrayList<Alquiler> lista = AlquilerDAO.listar();
+            List<Alquiler> lista = AlquilerDAO.listar();
             //Si no está vacío, que reescriba la tabla.
             if(textAlquilado.isEmpty() == false) {
                 for (Alquiler alquiler : lista) {
@@ -136,7 +136,7 @@ public class AlquileresView extends VerticalLayout {
         textDevolucion.addValueChangeListener(e->{
             LocalDate fechaDevolucion = e.getValue();
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
-            ArrayList<Alquiler> lista = AlquilerDAO.listar();
+            List<Alquiler> lista = AlquilerDAO.listar();
             //Si no está vacío, que reescriba la tabla.
             if(textDevolucion.isEmpty() == false) {
                 for (Alquiler alquiler : lista) {

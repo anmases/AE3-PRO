@@ -32,6 +32,7 @@ import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Vista de los clientes. Aquí se pueden alquilar las películas.
@@ -258,14 +259,11 @@ public Image convertirImagenVaadin(Pelicula pelicula){
         Image imagen = new Image();
         imagen.setAlt("Carátula de "+pelicula.getTitulo());
         if (pelicula.getCaratula() != null) {
-            try {
-                    InputStream in = pelicula.getCaratula().getBinaryStream();
-                    byte [] array = in.readAllBytes();
-                    StreamResource streamResource = new StreamResource("caratula.jpg", ()->new ByteArrayInputStream(array));
+
+
+                    StreamResource streamResource = new StreamResource("caratula.jpg", ()->new ByteArrayInputStream(pelicula.getCaratula()));
                     imagen.setSrc(streamResource);
-                } catch(SQLException | IOException e){
-                    throw new RuntimeException(e);
-                }
+
             }
 
    return imagen;
@@ -290,14 +288,14 @@ public String obtenerNombresActores(Pelicula pelicula){
     }
     public boolean estaAlquilada(Pelicula pelicula){
         //Establecemos la lista de alquileres:
-        ArrayList<Alquiler> alquileres = AlquilerDAO.listar();
+        List<Alquiler> alquileres = AlquilerDAO.listar();
         //establecemos la fecha.
         fecha = fecha.now();
         //Establecemos el cliente actual.
         int idCliente = LoginView.comprobarIdUsuario();
         //Buscaremos en la lista si cumple los requisitos de: 1. la fecha de retorno ser mayor que la actual, 2.el cliente, 3.la película:
-        for(Alquiler alquiler: alquileres){
-            if(alquiler!=null) {
+        for(Alquiler alquiler : alquileres){
+            if(alquiler !=null) {
                 if(alquiler.getIdCliente()==idCliente){
                     if(alquiler.getIdPelicula()==pelicula.getId()){
                        if(alquiler.getFechaRetorno().isAfter(fecha)){
