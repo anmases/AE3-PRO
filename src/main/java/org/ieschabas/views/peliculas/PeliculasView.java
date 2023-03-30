@@ -29,10 +29,10 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.clases.Actor;
 import org.ieschabas.clases.Director;
 import org.ieschabas.clases.Pelicula;
+import org.ieschabas.daos.PeliculaDAO;
 import org.ieschabas.enums.Categoria;
 import org.ieschabas.enums.Formato;
 import org.ieschabas.enums.Valoracion;
-import org.ieschabas.librerias.GestorPeliculas;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
@@ -49,6 +49,7 @@ import java.util.*;
 @RouteAlias(value = "", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class PeliculasView extends VerticalLayout {
+    private static PeliculaDAO peliculaDao = new PeliculaDAO();
     private Grid<Pelicula> tabla;
     private Dialog anyadirVentana;
     private VerticalLayout anyadirTabla = new VerticalLayout();
@@ -305,7 +306,7 @@ public class PeliculasView extends VerticalLayout {
             String tituloPelicula = e.getValue().toLowerCase();
             ArrayList<Pelicula> listaActualizada = new ArrayList<>();
             Collection<Pelicula> lista;
-            lista = GestorPeliculas.listarPeliculas();
+            lista = peliculaDao.listar();
             Pelicula pelicula;
             for (Pelicula valor : lista) {
                 pelicula = valor;
@@ -322,8 +323,8 @@ public class PeliculasView extends VerticalLayout {
                 //Es necesario convertirlo a String porque solo así se comprueba si "contiene" un caracter.
                 String anyoEstreno = e.getValue().toString();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
-                Collection<Pelicula> lista;
-                lista = GestorPeliculas.listarPeliculas();
+                List<Pelicula> lista;
+                lista = peliculaDao.listar();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;
@@ -344,8 +345,8 @@ public class PeliculasView extends VerticalLayout {
             if (e.getValue() != null) {
                 Categoria categoria = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
-                Collection<Pelicula> lista;
-                lista = GestorPeliculas.listarPeliculas();
+                List<Pelicula> lista;
+                lista = peliculaDao.listar();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;
@@ -365,7 +366,7 @@ public class PeliculasView extends VerticalLayout {
                 Formato formato = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 Collection<Pelicula> lista;
-                lista = GestorPeliculas.listarPeliculas();
+                lista = peliculaDao.listar();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;
@@ -385,7 +386,7 @@ public class PeliculasView extends VerticalLayout {
                 Valoracion valoracion = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 Collection<Pelicula> lista;
-                lista = GestorPeliculas.listarPeliculas();
+                lista = peliculaDao.listar();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;
@@ -445,8 +446,7 @@ public class PeliculasView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 //Elimina la película y las relaciones asociadas;
-                GestorPeliculas.eliminarPelicula(pelicula.getId());
-                if (GestorPeliculas.eliminarPelicula(pelicula.getId())) {
+                if (peliculaDao.eliminar(pelicula.getId())) {
                     Notification notification = Notification.show("película borrada correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 } else {
@@ -520,7 +520,7 @@ public class PeliculasView extends VerticalLayout {
             Pelicula pelicula;
             editor.save();
             pelicula = new Pelicula(textoId.getValue(), textoTitulo.getValue(), textoDescripcion.getValue(), textoAnyoPublicacion.getValue(), textoDuracion.getValue(), textoCategoria.getValue(), textoFormato.getValue(), textoValoracion.getValue());
-            if (GestorPeliculas.modificarPelicula(pelicula)) {
+            if (peliculaDao.modificar(pelicula)) {
                 Notification notification = Notification.show("película modificada");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             } else {
@@ -569,7 +569,7 @@ public class PeliculasView extends VerticalLayout {
      */
     public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(GestorPeliculas.listarPeliculas());
+        tabla.setItems(peliculaDao.listar());
     }
 
 
@@ -642,7 +642,7 @@ public class PeliculasView extends VerticalLayout {
             if (titulo.getValue() != null && descripcion.getValue() != null && anyoPublicacion.getValue() != null && duracion.getValue() != null && categoria.getValue() != null && formato.getValue() != null) {
                 //Añade al fichero el contenido del formulario:
                 Pelicula pelicula = new Pelicula(0, titulo.getValue(), descripcion.getValue(), anyoPublicacion.getValue(), duracion.getValue(), categoria.getValue(), formato.getValue(), valoracion.getValue());
-                GestorPeliculas.insertarPelicula(pelicula);
+                peliculaDao.insertar(pelicula);
                 //Se muestra la notificación:
                 Notification notification = Notification.show("película guardada correcamente");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);

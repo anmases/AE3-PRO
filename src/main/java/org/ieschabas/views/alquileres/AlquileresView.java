@@ -29,6 +29,7 @@ import java.util.List;
 @RolesAllowed("ADMIN")
 public class AlquileresView extends VerticalLayout {
     private Grid <Alquiler> tabla;
+    private static AlquilerDAO alquilerDao = new AlquilerDAO();
 
     /**
      * Constructor principal de la vista de alquileres.
@@ -92,7 +93,7 @@ public class AlquileresView extends VerticalLayout {
         textPelicula.addValueChangeListener(e-> {
             String tituloPelicula = e.getValue().toLowerCase();
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
-            List<Alquiler> lista = AlquilerDAO.listar();
+            List<Alquiler> lista = alquilerDao.listar();
             for (Alquiler alquiler : lista) {
                 if (alquiler.getTituloPelicula().toLowerCase().contains(tituloPelicula)) {
                     listaActualizada.add(alquiler);
@@ -105,7 +106,7 @@ public class AlquileresView extends VerticalLayout {
         textCliente.addValueChangeListener(e->{
             String nombreCliente = e.getValue().toLowerCase();
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
-            List<Alquiler> lista = AlquilerDAO.listar();
+            List<Alquiler> lista = alquilerDao.listar();
             for (Alquiler alquiler : lista) {
                 if (alquiler.getNombreCliente().toLowerCase().contains(nombreCliente)) {
                     listaActualizada.add(alquiler);
@@ -117,7 +118,7 @@ public class AlquileresView extends VerticalLayout {
         textAlquilado.addValueChangeListener(e->{
             LocalDate fechaAlquiler = e.getValue();
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
-            List<Alquiler> lista = AlquilerDAO.listar();
+            List<Alquiler> lista = alquilerDao.listar();
             //Si no está vacío, que reescriba la tabla.
             if(textAlquilado.isEmpty() == false) {
                 for (Alquiler alquiler : lista) {
@@ -136,7 +137,7 @@ public class AlquileresView extends VerticalLayout {
         textDevolucion.addValueChangeListener(e->{
             LocalDate fechaDevolucion = e.getValue();
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
-            List<Alquiler> lista = AlquilerDAO.listar();
+            List<Alquiler> lista = alquilerDao.listar();
             //Si no está vacío, que reescriba la tabla.
             if(textDevolucion.isEmpty() == false) {
                 for (Alquiler alquiler : lista) {
@@ -173,7 +174,7 @@ public class AlquileresView extends VerticalLayout {
      */
     public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(AlquilerDAO.listar());
+        tabla.setItems(alquilerDao.listar());
     }
 
 }
