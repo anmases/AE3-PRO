@@ -22,8 +22,8 @@ import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Usuario;
+import org.ieschabas.daos.UsuarioDAO;
 import org.ieschabas.enums.Rol;
-import org.ieschabas.librerias.GestorUsuarios;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
@@ -37,6 +37,7 @@ import javax.annotation.security.RolesAllowed;
 @Route(value = "Usuarios", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class UsuarioView extends VerticalLayout {
+    private static UsuarioDAO usuarioDAO = new UsuarioDAO();
     private Grid<Usuario> tabla;
 
     /**
@@ -89,7 +90,7 @@ public class UsuarioView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 //Elimina la película y las relaciones asociadas;
-                if (GestorUsuarios.eliminarUsuario(usuario.getId())) {
+                if (usuarioDAO.eliminar(usuario.getId())) {
                     Notification notification = Notification.show("Usuario borrado correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 } else {
@@ -160,7 +161,7 @@ public class UsuarioView extends VerticalLayout {
             editor.save();
             //Se rellenan todos los campos del objeto seleccionado:
             Usuario usuario = new Usuario(textoId.getValue(), textoNombre.getValue(), textoApellidos.getValue(), textoDireccion.getValue(), textoActivo.getValue(), textoFecha.getValue(), textoRol.getValue());
-            if (GestorUsuarios.modificarUsuario(usuario)) {
+            if (usuarioDAO.modificar(usuario)) {
                 Notification notification = Notification.show("Usuario modificado");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             } else {
@@ -205,7 +206,7 @@ public class UsuarioView extends VerticalLayout {
      */
     public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(GestorUsuarios.listarUsuarios());
+        tabla.setItems(usuarioDAO.listar());
     }
 
 
