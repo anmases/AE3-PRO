@@ -15,7 +15,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.clases.Usuario;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
-import org.ieschabas.librerias.GestorUsuarios;
+import org.ieschabas.daos.UsuarioDAO;
 import org.ieschabas.views.actores.ActoresView;
 import org.ieschabas.views.alquileres.AlquileresView;
 import org.ieschabas.views.cliente.ClienteView;
@@ -24,12 +24,16 @@ import org.ieschabas.views.login.LoginView;
 import org.ieschabas.views.peliculas.PeliculasView;
 import org.ieschabas.views.usuarios.UsuarioView;
 
+import java.io.Serial;
+
 
 /**
  * The main view is a top-level placeholder for other views.
  */
 @Route("main")
 public class MainView extends AppLayout implements BeforeEnterObserver {
+    @Serial
+    private static final long serialVersionUID = 6046822281493064403L;
     private H2 viewTitle;
 
     /**
@@ -45,6 +49,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
      * Crea el Header
      */
     private void addHeaderContent() {
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
         DrawerToggle toggle = new DrawerToggle();
         toggle.getElement().setAttribute("aria-label", "Menu toggle");
         viewTitle = new H2();
@@ -56,7 +61,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
 
         int id = LoginView.comprobarIdUsuario();
         if(id != 0) {
-            Usuario user = GestorUsuarios.buscarUsuario(id);
+            Usuario user = usuarioDAO.buscar(id);
             Icon admin = new Icon(VaadinIcon.USER_STAR);
             H4 nombreUsuario = new H4(user.getNombre() + " " + user.getApellidos());
             header.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
@@ -82,7 +87,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
 
     /**
      * Crea el menú de navegación
-     * @return
+     * @return AppNav
      */
     private AppNav createNavigation() {
         // AppNav is not yet an official component.
@@ -101,7 +106,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
 
     /**
      * Crea el footer (no en uso)
-     * @return
+     * @return Footer
      */
     private Footer createFooter() {
         Footer layout = new Footer();
@@ -120,7 +125,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
 
     /**
      * Devuelve el título de la página actual.
-     * @return
+     * @return String
      */
     private String getCurrentPageTitle() {
         PageTitle title = getContent().getClass().getAnnotation(PageTitle.class);
@@ -130,7 +135,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
         if(LoginView.comprobarLogIn()){
-            if(LoginView.comprobarAdmin()==false){
+            if(!LoginView.comprobarAdmin()){
                 event.rerouteTo(ClienteView.class);
             }
 
