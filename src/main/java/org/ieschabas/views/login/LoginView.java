@@ -20,6 +20,8 @@ import java.util.Properties;
 @PageTitle("Login")
 @Route(value = "login")
 public class LoginView extends VerticalLayout {
+    @Serial
+    private static final long serialVersionUID = 272742160091975700L;
     private static File archivoConfig = new File("remember.properties");
     private static Properties estado;
     private static boolean logIn;

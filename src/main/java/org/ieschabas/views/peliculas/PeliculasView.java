@@ -28,7 +28,9 @@ import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.clases.Actor;
 import org.ieschabas.clases.Director;
+import org.ieschabas.clases.Equipo;
 import org.ieschabas.clases.Pelicula;
+import org.ieschabas.daos.EquipoDAO;
 import org.ieschabas.daos.PeliculaDAO;
 import org.ieschabas.enums.Categoria;
 import org.ieschabas.enums.Formato;
@@ -50,6 +52,7 @@ import java.util.*;
 @RolesAllowed("ADMIN")
 public class PeliculasView extends VerticalLayout {
     private static PeliculaDAO peliculaDao = new PeliculaDAO();
+    private static EquipoDAO equipoDAO = new EquipoDAO();
     private Grid<Pelicula> tabla;
     private Dialog anyadirVentana;
     private VerticalLayout anyadirTabla = new VerticalLayout();
@@ -113,13 +116,13 @@ public class PeliculasView extends VerticalLayout {
 
 /////////////////////////////////////////Creación del formulario Añadir/////////////////////////////////////////////////
         //Información para los actores:
-        ArrayList<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
-        ArrayList<Actor> listaActoresRestantes = GestorPeliculas.listarActoresNoRelacionados(pelicula.getId());   //Actores restantes:
+        List<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
+        List<Actor> listaActoresRestantes = pelicula.getActoresRestantes();
 
 
         //Información para los directores:
-        ArrayList<Director> directoresSeleccionados = new ArrayList<>();   //Directores seleccionados en el Multiselect:
-        Collection<Director> listaDirectoresRestantes = GestorPeliculas.listarDirectoresNoRelacionados(pelicula.getId());   //Directores restantes:
+        List<Director> directoresSeleccionados = new ArrayList<>();   //Directores seleccionados en el Multiselect:
+        List<Director> listaDirectoresRestantes = pelicula.getDirectoresRestantes();
 
 
         //Creamos los MultiSelect:
@@ -141,18 +144,19 @@ public class PeliculasView extends VerticalLayout {
             button.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_ERROR, ButtonVariant.LUMO_TERTIARY);
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
-                GestorPeliculas.eliminarActorRelacionado(pelicula.getId(), actor.getId());
+                pelicula.eliminarRelacion(actor);
+                peliculaDao.modificar(pelicula);
                 //Rellenar la tabla:
-                tablaActores.setItems(GestorPeliculas.listarActoresRelacionados(pelicula.getId()));
+                tablaActores.setItems(pelicula.getActores());
                 //Refrescar la tabla:
                 tablaActores.getDataProvider().refreshAll();
                 //Rellenamos el multiselect;
-                opcionActor.setItems(GestorPeliculas.listarActoresNoRelacionados(pelicula.getId()));
+                opcionActor.setItems(pelicula.getActoresRestantes());
                 //Refrescamos el multiSelect:
                 opcionActor.getDataProvider().refreshAll();
             });
         }))).setHeader("Eliminar").setResizable(true).setAutoWidth(true);
-        tablaActores.setItems(GestorPeliculas.listarActoresRelacionados(pelicula.getId()));
+        tablaActores.setItems(pelicula.getActores());
         tablaActores.recalculateColumnWidths();
         tablaActores.setHeightByRows(true);
 
@@ -164,18 +168,19 @@ public class PeliculasView extends VerticalLayout {
             button.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_ERROR, ButtonVariant.LUMO_TERTIARY);
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
-                GestorPeliculas.eliminarDirectorRelacionado(pelicula.getId(), director.getId());
+                pelicula.eliminarRelacion(director);
+                peliculaDao.modificar(pelicula);;
                 //Rellenar la tabla:
-                tablaDirectores.setItems(GestorPeliculas.listarDirectoresRelacionados(pelicula.getId()));
+                tablaDirectores.setItems(pelicula.getDirectores());
                 //Refrescar la tabla:
                 tablaDirectores.getDataProvider().refreshAll();
                 //Rellenamos el multiselect;
-                opcionDirector.setItems(GestorPeliculas.listarDirectoresNoRelacionados(pelicula.getId()));
+                opcionDirector.setItems(pelicula.getDirectoresRestantes());
                 //Refrescamos el multiSelect:
                 opcionDirector.getDataProvider().refreshAll();
             });
         }))).setHeader("Eliminar").setResizable(true).setAutoWidth(true);
-        tablaDirectores.setItems(GestorPeliculas.listarDirectoresRelacionados(pelicula.getId()));
+        tablaDirectores.setItems(pelicula.getDirectores());
         tablaDirectores.recalculateColumnWidths();
         tablaDirectores.setHeightByRows(true);
 
@@ -185,17 +190,24 @@ public class PeliculasView extends VerticalLayout {
         guardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         guardar.setWidthFull();
         guardar.addClickListener(event -> {
+            //Aquí se añaden las relaciones:
             if (!opcionDirector.isEmpty()) {
                 directoresSeleccionados.addAll(opcionDirector.getSelectedItems());
-                GestorPeliculas.insertarDirectoresRelacionados(directoresSeleccionados, pelicula.getId());
+                List<Equipo> directores = pelicula.getEquipos();
+                directores.addAll(directoresSeleccionados);
+                pelicula.setEquipos(directores);
+                peliculaDao.modificar(pelicula);
             }
             if (!opcionActor.isEmpty()) {
                 actoresSeleccionados.addAll(opcionActor.getSelectedItems());
-                GestorPeliculas.insertarActoresRelacionados(actoresSeleccionados, pelicula.getId());
+                List<Equipo> actores = pelicula.getEquipos();
+                actores.addAll(actoresSeleccionados);
+                pelicula.setEquipos(actores);
+                peliculaDao.modificar(pelicula);
             }
             //Rellenar la tabla:
-            tablaActores.setItems(GestorPeliculas.listarActoresRelacionados(pelicula.getId()));
-            tablaDirectores.setItems(GestorPeliculas.listarDirectoresRelacionados(pelicula.getId()));
+            tablaActores.setItems(pelicula.getActores());
+            tablaDirectores.setItems(pelicula.getDirectores());
             //Notificación:
             Notification notification = Notification.show("Se ha guardado correctamente");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
@@ -203,8 +215,8 @@ public class PeliculasView extends VerticalLayout {
             tablaActores.getDataProvider().refreshAll();
             tablaDirectores.getDataProvider().refreshAll();
             //Rellenamos el multiselect;
-            opcionActor.setItems(GestorPeliculas.listarActoresNoRelacionados(pelicula.getId()));
-            opcionDirector.setItems(GestorPeliculas.listarDirectoresNoRelacionados(pelicula.getId()));
+            opcionActor.setItems(pelicula.getActoresRestantes());
+            opcionDirector.setItems(pelicula.getDirectoresRestantes());
             //Refrescamos el multiSelect:
             opcionActor.getDataProvider().refreshAll();
             opcionDirector.getDataProvider().refreshAll();
@@ -217,14 +229,14 @@ public class PeliculasView extends VerticalLayout {
             opcionActor.clear();
             opcionDirector.clear();
             //Rellenar la tabla:
-            tablaActores.setItems(GestorPeliculas.listarActoresRelacionados(pelicula.getId()));
-            tablaDirectores.setItems(GestorPeliculas.listarDirectoresRelacionados(pelicula.getId()));
+            tablaActores.setItems(pelicula.getActores());
+            tablaDirectores.setItems(pelicula.getDirectores());
             //Refrescar la tabla:
             tablaActores.getDataProvider().refreshAll();
             tablaDirectores.getDataProvider().refreshAll();
             //Rellenamos el multiselect;
-            opcionActor.setItems(GestorPeliculas.listarActoresNoRelacionados(pelicula.getId()));
-            opcionDirector.setItems(GestorPeliculas.listarDirectoresNoRelacionados(pelicula.getId()));
+            opcionActor.setItems(pelicula.getActoresRestantes());
+            opcionDirector.setItems(pelicula.getDirectoresRestantes());
             //Refrescamos el multiSelect:
             opcionActor.setItems(listaActoresRestantes);
             opcionDirector.setItems(listaDirectoresRestantes);

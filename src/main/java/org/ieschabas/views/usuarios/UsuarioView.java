@@ -27,6 +27,7 @@ import org.ieschabas.enums.Rol;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
+import java.io.Serial;
 
 /**
  * Vista de los Usuarios
@@ -37,7 +38,10 @@ import javax.annotation.security.RolesAllowed;
 @Route(value = "Usuarios", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class UsuarioView extends VerticalLayout {
-    private static UsuarioDAO usuarioDAO = new UsuarioDAO();
+    @Serial
+    private static final long serialVersionUID = -2553389613089065660L;
+    private static final UsuarioDAO usuarioDAO = new UsuarioDAO();
+
     private Grid<Usuario> tabla;
 
     /**

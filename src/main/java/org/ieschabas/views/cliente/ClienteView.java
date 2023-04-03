@@ -27,11 +27,7 @@ import org.ieschabas.views.login.LoginView;
 
 import javax.annotation.security.RolesAllowed;
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,6 +38,7 @@ import java.util.List;
 @Route(value = "Cliente")
 @RolesAllowed("USER")
 public class ClienteView extends AppLayout {
+
     //DAOS:
     private static PeliculaDAO peliculaDAO = new PeliculaDAO();
     private static UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -274,7 +271,7 @@ public Image convertirImagenVaadin(Pelicula pelicula){
 }
 public String obtenerNombresActores(Pelicula pelicula){
                 String nombreActor ="Reparto: ";
-        List<Actor> actores = pelicula.getActores();
+        List<Actor> actores = pelicula.getEquipos();
         for(Actor actor:actores){
             nombreActor = nombreActor+" "+actor.getNombre()+" "+actor.getApellidos()+",";
         }
