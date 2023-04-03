@@ -16,7 +16,6 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Director;
-import org.ieschabas.librerias.GestorDirectores;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;

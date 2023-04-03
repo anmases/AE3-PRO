@@ -20,9 +20,9 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.StreamResource;
 import org.ieschabas.clases.*;
 import org.ieschabas.daos.AlquilerDAO;
+import org.ieschabas.daos.PeliculaDAO;
+import org.ieschabas.daos.UsuarioDAO;
 import org.ieschabas.enums.Valoracion;
-import org.ieschabas.librerias.GestorPeliculas;
-import org.ieschabas.librerias.GestorUsuarios;
 import org.ieschabas.views.login.LoginView;
 
 import javax.annotation.security.RolesAllowed;
@@ -42,7 +42,11 @@ import java.util.List;
 @Route(value = "Cliente")
 @RolesAllowed("USER")
 public class ClienteView extends AppLayout {
-      private ArrayList<Pelicula> listaPeliculas;
+    //DAOS:
+    private static PeliculaDAO peliculaDAO = new PeliculaDAO();
+    private static UsuarioDAO usuarioDAO = new UsuarioDAO();
+    private static AlquilerDAO alquilerDAO = new AlquilerDAO();
+      private List<Pelicula> listaPeliculas;
       private LocalDate fecha;
       private Div vistaPeliculas;
       private HorizontalLayout vistaAlquiler;
@@ -81,9 +85,9 @@ public class ClienteView extends AppLayout {
         HorizontalLayout usuario = new HorizontalLayout();
         cabecera.setWidthFull();
         cabecera.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
-        //Se coloca el usuario en este momento:
+        //Se coloca el usuario en este momento, que siempre será cliente:
         int id = LoginView.comprobarIdUsuario();
-        Usuario user = GestorUsuarios.buscarUsuario(id);
+        Usuario user = usuarioDAO.buscar(id);
 
         Icon cliente = new Icon(VaadinIcon.USER);
         H4 nombreUsuario = new H4(user.getNombre()+" "+user.getApellidos());
@@ -101,7 +105,7 @@ public class ClienteView extends AppLayout {
      * @return Div
      */
     public Div listadoLayout(){
-        listaPeliculas = GestorPeliculas.listarPeliculas();
+        listaPeliculas = peliculaDAO.listar();
 
            vistaPeliculas = new Div();
            vistaPeliculas.setWidthFull();
@@ -198,7 +202,7 @@ public class ClienteView extends AppLayout {
             //Se añaden 2 meses:
             alquiler.setFechaRetorno(fecha.plusMonths(2));
             //Se añade a la BD:
-        if(AlquilerDAO.insertar(alquiler)) {
+        if(alquilerDAO.insertar(alquiler)) {
             Notification notification = Notification.show("Se ha alquilado correctamente");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
         }
@@ -270,7 +274,7 @@ public Image convertirImagenVaadin(Pelicula pelicula){
 }
 public String obtenerNombresActores(Pelicula pelicula){
                 String nombreActor ="Reparto: ";
-        ArrayList<Actor> actores = pelicula.getActores();
+        List<Actor> actores = pelicula.getActores();
         for(Actor actor:actores){
             nombreActor = nombreActor+" "+actor.getNombre()+" "+actor.getApellidos()+",";
         }
@@ -279,7 +283,7 @@ public String obtenerNombresActores(Pelicula pelicula){
 }
     public String obtenerNombresDirectores(Pelicula pelicula){
         String nombreDirector="Directores: ";
-        ArrayList<Director> directores = pelicula.getDirectores();
+        List<Director> directores = pelicula.getDirectores();
         for(Director director:directores){
             nombreDirector = nombreDirector+" "+director.getNombre()+" "+director.getApellidos()+",";
         }
@@ -288,7 +292,7 @@ public String obtenerNombresActores(Pelicula pelicula){
     }
     public boolean estaAlquilada(Pelicula pelicula){
         //Establecemos la lista de alquileres:
-        List<Alquiler> alquileres = AlquilerDAO.listar();
+        List<Alquiler> alquileres = alquilerDAO.listar();
         //establecemos la fecha.
         fecha = fecha.now();
         //Establecemos el cliente actual.
