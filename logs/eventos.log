@@ -16357,3 +16357,105 @@ java.lang.ClassCastException: class java.util.ArrayList cannot be cast to class 
 04-04-2023 22:56:30 INFO  UsuarioDAO:91 - Listar: 1 -- Antonio -- Mas Esteve -- true
 04-04-2023 22:56:30 INFO  UsuarioDAO:91 - Listar: 2 -- Alejandro -- Palacios Requena -- true
 04-04-2023 22:56:30 INFO  UsuarioDAO:91 - Listar: 3 -- Andrey -- Londoño Escudero -- false
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 1 -- Francis -- Ford Coppola -- 1939 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 2 -- Stanley -- Kubrick -- 1928 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 3 -- Billy -- Wilder -- 1906 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 4 -- John -- Carpenter -- 1948 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 5 -- James -- Cameron -- 1954 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 6 -- Pedro -- Almodovar -- 1949 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 7 -- Martin -- Scorsese -- 1942 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 8 -- Quentin -- Tarantino -- 1963 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 9 -- Woody -- Allen -- 1935 -- DIRECTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 10 -- Marlon -- Brandon -- 1924 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 11 -- Al -- Pacino -- 1940 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 12 -- Robert -- Duvall -- 1931 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 13 -- James -- Cann -- 1940 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 14 -- Diane -- Keaton -- 1946 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 15 -- Robert -- de Niro -- 1943 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 16 -- Kirk -- Douglas -- 1916 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 17 -- Ralph -- Meeker -- 1920 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 18 -- Adolphe -- Menjou -- 1890 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 19 -- Jack -- Lemmon -- 1925 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 20 -- Walter -- Matthau -- 1920 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 21 -- Susan -- Sarandon -- 1946 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
+04-04-2023 23:28:22 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 1 -- Francis -- Ford Coppola -- 1939 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 2 -- Stanley -- Kubrick -- 1928 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 3 -- Billy -- Wilder -- 1906 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 4 -- John -- Carpenter -- 1948 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 5 -- James -- Cameron -- 1954 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 6 -- Pedro -- Almodovar -- 1949 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 7 -- Martin -- Scorsese -- 1942 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 8 -- Quentin -- Tarantino -- 1963 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 9 -- Woody -- Allen -- 1935 -- DIRECTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 10 -- Marlon -- Brandon -- 1924 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 11 -- Al -- Pacino -- 1940 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 12 -- Robert -- Duvall -- 1931 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 13 -- James -- Cann -- 1940 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 14 -- Diane -- Keaton -- 1946 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 15 -- Robert -- de Niro -- 1943 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 16 -- Kirk -- Douglas -- 1916 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 17 -- Ralph -- Meeker -- 1920 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 18 -- Adolphe -- Menjou -- 1890 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 19 -- Jack -- Lemmon -- 1925 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 20 -- Walter -- Matthau -- 1920 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 21 -- Susan -- Sarandon -- 1946 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
+04-04-2023 23:32:49 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR
+04-04-2023 23:34:15 INFO  UsuarioDAO:37 - buscado el usuario:1
+04-04-2023 23:34:15 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+04-04-2023 23:34:15 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+04-04-2023 23:34:15 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+04-04-2023 23:34:15 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+04-04-2023 23:34:15 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+04-04-2023 23:34:15 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+04-04-2023 23:34:15 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+04-04-2023 23:34:15 WARN  RootClass:287 - HHH000038: Composite-id class does not override equals(): org.ieschabas.login.Login
+04-04-2023 23:34:15 WARN  RootClass:290 - HHH000039: Composite-id class does not override hashCode(): org.ieschabas.login.Login
+04-04-2023 23:34:16 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b335bf7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+04-04-2023 23:34:16 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+04-04-2023 23:34:16 INFO  PeliculaDAO:91 - Listar: 1 -- El Padrino
+04-04-2023 23:34:16 INFO  PeliculaDAO:91 - Listar: 2 -- El Padrino 2
+04-04-2023 23:34:16 INFO  PeliculaDAO:91 - Listar: 3 -- Senderos de gloria
+04-04-2023 23:34:16 INFO  PeliculaDAO:91 - Listar: 4 -- Primera plana
+04-04-2023 23:34:16 INFO  PeliculaDAO:91 - Listar: 5 -- Resident Evil
+04-04-2023 23:34:16 INFO  PeliculaDAO:91 - Listar: 6 -- Resident Evil 2
+04-04-2023 23:34:16 INFO  PeliculaDAO:91 - Listar: 7 -- Titanic
+04-04-2023 23:34:48 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+04-04-2023 23:34:48 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+04-04-2023 23:34:48 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+04-04-2023 23:34:48 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+04-04-2023 23:34:48 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+04-04-2023 23:34:48 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+04-04-2023 23:34:48 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+04-04-2023 23:34:48 WARN  RootClass:287 - HHH000038: Composite-id class does not override equals(): org.ieschabas.login.Login
+04-04-2023 23:34:48 WARN  RootClass:290 - HHH000039: Composite-id class does not override hashCode(): org.ieschabas.login.Login
+04-04-2023 23:34:48 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@58acbab0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+04-04-2023 23:34:48 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 1 -- Francis -- Ford Coppola -- 1939 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 2 -- Stanley -- Kubrick -- 1928 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 3 -- Billy -- Wilder -- 1906 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 4 -- John -- Carpenter -- 1948 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 5 -- James -- Cameron -- 1954 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 6 -- Pedro -- Almodovar -- 1949 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 7 -- Martin -- Scorsese -- 1942 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 8 -- Quentin -- Tarantino -- 1963 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 9 -- Woody -- Allen -- 1935 -- DIRECTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 10 -- Marlon -- Brandon -- 1924 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 11 -- Al -- Pacino -- 1940 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 12 -- Robert -- Duvall -- 1931 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 13 -- James -- Cann -- 1940 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 14 -- Diane -- Keaton -- 1946 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 15 -- Robert -- de Niro -- 1943 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 16 -- Kirk -- Douglas -- 1916 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 17 -- Ralph -- Meeker -- 1920 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 18 -- Adolphe -- Menjou -- 1890 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 19 -- Jack -- Lemmon -- 1925 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 20 -- Walter -- Matthau -- 1920 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 21 -- Susan -- Sarandon -- 1946 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
+04-04-2023 23:34:48 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR

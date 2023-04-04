@@ -111,10 +111,6 @@
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-spring-boot-starter:23.3.6" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-spring:23.3.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.25" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.25" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.25" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.25" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.25" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-websocket:5.3.25" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.7.8" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-json:2.7.8" level="project" />
@@ -323,5 +319,9 @@
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final" level="project" />
     <orderEntry type="library" name="Maven: javax.persistence:javax.persistence-api:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.25" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.25" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.25" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.25" level="project" />
   </component>
 </module>

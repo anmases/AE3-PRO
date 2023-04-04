@@ -15,12 +15,10 @@ import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Actor;
 import org.ieschabas.clases.Equipo;
-import org.ieschabas.clases.Pelicula;
 import org.ieschabas.daos.EquipoDAO;
 import org.ieschabas.enums.Puesto;
 import org.ieschabas.views.MainView;
@@ -39,7 +37,7 @@ import java.util.List;
 @Route(value = "Actores", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class EquipoView extends VerticalLayout {
-    private static final EquipoDAO equipoDao = new EquipoDAO();
+    private final EquipoDAO equipoDao;
     //tabla:
     private Grid<Equipo> tabla;
 
@@ -47,7 +45,8 @@ public class EquipoView extends VerticalLayout {
      * Constructor de la vista equipo
      *
      */
-    public EquipoView() throws IOException {
+    public EquipoView(EquipoDAO equipoDao) throws IOException {
+        this.equipoDao = equipoDao;
         addClassName("equipo-view");
         SplitLayout splitLayout = new SplitLayout();
 
