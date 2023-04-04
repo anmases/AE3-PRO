@@ -27,6 +27,7 @@ import org.ieschabas.views.login.LoginView;
 
 import javax.annotation.security.RolesAllowed;
 import java.io.ByteArrayInputStream;
+import java.io.Serial;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -38,36 +39,37 @@ import java.util.List;
 @Route(value = "Cliente")
 @RolesAllowed("USER")
 public class ClienteView extends AppLayout {
-
+    @Serial
+    private static final long serialVersionUID = -5482598882200796969L;
     //DAOS:
-    private static PeliculaDAO peliculaDAO = new PeliculaDAO();
-    private static UsuarioDAO usuarioDAO = new UsuarioDAO();
-    private static AlquilerDAO alquilerDAO = new AlquilerDAO();
-      private List<Pelicula> listaPeliculas;
-      private LocalDate fecha;
+    private static final PeliculaDAO peliculaDAO = new PeliculaDAO();
+    private static final UsuarioDAO usuarioDAO = new UsuarioDAO();
+    private static final AlquilerDAO alquilerDAO = new AlquilerDAO();
+
+    private LocalDate fecha;
       private Div vistaPeliculas;
       private HorizontalLayout vistaAlquiler;
-      private H4 titulo;
-      private Image caratula;
-      private Icon estrella;
+    private Image caratula;
 
     /**
      * Constructor principal de la vista Clientes.
      * @author Antonio Mas Esteve
      */
     public ClienteView() {
+        Cliente cliente = (Cliente) usuarioDAO.buscar(LoginView.comprobarIdUsuario());
         //setSizeFull();
         addClassName("Cliente-View");
         vistaAlquiler = new HorizontalLayout();
         vistaAlquiler.setVisible(false);
-        Div contenido = new Div(listadoLayout(), vistaAlquiler);
+
+        Div contenido = new Div(listadoLayout(cliente), vistaAlquiler);
 
 
         Image logo = new Image("images/PRO_LOGO.png", "VideoClub");
         logo.setMaxWidth("140px");
         logo.setMaxHeight("90px");
 
-        addToNavbar(true, logo, crearCabecera());
+        addToNavbar(true, logo, crearCabecera(cliente));
         setContent(contenido);
 
     }
@@ -77,19 +79,16 @@ public class ClienteView extends AppLayout {
      * @author Antonio Mas Esteve.
      * @return VerticalLayout
      */
-    private VerticalLayout crearCabecera(){
+    private VerticalLayout crearCabecera(Cliente cliente){
         VerticalLayout cabecera = new VerticalLayout();
         HorizontalLayout usuario = new HorizontalLayout();
         cabecera.setWidthFull();
         cabecera.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
-        //Se coloca el usuario en este momento, que siempre será cliente:
-        int id = LoginView.comprobarIdUsuario();
-        Usuario user = usuarioDAO.buscar(id);
 
-        Icon cliente = new Icon(VaadinIcon.USER);
-        H4 nombreUsuario = new H4(user.getNombre()+" "+user.getApellidos());
+        Icon user = new Icon(VaadinIcon.USER);
+        H4 nombreUsuario = new H4(cliente.getNombre()+" "+cliente.getApellidos());
         Button logout = new Button("Cerrar Sesión");
-        usuario.add(cliente, nombreUsuario, logout);
+        usuario.add(user, nombreUsuario, logout);
         usuario.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
         logout.addClickListener(e-> LoginView.cerrarSesion());
         cabecera.add(usuario);
@@ -101,8 +100,8 @@ public class ClienteView extends AppLayout {
      * @author Antonio Mas Esteve
      * @return Div
      */
-    public Div listadoLayout(){
-        listaPeliculas = peliculaDAO.listar();
+    public Div listadoLayout(Cliente cliente){
+        List<Pelicula> listaPeliculas = peliculaDAO.listar();
 
            vistaPeliculas = new Div();
            vistaPeliculas.setWidthFull();
@@ -125,19 +124,19 @@ public class ClienteView extends AppLayout {
             imagenLayout.add(caratula);
             peliculaLayout.add(imagenLayout);
             //Añadimos el título:
-            titulo = new H4(pelicula.getTitulo()+" "+"("+pelicula.getAnyoPublicacion()+")");
+            H4 titulo = new H4(pelicula.getTitulo() + " " + "(" + pelicula.getAnyoPublicacion() + ")");
             peliculaLayout.add(titulo);
             //Añade la valoración en estrellas:
             for (int i = 0; i < Valoracion.toInteger(pelicula.getValoracion()); i++) {
 
-                estrella = new Icon(VaadinIcon.STAR);
+                Icon estrella = new Icon(VaadinIcon.STAR);
                 estrella.setColor("#FFFF00");
                 estrella.setSize("s");
                 valoracionLayout.add(estrella);
                 peliculaLayout.add(valoracionLayout);
             }
             peliculaLayout.addClickListener(event->{
-                vistaAlquiler = alquilerLayout(pelicula);
+                vistaAlquiler = alquilerLayout(pelicula, cliente);
                 vistaPeliculas.setVisible(false);
                 vistaAlquiler.setVisible(true);
             });
@@ -153,7 +152,7 @@ public class ClienteView extends AppLayout {
      * @author Antonio Mas Esteve
      * @return HorizontalLayout
      */
-    public HorizontalLayout alquilerLayout(Pelicula pelicula){
+    public HorizontalLayout alquilerLayout(Pelicula pelicula, Cliente cliente){
         //Se inicializa el contenedor de la imagen:
         vistaAlquiler.removeAll();
         Div contenedorImagen = new Div();
@@ -175,8 +174,8 @@ public class ClienteView extends AppLayout {
         ver.addThemeVariants(ButtonVariant.LUMO_SUCCESS, ButtonVariant.LUMO_PRIMARY);
         ver.setWidthFull();
         //Muestra uno u otro botón si está o no alquilada:
-        ver.setVisible(estaAlquilada(pelicula));
-        alquilar.setVisible(!estaAlquilada(pelicula));
+        ver.setVisible(estaAlquilada(pelicula, cliente));
+        alquilar.setVisible(!estaAlquilada(pelicula, cliente));
 
         //Creamos el cuadro de diálogo del alquiler:
         Dialog dialogo = new Dialog();
@@ -190,12 +189,12 @@ public class ClienteView extends AppLayout {
         dialogo.add(texto, devolucion, confirmacion);
         cancelar.addClickListener(e-> dialogo.close());
         confirmar.addClickListener(e->{
-            fecha = fecha.now();
+            fecha = LocalDate.now();
             Alquiler alquiler = new Alquiler();
             alquiler.setId(0);
             alquiler.setFechaAlquiler(fecha);
-            alquiler.setIdPelicula(pelicula.getId());
-            alquiler.setIdCliente(LoginView.comprobarIdUsuario());
+            alquiler.setPelicula(pelicula);
+            alquiler.setCliente(cliente);
             //Se añaden 2 meses:
             alquiler.setFechaRetorno(fecha.plusMonths(2));
             //Se añade a la BD:
@@ -271,7 +270,7 @@ public Image convertirImagenVaadin(Pelicula pelicula){
 }
 public String obtenerNombresActores(Pelicula pelicula){
                 String nombreActor ="Reparto: ";
-        List<Actor> actores = pelicula.getEquipos();
+        List<Actor> actores = pelicula.getActores();
         for(Actor actor:actores){
             nombreActor = nombreActor+" "+actor.getNombre()+" "+actor.getApellidos()+",";
         }
@@ -287,18 +286,16 @@ public String obtenerNombresActores(Pelicula pelicula){
         nombreDirector = nombreDirector.substring(0, nombreDirector.length()-1) + ".\n ";
         return nombreDirector;
     }
-    public boolean estaAlquilada(Pelicula pelicula){
+    public boolean estaAlquilada(Pelicula pelicula, Cliente cliente){
         //Establecemos la lista de alquileres:
         List<Alquiler> alquileres = alquilerDAO.listar();
         //establecemos la fecha.
-        fecha = fecha.now();
-        //Establecemos el cliente actual.
-        int idCliente = LoginView.comprobarIdUsuario();
+        fecha = LocalDate.now();
         //Buscaremos en la lista si cumple los requisitos de: 1. la fecha de retorno ser mayor que la actual, 2.el cliente, 3.la película:
         for(Alquiler alquiler : alquileres){
             if(alquiler !=null) {
-                if(alquiler.getIdCliente()==idCliente){
-                    if(alquiler.getIdPelicula()==pelicula.getId()){
+                if(alquiler.getCliente().equals(cliente)){
+                    if(alquiler.getPelicula().equals(pelicula)){
                        if(alquiler.getFechaRetorno().isAfter(fecha)){
                            return true;
                        }

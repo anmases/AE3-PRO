@@ -115,7 +115,7 @@ public class PeliculasView extends VerticalLayout {
 
 
 /////////////////////////////////////////Creación del formulario Añadir/////////////////////////////////////////////////
-        //Información para los actores:
+        //Información para los equipo:
         List<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
         List<Actor> listaActoresRestantes = pelicula.getActoresRestantes();
 
@@ -127,16 +127,16 @@ public class PeliculasView extends VerticalLayout {
 
         //Creamos los MultiSelect:
         HorizontalLayout botones2 = new HorizontalLayout();
-        MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>("Añadir actores a la película");
-        opcionActor.setPlaceholder("Añada los actores");
+        MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>("Añadir equipo a la película");
+        opcionActor.setPlaceholder("Añada los equipo");
         MultiSelectComboBox<Director> opcionDirector = new MultiSelectComboBox<>("Añadir directores a la película");
-        opcionDirector.setPlaceholder("Añada los actores");
+        opcionDirector.setPlaceholder("Añada los equipo");
         opcionActor.setItems(listaActoresRestantes);
         opcionActor.setItemLabelGenerator(actor -> actor.getNombre() + " " + actor.getApellidos());
         opcionDirector.setItems(listaDirectoresRestantes);
         opcionDirector.setItemLabelGenerator(director -> director.getNombre() + " " + director.getApellidos());
 ///////////////////////////////////////Creamos Las tablas//////////////////////////////////////////////////////////////
-        //Tabla de actores:
+        //Tabla de equipo:
         Grid<Actor> tablaActores = new Grid<>(Actor.class, false);
         tablaActores.addColumn(Actor::getNombre).setHeader("Nombre").setAutoWidth(true);
         tablaActores.addColumn(Actor::getApellidos).setHeader("apellidos").setAutoWidth(true);

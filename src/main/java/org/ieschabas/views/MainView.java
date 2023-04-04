@@ -16,10 +16,9 @@ import org.ieschabas.clases.Usuario;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.daos.UsuarioDAO;
-import org.ieschabas.views.actores.ActoresView;
+import org.ieschabas.views.equipo.EquipoView;
 import org.ieschabas.views.alquileres.AlquileresView;
 import org.ieschabas.views.cliente.ClienteView;
-import org.ieschabas.views.directores.DirectoresView;
 import org.ieschabas.views.login.LoginView;
 import org.ieschabas.views.peliculas.PeliculasView;
 import org.ieschabas.views.usuarios.UsuarioView;
@@ -95,8 +94,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         AppNav nav = new AppNav();
 
         nav.addItem(new AppNavItem("Películas", PeliculasView.class, "la la-film"));
-        nav.addItem(new AppNavItem("Actores", ActoresView.class, "la la-user"));
-        nav.addItem(new AppNavItem("Directores", DirectoresView.class, "la la-user-tie"));
+        nav.addItem(new AppNavItem("Actores", EquipoView.class, "la la-user-tie"));
         nav.addItem(new AppNavItem("Alquileres", AlquileresView.class, "la la-file"));
         nav.addItem(new AppNavItem("Usuarios", UsuarioView.class, "la la-users"));
 
