@@ -1,20 +1,20 @@
 package org.ieschabas;
 
+import org.ieschabas.daos.EquipoDAO;
 import org.ieschabas.views.usuarios.UsuarioView;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class ApplicationTest {
-    private final UsuarioView usuarioView;
+    @Autowired
+    private EquipoDAO equipoDAO;
 
-    ApplicationTest(UsuarioView usuarioView) {
-        this.usuarioView = usuarioView;
-    }
 
     @Test
     void prueba() {
-        assertNotNull(usuarioView);
+        assertNotNull(equipoDAO);
     }
 }

@@ -226,9 +226,11 @@ public class ClienteView extends AppLayout {
         Paragraph reparto = new Paragraph(obtenerNombresActores(pelicula));
         Paragraph directores = new Paragraph(obtenerNombresDirectores(pelicula));
         HorizontalLayout caracteristicas = new HorizontalLayout();
+
         Button categoria = new Button("Categoría: "+pelicula.getCategoria().toString());
         Button formato = new Button("Formato: "+pelicula.getFormato().toString());
         Button duracion = new Button("Duración : "+pelicula.getDuracion()+"min");
+
         caracteristicas.add(categoria, formato, duracion);
         HorizontalLayout botones = new HorizontalLayout();
 
@@ -294,8 +296,8 @@ public String obtenerNombresActores(Pelicula pelicula){
         //Buscaremos en la lista si cumple los requisitos de: 1. la fecha de retorno ser mayor que la actual, 2.el cliente, 3.la película:
         for(Alquiler alquiler : alquileres){
             if(alquiler !=null) {
-                if(alquiler.getCliente().equals(cliente)){
-                    if(alquiler.getPelicula().equals(pelicula)){
+                if(alquiler.getCliente().getId() == cliente.getId()){
+                    if(alquiler.getPelicula().getId() == pelicula.getId()){
                        if(alquiler.getFechaRetorno().isAfter(fecha)){
                            return true;
                        }

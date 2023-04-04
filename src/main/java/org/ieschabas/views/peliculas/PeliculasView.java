@@ -357,8 +357,7 @@ public class PeliculasView extends VerticalLayout {
             if (e.getValue() != null) {
                 Categoria categoria = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
-                List<Pelicula> lista;
-                lista = peliculaDao.listar();
+                List<Pelicula> lista = peliculaDao.listar();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;

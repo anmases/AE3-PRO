@@ -1,7 +1,9 @@
 package org.ieschabas.views.equipo;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H3;
@@ -13,15 +15,20 @@ import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.clases.Actor;
 import org.ieschabas.clases.Equipo;
+import org.ieschabas.clases.Pelicula;
 import org.ieschabas.daos.EquipoDAO;
+import org.ieschabas.enums.Puesto;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Vista de los equipo
@@ -89,6 +96,7 @@ public class EquipoView extends VerticalLayout {
         IntegerField textId = new IntegerField("Id");
         binder.forField(textId).bind(Equipo::getId, Equipo::setId);
         textId.setEnabled(false);
+        textId.setVisible(false);
         TextField textNombre = new TextField("Nombre");
         binder.forField(textNombre).bind(Equipo::getNombre, Equipo::setNombre);
         TextField textApellidos = new TextField("Apellidos");
@@ -185,6 +193,31 @@ public class EquipoView extends VerticalLayout {
 
         return formLayout;
     }
+    public Component crearBuscador(){
+        ComboBox<Puesto> buscador = new ComboBox<>("Tipo");
+        buscador.setItems(Puesto.values());
+        buscador.setClearButtonVisible(true);
+        buscador.addValueChangeListener(e->{
+            List<Equipo> listaNueva = new ArrayList<>();
+            if(e.getValue() != null){
+                    if (e.getValue() == Puesto.ACTOR) {
+                        listaNueva.addAll(equipoDao.listarActores());
+                        tabla.setItems(listaNueva);
+                        refrescarTabla();
+                    }
+                    if (e.getValue() == Puesto.DIRECTOR) {
+                        listaNueva.addAll(equipoDao.listarDirectores());
+                        tabla.setItems(listaNueva);
+                        refrescarTabla();
+                    }
+            }
+            else{
+                rellenarTabla();
+                refrescarTabla();
+            }
+        });
+        return buscador;
+    }
 
     /**
      * Crea el menú edición título+formulario
@@ -195,7 +228,7 @@ public class EquipoView extends VerticalLayout {
     public VerticalLayout crearMenuEdicion() {
         VerticalLayout editor = new VerticalLayout();
         H3 titulo = new H3("Editar Actor");
-        editor.add(titulo, crearFormulario());
+        editor.add(crearBuscador(), crearFormulario());
         editor.setPadding(true);
         return editor;
     }
