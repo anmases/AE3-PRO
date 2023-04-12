@@ -40,15 +40,16 @@ import java.io.Serial;
 public class UsuarioView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = -2553389613089065660L;
-    private static final UsuarioDAO usuarioDAO = new UsuarioDAO();
+    private final UsuarioDAO usuarioDAO;
 
     private Grid<Usuario> tabla;
 
     /**
-     * Constructor principal.
-     * @author Antonio Mas Esteve
+     * Constructor principal de la vista de usuarios.
+     * Aquí se inyectan las dependencias de UsuarioDAO mediante SpringBoot IoC
      */
-    public UsuarioView(){
+    public UsuarioView(UsuarioDAO usuarioDAO){
+        this.usuarioDAO = usuarioDAO;
         setSizeFull();
         addClassName("Usuarios-View");
         add(crearTabla());

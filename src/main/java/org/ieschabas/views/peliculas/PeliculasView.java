@@ -30,7 +30,6 @@ import org.ieschabas.clases.Actor;
 import org.ieschabas.clases.Director;
 import org.ieschabas.clases.Equipo;
 import org.ieschabas.clases.Pelicula;
-import org.ieschabas.daos.EquipoDAO;
 import org.ieschabas.daos.PeliculaDAO;
 import org.ieschabas.enums.Categoria;
 import org.ieschabas.enums.Formato;
@@ -38,6 +37,7 @@ import org.ieschabas.enums.Valoracion;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
+import java.io.Serial;
 import java.util.*;
 
 
@@ -51,8 +51,10 @@ import java.util.*;
 @RouteAlias(value = "", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class PeliculasView extends VerticalLayout {
-    private static PeliculaDAO peliculaDao = new PeliculaDAO();
-    private static EquipoDAO equipoDAO = new EquipoDAO();
+    @Serial
+    private static final long serialVersionUID = -1413643061670701677L;
+    private final PeliculaDAO peliculaDao;
+
     private Grid<Pelicula> tabla;
     private Dialog anyadirVentana;
     private VerticalLayout anyadirTabla = new VerticalLayout();
@@ -60,10 +62,11 @@ public class PeliculasView extends VerticalLayout {
 
     /**
      * Constructor principal de la clase Películas.
-     *
+     * Aquí se inyectan las dependencias de PeliculaDAO mediante SpringBoot IoC
      * @author Antonio Mas Esteve
      */
-    public PeliculasView() {
+    public PeliculasView(PeliculaDAO peliculaDao) {
+        this.peliculaDao = peliculaDao;
         setSizeFull();
         addClassName("Peliculas-View");
 

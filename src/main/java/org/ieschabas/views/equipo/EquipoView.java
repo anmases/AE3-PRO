@@ -30,7 +30,6 @@ import java.util.List;
 
 /**
  * Vista de los equipo
- *
  * @author Antonio Mas Esteve
  */
 @PageTitle("Actores")
@@ -43,7 +42,7 @@ public class EquipoView extends VerticalLayout {
 
     /**
      * Constructor de la vista equipo
-     *
+     * Aquí se inyectan las dependencias de EquipoDAO mediante SpringBoot IoC
      */
     public EquipoView(EquipoDAO equipoDao) throws IOException {
         this.equipoDao = equipoDao;

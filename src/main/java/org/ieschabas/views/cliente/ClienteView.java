@@ -42,9 +42,9 @@ public class ClienteView extends AppLayout {
     @Serial
     private static final long serialVersionUID = -5482598882200796969L;
     //DAOS:
-    private static final PeliculaDAO peliculaDAO = new PeliculaDAO();
-    private static final UsuarioDAO usuarioDAO = new UsuarioDAO();
-    private static final AlquilerDAO alquilerDAO = new AlquilerDAO();
+    private final PeliculaDAO peliculaDAO;
+    private final UsuarioDAO usuarioDAO;
+    private final AlquilerDAO alquilerDAO;
 
     private LocalDate fecha;
       private Div vistaPeliculas;
@@ -53,10 +53,14 @@ public class ClienteView extends AppLayout {
 
     /**
      * Constructor principal de la vista Clientes.
-     * @author Antonio Mas Esteve
+     * Aquí se inyectan las dependencias mediante SpringBoot IoC
      */
-    public ClienteView() {
-        Cliente cliente = (Cliente) usuarioDAO.buscar(LoginView.comprobarIdUsuario());
+    public ClienteView(PeliculaDAO peliculaDAO, UsuarioDAO usuarioDAO, AlquilerDAO alquilerDAO) {
+        this.peliculaDAO = peliculaDAO;
+        this.usuarioDAO = usuarioDAO;
+        this.alquilerDAO = alquilerDAO;
+
+        Cliente cliente = (Cliente) this.usuarioDAO.buscar(LoginView.comprobarIdUsuario());
         //setSizeFull();
         addClassName("Cliente-View");
         vistaAlquiler = new HorizontalLayout();

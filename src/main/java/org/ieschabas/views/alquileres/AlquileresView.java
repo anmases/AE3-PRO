@@ -16,6 +16,7 @@ import org.ieschabas.daos.AlquilerDAO;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
+import java.io.Serial;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,14 +29,17 @@ import java.util.List;
 @Route(value = "Alquileres", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class AlquileresView extends VerticalLayout {
+    @Serial
+    private static final long serialVersionUID = -7652397079794250749L;
     private Grid <Alquiler> tabla;
-    private static AlquilerDAO alquilerDao = new AlquilerDAO();
+    private final AlquilerDAO alquilerDao;
 
     /**
      * Constructor principal de la vista de alquileres.
-     *
+     * Aquí se inyectan las dependencias de AlquilerDAO mediante SpringBoot IoC
      */
-    public AlquileresView() {
+    public AlquileresView(AlquilerDAO alquilerDao) {
+        this.alquilerDao = alquilerDao;
         setSizeFull();
         addClassName("Alquileres-View");
       H3 titulo = new H3("Historial de alquileres");
@@ -120,7 +124,7 @@ public class AlquileresView extends VerticalLayout {
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
             List<Alquiler> lista = alquilerDao.listar();
             //Si no está vacío, que reescriba la tabla.
-            if(textAlquilado.isEmpty() == false) {
+            if(!textAlquilado.isEmpty()) {
                 for (Alquiler alquiler : lista) {
                     if (alquiler.getFechaAlquiler().equals(fechaAlquiler)) {
                         listaActualizada.add(alquiler);
@@ -139,7 +143,7 @@ public class AlquileresView extends VerticalLayout {
             ArrayList<Alquiler> listaActualizada = new ArrayList<>();
             List<Alquiler> lista = alquilerDao.listar();
             //Si no está vacío, que reescriba la tabla.
-            if(textDevolucion.isEmpty() == false) {
+            if(!textDevolucion.isEmpty()) {
                 for (Alquiler alquiler : lista) {
                     if (alquiler.getFechaRetorno().equals(fechaDevolucion)) {
                         listaActualizada.add(alquiler);
