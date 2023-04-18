@@ -1,16 +1,33 @@
 package org.ieschabas.views.login;
 
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.formlayout.FormLayout;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.login.LoginForm;
+import com.vaadin.flow.component.login.LoginI18n;
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.EmailField;
+import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
+import org.ieschabas.clases.Cliente;
 import org.ieschabas.clases.Usuario;
+import org.ieschabas.daos.LoginDAO;
+import org.ieschabas.daos.UsuarioDAO;
 import org.ieschabas.login.Login;
+import org.ieschabas.services.ServicioCorreo;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.Properties;
+import java.util.Random;
 
 /**
  * Vista de login
@@ -22,29 +39,91 @@ import java.util.Properties;
 public class LoginView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = 272742160091975700L;
+    @Autowired
+    private UsuarioDAO usuarioDAO;
+    @Autowired
+    private LoginDAO loginDao;
+    @Autowired
+    private ServicioCorreo servicioCorreo;
     private static File archivoConfig = new File("remember.properties");
     private static Properties estado;
     private static boolean logIn;
     private static boolean esAdmin;
     private static int idUsuario;
     private LoginForm vistaLogin;
-    private ArrayList<Usuario> usuarios;
+    private Dialog formularioCliente;
     public LoginView() {
         setAlignItems(Alignment.CENTER);
-      add(vistaLogin());
+      add(crearFormularioCliente(), vistaLogin(), crearUsuarioBoton());
+    }
+    public Button crearUsuarioBoton(){
+        Button nuevoUsuario = new Button("Registrarse");
+        nuevoUsuario.addClickListener(e->formularioCliente.open());
+        return nuevoUsuario;
+    }
+    public Dialog crearFormularioCliente(){
+        formularioCliente = new Dialog();
+        FormLayout formulario = new FormLayout();
+        TextField nombre = new TextField("nombre");
+        TextField apellidos = new TextField("Apellidos");
+        TextField direccion = new TextField("Dirección");
+        EmailField email = new EmailField("Correo electrónico");
+        PasswordField contrasenya = new PasswordField("Contraseña");
+
+        Button guardar = new Button("Guardar");
+        guardar.addClickListener(e->{
+            if(nombre.getValue() != null && apellidos.getValue()!= null && direccion.getValue() != null && email.getValue() != null && contrasenya.getValue() != null) {
+                Usuario cliente = new Cliente(nombre.getValue(), apellidos.getValue(), direccion.getValue(), true, LocalDate.now());
+                usuarioDAO.insertar(cliente);
+                Login login = new Login(cliente, email.getValue(), contrasenya.getValue());
+                if (loginDao.insertar(login)) {
+                    Notification notification = Notification.show("Usuario creado correcamente");
+                    notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                }
+                formularioCliente.removeAll();
+                formularioCliente.close();
+            }
+            else{
+                Notification notification = Notification.show("Todos los campos deben rellenarse");
+                notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+            }
+        });
+        Button cancelar = new Button("Cancelar");
+        cancelar.addClickListener(e->{
+            formularioCliente.removeAll();
+            formularioCliente.close();
+
+        });
+        HorizontalLayout botones = new HorizontalLayout(guardar, cancelar);
+        formulario.add(nombre, apellidos, direccion, email, contrasenya, botones);
+        formularioCliente.add(formulario);
+      return formularioCliente;
     }
 
     public LoginForm vistaLogin(){
-
+        LoginI18n i18n = LoginI18n.createDefault();
+        LoginI18n.Form form = i18n.getForm();
+        form.setTitle("VideoClub PRO");
+        form.setUsername("Correo electrónico");
+        form.setPassword("Contraseña");
+        form.setSubmit("Validar");
+        form.setForgotPassword("¿Olvidó su contraseña?");
+        i18n.setForm(form);
+        //Mensaje de error:
+        LoginI18n.ErrorMessage mensaje = i18n.getErrorMessage();
+        mensaje.setTitle("Email o contraseña incorrectos");
+        mensaje.setMessage("Aviso: Se distingue entre mayúsculas y minúsculas, caracteres y símbolos especiales");
+        i18n.setErrorMessage(mensaje);
         vistaLogin = new LoginForm();
-        vistaLogin.setForgotPasswordButtonVisible(true);
+        vistaLogin.setI18n(i18n);
         vistaLogin.addLoginListener(e-> {
-
             inicioSesion(e.getUsername(),e.getPassword());
             if(!Login.login(e.getUsername(), e.getPassword())){
                 vistaLogin.setError(true);
-            }
-
+            }});
+        vistaLogin.setForgotPasswordButtonVisible(true);
+        vistaLogin.addForgotPasswordListener(event->{
+            recuperarContrasenya();
         });
 
         return vistaLogin;
@@ -147,6 +226,33 @@ public static int comprobarIdUsuario(){
 public static void cerrarSesion(){
         LoginView loginView = new LoginView();
         loginView.cierreSesion();
+}
+
+public void recuperarContrasenya(){
+    Random random = new Random();
+    int numero = random.nextInt(10000);
+    String contrasenya = numero+"";
+    Dialog dialogo = new Dialog();
+    H3 titulo = new H3("Enviar nueva contraseña por Email");
+    EmailField emailCampo = new EmailField("Escriba su Email:");
+    Button send = new Button("Enviar");
+    send.addClickListener(e->{
+        if(loginDao.buscarPorMail(emailCampo.getValue()) != null){
+        if(servicioCorreo.enviar(emailCampo.getValue(), contrasenya)){
+            Login loginNuevo = loginDao.buscarPorMail(emailCampo.getValue());
+            loginNuevo.setContrasenya(contrasenya);
+            loginDao.modificar(loginNuevo);
+            Notification notification = Notification.show("Contraseña cambiada correctamente. Revise su bandeja de entrada");
+            notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+        }
+        }else{
+            Notification notification = Notification.show("El Email no existe");
+            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+        }
+        dialogo.close();
+    });
+    dialogo.add(titulo, emailCampo, send);
+    dialogo.open();
 }
 
 }

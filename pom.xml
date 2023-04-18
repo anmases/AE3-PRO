@@ -125,6 +125,18 @@
             <version>5.1.1</version>
             <scope>test</scope>
         </dependency>
+        <!--Dependencia para el envío de email de Spring-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sendinblue</groupId>
+            <artifactId>sib-api-v3-sdk</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+
 
 
         <!--Registra en ficheros Log información sobre el comportamiento de la aplicación, lo que ayuda a depurar y desarrollar la misma-->

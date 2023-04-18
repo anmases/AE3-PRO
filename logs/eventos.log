@@ -16789,3 +16789,641 @@ java.lang.ClassCastException: class java.util.ArrayList cannot be cast to class 
 05-04-2023 00:02:35 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
 05-04-2023 00:02:35 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
 05-04-2023 00:02:35 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR
+13-04-2023 19:31:38 INFO  UsuarioDAO:38 - buscado el usuario:1
+13-04-2023 19:31:39 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+13-04-2023 19:31:39 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13-04-2023 19:31:39 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+13-04-2023 19:31:39 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+13-04-2023 19:31:39 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+13-04-2023 19:31:39 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+13-04-2023 19:31:39 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+13-04-2023 19:31:39 WARN  RootClass:287 - HHH000038: Composite-id class does not override equals(): org.ieschabas.login.Login
+13-04-2023 19:31:39 WARN  RootClass:290 - HHH000039: Composite-id class does not override hashCode(): org.ieschabas.login.Login
+13-04-2023 19:31:40 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@799a8cd1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13-04-2023 19:31:40 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13-04-2023 19:31:40 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+13-04-2023 19:31:40 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+13-04-2023 19:31:40 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+13-04-2023 19:31:40 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+13-04-2023 19:31:40 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+13-04-2023 19:31:40 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+13-04-2023 19:31:40 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+13-04-2023 19:56:43 INFO  Login:133 - Listar: 0 -- 1 -- antoniomas33@hotmail.com
+13-04-2023 19:56:43 INFO  Login:133 - Listar: 0 -- 2 -- alejandro.palacios@ieschabas.org
+13-04-2023 19:56:43 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+13-04-2023 19:56:44 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13-04-2023 19:56:44 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+13-04-2023 19:56:44 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+13-04-2023 19:56:44 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+13-04-2023 19:56:44 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+13-04-2023 19:56:44 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+13-04-2023 19:56:44 WARN  RootClass:287 - HHH000038: Composite-id class does not override equals(): org.ieschabas.login.Login
+13-04-2023 19:56:44 WARN  RootClass:290 - HHH000039: Composite-id class does not override hashCode(): org.ieschabas.login.Login
+13-04-2023 19:56:44 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@738fbee7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13-04-2023 19:56:44 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13-04-2023 19:56:44 INFO  Login:133 - Listar: 0 -- 1 -- antoniomas33@hotmail.com
+13-04-2023 19:56:44 INFO  Login:133 - Listar: 0 -- 2 -- alejandro.palacios@ieschabas.org
+13-04-2023 19:56:44 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+13-04-2023 19:56:44 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13-04-2023 19:56:44 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+13-04-2023 19:56:44 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+13-04-2023 19:56:44 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+13-04-2023 19:56:44 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+13-04-2023 19:56:44 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+13-04-2023 19:56:45 WARN  RootClass:287 - HHH000038: Composite-id class does not override equals(): org.ieschabas.login.Login
+13-04-2023 19:56:45 WARN  RootClass:290 - HHH000039: Composite-id class does not override hashCode(): org.ieschabas.login.Login
+13-04-2023 19:56:45 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@610c1f96] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13-04-2023 19:56:45 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13-04-2023 19:56:45 INFO  Login:133 - Listar: 0 -- 1 -- antoniomas33@hotmail.com
+13-04-2023 19:56:45 INFO  Login:133 - Listar: 0 -- 2 -- alejandro.palacios@ieschabas.org
+13-04-2023 19:56:45 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+13-04-2023 19:56:45 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13-04-2023 19:56:45 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+13-04-2023 19:56:45 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+13-04-2023 19:56:45 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+13-04-2023 19:56:45 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+13-04-2023 19:56:45 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+13-04-2023 19:56:45 WARN  RootClass:287 - HHH000038: Composite-id class does not override equals(): org.ieschabas.login.Login
+13-04-2023 19:56:45 WARN  RootClass:290 - HHH000039: Composite-id class does not override hashCode(): org.ieschabas.login.Login
+13-04-2023 19:56:45 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6342f7b1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13-04-2023 19:56:46 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13-04-2023 19:56:46 INFO  Login:133 - Listar: 0 -- 1 -- antoniomas33@hotmail.com
+13-04-2023 19:56:46 INFO  Login:133 - Listar: 0 -- 2 -- alejandro.palacios@ieschabas.org
+13-04-2023 19:56:46 INFO  ServerRpcHandler:291 - Ignoring old duplicate message from the client. Expected: 5, got: 4
+13-04-2023 21:53:18 INFO  UsuarioDAO:23 - Añadido el usuario:4
+13-04-2023 21:53:18 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+13-04-2023 21:53:18 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13-04-2023 21:53:18 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+13-04-2023 21:53:18 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+13-04-2023 21:53:18 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+13-04-2023 21:53:18 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+13-04-2023 21:53:18 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+13-04-2023 21:53:18 WARN  RootClass:287 - HHH000038: Composite-id class does not override equals(): org.ieschabas.login.Login
+13-04-2023 21:53:18 WARN  RootClass:290 - HHH000039: Composite-id class does not override hashCode(): org.ieschabas.login.Login
+13-04-2023 21:53:19 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6764b9b2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13-04-2023 21:53:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13-04-2023 21:53:19 ERROR DefaultErrorHandler:44 - 
+javax.persistence.PersistenceException: org.hibernate.PropertyAccessException: Could not set field value [POST_INSERT_INDICATOR] value by reflection : [class org.ieschabas.login.Login.id] setter of org.ieschabas.login.Login.id
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:762)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:742)
+	at org.ieschabas.login.Login.insertar(Login.java:62)
+	at org.ieschabas.views.login.LoginView.lambda$crearFormularioCliente$ed0002d9$1(LoginView.java:68)
+	at com.vaadin.flow.component.ComponentEventBus.fireEventForListener(ComponentEventBus.java:233)
+	at com.vaadin.flow.component.ComponentEventBus.handleDomEvent(ComponentEventBus.java:475)
+	at com.vaadin.flow.component.ComponentEventBus.lambda$addDomTrigger$dd1b7957$1(ComponentEventBus.java:292)
+	at com.vaadin.flow.internal.nodefeature.ElementListenerMap.lambda$fireEvent$2(ElementListenerMap.java:447)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.vaadin.flow.internal.nodefeature.ElementListenerMap.fireEvent(ElementListenerMap.java:447)
+	at com.vaadin.flow.server.communication.rpc.EventRpcHandler.handleNode(EventRpcHandler.java:62)
+	at com.vaadin.flow.server.communication.rpc.AbstractRpcInvocationHandler.handle(AbstractRpcInvocationHandler.java:75)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocationData(ServerRpcHandler.java:438)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.lambda$handleInvocations$1(ServerRpcHandler.java:419)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocations(ServerRpcHandler.java:419)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleRpc(ServerRpcHandler.java:320)
+	at com.vaadin.flow.server.communication.UidlRequestHandler.synchronizedHandleRequest(UidlRequestHandler.java:115)
+	at com.vaadin.flow.server.SynchronizedRequestHandler.handleRequest(SynchronizedRequestHandler.java:40)
+	at com.vaadin.flow.server.VaadinService.handleRequest(VaadinService.java:1564)
+	at com.vaadin.flow.server.VaadinServlet.service(VaadinServlet.java:369)
+	at com.vaadin.flow.spring.SpringServlet.service(SpringServlet.java:106)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:353)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313)
+	at org.springframework.web.servlet.mvc.ServletForwardingController.handleRequestInternal(ServletForwardingController.java:141)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:177)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:51)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.hibernate.PropertyAccessException: Could not set field value [POST_INSERT_INDICATOR] value by reflection : [class org.ieschabas.login.Login.id] setter of org.ieschabas.login.Login.id
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:72)
+	at org.hibernate.mapping.Component$ValueGenerationPlan.execute(Component.java:510)
+	at org.hibernate.id.CompositeNestedGeneratedValueGenerator.generate(CompositeNestedGeneratedValueGenerator.java:112)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:114)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:756)
+	... 71 more
+Caused by: java.lang.IllegalArgumentException: Can not set int field org.ieschabas.clases.EntidadAbstracta.id to org.hibernate.id.IdentifierGeneratorHelper$2
+	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:167)
+	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:171)
+	at java.base/jdk.internal.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:98)
+	at java.base/java.lang.reflect.Field.set(Field.java:799)
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:52)
+	... 79 more
+13-04-2023 23:08:05 INFO  UsuarioDAO:23 - Añadido el usuario:5
+13-04-2023 23:08:05 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+13-04-2023 23:08:05 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13-04-2023 23:08:05 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+13-04-2023 23:08:05 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+13-04-2023 23:08:05 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+13-04-2023 23:08:05 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+13-04-2023 23:08:05 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+13-04-2023 23:08:06 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12c40b48] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13-04-2023 23:08:06 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13-04-2023 23:08:06 INFO  Login:24 - Añadido el Login:4--5--manuel.castro@ieschabas.org
+13-04-2023 23:18:34 INFO  UsuarioDAO:23 - Añadido el usuario:6
+13-04-2023 23:18:34 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+13-04-2023 23:18:35 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13-04-2023 23:18:35 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+13-04-2023 23:18:35 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+13-04-2023 23:18:35 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+13-04-2023 23:18:35 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+13-04-2023 23:18:35 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+13-04-2023 23:18:35 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@c449391] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13-04-2023 23:18:35 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13-04-2023 23:18:35 INFO  Login:24 - Añadido el Login:5--6--ainara@ieschabas.org
+13-04-2023 23:32:26 INFO  UsuarioDAO:23 - Añadido el usuario:7
+13-04-2023 23:32:26 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+13-04-2023 23:32:27 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+13-04-2023 23:32:27 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+13-04-2023 23:32:27 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+13-04-2023 23:32:27 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+13-04-2023 23:32:27 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+13-04-2023 23:32:27 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+13-04-2023 23:32:27 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@265d2deb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13-04-2023 23:32:27 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13-04-2023 23:32:27 INFO  Login:24 - Añadido el Login:6--7--abdon.martinez@ieschabas.org
+18-04-2023 16:51:39 INFO  Login:109 - buscado el login: 1---antoniomas33@hotmail.com
+18-04-2023 16:52:01 ERROR DefaultErrorHandler:44 - 
+org.springframework.mail.MailSendException: Mail server connection failed; nested exception is com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect. Failed messages: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect; message exception details (1) are:
+Failed message 1:
+com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2210)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:722)
+	at javax.mail.Service.connect(Service.java:342)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:518)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:437)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:323)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312)
+	at org.ieschabas.services.ServicioCorreo.enviar(ServicioCorreo.java:19)
+	at org.ieschabas.views.login.LoginView.lambda$recuperarContrasenya$ba19ccfc$1(LoginView.java:241)
+	at com.vaadin.flow.component.ComponentEventBus.fireEventForListener(ComponentEventBus.java:233)
+	at com.vaadin.flow.component.ComponentEventBus.handleDomEvent(ComponentEventBus.java:475)
+	at com.vaadin.flow.component.ComponentEventBus.lambda$addDomTrigger$dd1b7957$1(ComponentEventBus.java:292)
+	at com.vaadin.flow.internal.nodefeature.ElementListenerMap.lambda$fireEvent$2(ElementListenerMap.java:447)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.vaadin.flow.internal.nodefeature.ElementListenerMap.fireEvent(ElementListenerMap.java:447)
+	at com.vaadin.flow.server.communication.rpc.EventRpcHandler.handleNode(EventRpcHandler.java:62)
+	at com.vaadin.flow.server.communication.rpc.AbstractRpcInvocationHandler.handle(AbstractRpcInvocationHandler.java:75)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocationData(ServerRpcHandler.java:438)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.lambda$handleInvocations$1(ServerRpcHandler.java:419)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocations(ServerRpcHandler.java:419)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleRpc(ServerRpcHandler.java:320)
+	at com.vaadin.flow.server.communication.UidlRequestHandler.synchronizedHandleRequest(UidlRequestHandler.java:115)
+	at com.vaadin.flow.server.SynchronizedRequestHandler.handleRequest(SynchronizedRequestHandler.java:40)
+	at com.vaadin.flow.server.VaadinService.handleRequest(VaadinService.java:1564)
+	at com.vaadin.flow.server.VaadinServlet.service(VaadinServlet.java:369)
+	at com.vaadin.flow.spring.SpringServlet.service(SpringServlet.java:106)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:353)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313)
+	at org.springframework.web.servlet.mvc.ServletForwardingController.handleRequestInternal(ServletForwardingController.java:141)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:177)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:51)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/java.net.Socket.connect(Socket.java:583)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:335)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:214)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2160)
+	... 76 more
+18-04-2023 17:38:44 INFO  Login:109 - buscado el login: 1---antoniomas33@hotmail.com
+18-04-2023 17:39:05 ERROR DefaultErrorHandler:44 - 
+org.springframework.mail.MailSendException: Mail server connection failed; nested exception is com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp-relay.sendinblue.com, 587; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect. Failed messages: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp-relay.sendinblue.com, 587; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect; message exception details (1) are:
+Failed message 1:
+com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp-relay.sendinblue.com, 587; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2210)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:722)
+	at javax.mail.Service.connect(Service.java:342)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:518)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:437)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:323)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312)
+	at org.ieschabas.services.ServicioCorreo.enviar(ServicioCorreo.java:19)
+	at org.ieschabas.views.login.LoginView.lambda$recuperarContrasenya$ba19ccfc$1(LoginView.java:241)
+	at com.vaadin.flow.component.ComponentEventBus.fireEventForListener(ComponentEventBus.java:233)
+	at com.vaadin.flow.component.ComponentEventBus.handleDomEvent(ComponentEventBus.java:475)
+	at com.vaadin.flow.component.ComponentEventBus.lambda$addDomTrigger$dd1b7957$1(ComponentEventBus.java:292)
+	at com.vaadin.flow.internal.nodefeature.ElementListenerMap.lambda$fireEvent$2(ElementListenerMap.java:447)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.vaadin.flow.internal.nodefeature.ElementListenerMap.fireEvent(ElementListenerMap.java:447)
+	at com.vaadin.flow.server.communication.rpc.EventRpcHandler.handleNode(EventRpcHandler.java:62)
+	at com.vaadin.flow.server.communication.rpc.AbstractRpcInvocationHandler.handle(AbstractRpcInvocationHandler.java:75)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocationData(ServerRpcHandler.java:438)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.lambda$handleInvocations$1(ServerRpcHandler.java:419)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocations(ServerRpcHandler.java:419)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleRpc(ServerRpcHandler.java:320)
+	at com.vaadin.flow.server.communication.UidlRequestHandler.synchronizedHandleRequest(UidlRequestHandler.java:115)
+	at com.vaadin.flow.server.SynchronizedRequestHandler.handleRequest(SynchronizedRequestHandler.java:40)
+	at com.vaadin.flow.server.VaadinService.handleRequest(VaadinService.java:1564)
+	at com.vaadin.flow.server.VaadinServlet.service(VaadinServlet.java:369)
+	at com.vaadin.flow.spring.SpringServlet.service(SpringServlet.java:106)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:353)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313)
+	at org.springframework.web.servlet.mvc.ServletForwardingController.handleRequestInternal(ServletForwardingController.java:141)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:177)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:51)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/java.net.Socket.connect(Socket.java:583)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:335)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:214)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2160)
+	... 76 more
+18-04-2023 17:45:41 INFO  DevServerOutputTracker:124 - 
+18-04-2023 17:45:41 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+18-04-2023 21:10:30 INFO  Login:109 - buscado el login: 1---antoniomas33@hotmail.com
+18-04-2023 21:10:32 ERROR DefaultErrorHandler:44 - 
+org.springframework.mail.MailAuthenticationException: Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 530 Invalid username or password
+
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:440)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:323)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312)
+	at org.ieschabas.services.ServicioCorreo.enviar(ServicioCorreo.java:19)
+	at org.ieschabas.views.login.LoginView.lambda$recuperarContrasenya$ba19ccfc$1(LoginView.java:241)
+	at com.vaadin.flow.component.ComponentEventBus.fireEventForListener(ComponentEventBus.java:233)
+	at com.vaadin.flow.component.ComponentEventBus.handleDomEvent(ComponentEventBus.java:475)
+	at com.vaadin.flow.component.ComponentEventBus.lambda$addDomTrigger$dd1b7957$1(ComponentEventBus.java:292)
+	at com.vaadin.flow.internal.nodefeature.ElementListenerMap.lambda$fireEvent$2(ElementListenerMap.java:447)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.vaadin.flow.internal.nodefeature.ElementListenerMap.fireEvent(ElementListenerMap.java:447)
+	at com.vaadin.flow.server.communication.rpc.EventRpcHandler.handleNode(EventRpcHandler.java:62)
+	at com.vaadin.flow.server.communication.rpc.AbstractRpcInvocationHandler.handle(AbstractRpcInvocationHandler.java:75)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocationData(ServerRpcHandler.java:438)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.lambda$handleInvocations$1(ServerRpcHandler.java:419)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocations(ServerRpcHandler.java:419)
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleRpc(ServerRpcHandler.java:320)
+	at com.vaadin.flow.server.communication.UidlRequestHandler.synchronizedHandleRequest(UidlRequestHandler.java:115)
+	at com.vaadin.flow.server.SynchronizedRequestHandler.handleRequest(SynchronizedRequestHandler.java:40)
+	at com.vaadin.flow.server.VaadinService.handleRequest(VaadinService.java:1564)
+	at com.vaadin.flow.server.VaadinServlet.service(VaadinServlet.java:369)
+	at com.vaadin.flow.spring.SpringServlet.service(SpringServlet.java:106)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:353)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313)
+	at org.springframework.web.servlet.mvc.ServletForwardingController.handleRequestInternal(ServletForwardingController.java:141)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:177)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:51)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: javax.mail.AuthenticationFailedException: 530 Invalid username or password
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:947)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:858)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:762)
+	at javax.mail.Service.connect(Service.java:342)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:518)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:437)
+	... 72 more
+18-04-2023 21:15:08 INFO  Login:109 - buscado el login: 1---antoniomas33@hotmail.com
+18-04-2023 23:22:39 INFO  Login:109 - buscado el login: 1---antoniomas33@hotmail.com
+18-04-2023 23:22:41 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:22:41 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:22:41 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:22:41 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:22:41 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:22:41 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:22:41 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:22:42 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1ce5b466] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:22:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:22:42 INFO  Login:109 - buscado el login: 1---antoniomas33@hotmail.com
+18-04-2023 23:22:42 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:22:42 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:22:42 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:22:42 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:22:42 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:22:42 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:22:42 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:22:42 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@70b1d6fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:22:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:22:42 INFO  Login:69 - Modificado el Login:1---antoniomas33@hotmail.com
+18-04-2023 23:25:54 INFO  Login:109 - buscado el login: 1---antoniomas33@hotmail.com
+18-04-2023 23:25:56 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:25:56 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:25:56 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:25:56 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:25:56 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:25:56 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:25:56 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:25:56 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@479230e2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:25:57 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:25:57 INFO  Login:109 - buscado el login: 1---antoniomas33@hotmail.com
+18-04-2023 23:25:57 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:25:57 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:25:57 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:25:57 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:25:57 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:25:57 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:25:57 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:25:57 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@51bc7172] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:25:57 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:25:57 INFO  Login:69 - Modificado el Login:1---antoniomas33@hotmail.com
+18-04-2023 23:26:41 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:26:41 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:26:41 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:26:41 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:26:41 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:26:41 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:26:41 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:26:42 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1ef4ee54] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:26:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 1 -- 1 -- antoniomas33@hotmail.com
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 2 -- 2 -- alejandro.palacios@ieschabas.org
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 3 -- 4 -- aaaa@bbbb.com
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 4 -- 5 -- manuel.castro@ieschabas.org
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 5 -- 6 -- ainara@ieschabas.org
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 6 -- 7 -- abdon.martinez@ieschabas.org
+18-04-2023 23:26:42 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:26:42 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:26:42 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:26:42 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:26:42 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:26:42 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:26:42 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:26:42 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4bb8e7a7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:26:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 1 -- 1 -- antoniomas33@hotmail.com
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 2 -- 2 -- alejandro.palacios@ieschabas.org
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 3 -- 4 -- aaaa@bbbb.com
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 4 -- 5 -- manuel.castro@ieschabas.org
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 5 -- 6 -- ainara@ieschabas.org
+18-04-2023 23:26:42 INFO  Login:92 - Listar: 6 -- 7 -- abdon.martinez@ieschabas.org
+18-04-2023 23:26:42 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:26:43 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:26:43 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:26:43 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:26:43 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:26:43 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:26:43 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:26:43 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3db15fe5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:26:43 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:26:43 INFO  UsuarioDAO:38 - buscado el usuario:1
+18-04-2023 23:26:43 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:26:43 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:26:43 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:26:43 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:26:43 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:26:43 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:26:43 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:26:43 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4bbb43f6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:26:43 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:26:43 INFO  Login:92 - Listar: 1 -- 1 -- antoniomas33@hotmail.com
+18-04-2023 23:26:43 INFO  Login:92 - Listar: 2 -- 2 -- alejandro.palacios@ieschabas.org
+18-04-2023 23:26:43 INFO  Login:92 - Listar: 3 -- 4 -- aaaa@bbbb.com
+18-04-2023 23:26:43 INFO  Login:92 - Listar: 4 -- 5 -- manuel.castro@ieschabas.org
+18-04-2023 23:26:43 INFO  Login:92 - Listar: 5 -- 6 -- ainara@ieschabas.org
+18-04-2023 23:26:43 INFO  Login:92 - Listar: 6 -- 7 -- abdon.martinez@ieschabas.org
+18-04-2023 23:26:43 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:26:44 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:26:44 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:26:44 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:26:44 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:26:44 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:26:44 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:26:44 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@56bc359f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:26:44 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:26:44 INFO  UsuarioDAO:38 - buscado el usuario:1
+18-04-2023 23:26:44 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:26:44 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:26:44 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:26:44 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:26:44 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:26:44 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:26:44 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:26:44 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4419e4a1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:26:44 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:26:44 INFO  Login:92 - Listar: 1 -- 1 -- antoniomas33@hotmail.com
+18-04-2023 23:26:44 INFO  Login:92 - Listar: 2 -- 2 -- alejandro.palacios@ieschabas.org
+18-04-2023 23:26:44 INFO  Login:92 - Listar: 3 -- 4 -- aaaa@bbbb.com
+18-04-2023 23:26:44 INFO  Login:92 - Listar: 4 -- 5 -- manuel.castro@ieschabas.org
+18-04-2023 23:26:44 INFO  Login:92 - Listar: 5 -- 6 -- ainara@ieschabas.org
+18-04-2023 23:26:44 INFO  Login:92 - Listar: 6 -- 7 -- abdon.martinez@ieschabas.org
+18-04-2023 23:26:46 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:26:47 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:26:47 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:26:47 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:26:47 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:26:47 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:26:47 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:26:47 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4f86e6e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:26:47 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:26:47 INFO  UsuarioDAO:38 - buscado el usuario:1
+18-04-2023 23:26:47 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+18-04-2023 23:26:47 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18-04-2023 23:26:47 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+18-04-2023 23:26:47 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+18-04-2023 23:26:47 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+18-04-2023 23:26:47 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+18-04-2023 23:26:47 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+18-04-2023 23:26:48 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@508bed0a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18-04-2023 23:26:48 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
