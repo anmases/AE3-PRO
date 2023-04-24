@@ -96,7 +96,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         AppNav nav = new AppNav();
 
         nav.addItem(new AppNavItem("Películas", PeliculasView.class, "la la-film"));
-        nav.addItem(new AppNavItem("Actores", EquipoView.class, "la la-user-tie"));
+        nav.addItem(new AppNavItem("Equipo", EquipoView.class, "la la-user-tie"));
         nav.addItem(new AppNavItem("Alquileres", AlquileresView.class, "la la-file"));
         nav.addItem(new AppNavItem("Usuarios", UsuarioView.class, "la la-users"));
 
@@ -134,13 +134,13 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-        if(LoginView.comprobarLogIn()){
+    /**    if(LoginView.comprobarLogIn()){
             if(!LoginView.comprobarAdmin()){
                 event.rerouteTo(ClienteView.class);
             }
 
         }else {
             event.rerouteTo(LoginView.class);
-        }
+        }**/
     }
 }

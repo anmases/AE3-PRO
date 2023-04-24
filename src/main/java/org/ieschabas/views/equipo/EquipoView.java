@@ -32,8 +32,8 @@ import java.util.List;
  * Vista de los equipo
  * @author Antonio Mas Esteve
  */
-@PageTitle("Actores")
-@Route(value = "Actores", layout = MainView.class)
+@PageTitle("Equipo")
+@Route(value = "equipo", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class EquipoView extends VerticalLayout {
     private final EquipoDAO equipoDao;

@@ -117,11 +117,11 @@ public class LoginView extends VerticalLayout {
         vistaLogin = new LoginForm();
         vistaLogin.setAction("login");
         vistaLogin.setI18n(i18n);
-        vistaLogin.addLoginListener(e-> {
+       /** vistaLogin.addLoginListener(e-> {
             inicioSesion(e.getUsername(),e.getPassword());
             if(!Login.login(e.getUsername(), e.getPassword())){
                 vistaLogin.setError(true);
-            }});
+            }});**/
         vistaLogin.setForgotPasswordButtonVisible(true);
         vistaLogin.addForgotPasswordListener(event->{
             recuperarContrasenya();
