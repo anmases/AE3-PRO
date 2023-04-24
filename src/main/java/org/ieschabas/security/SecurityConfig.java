@@ -32,12 +32,12 @@ public class SecurityConfig extends VaadinWebSecurity {
     }
     @Bean
     public UserDetailsService users(){
-       // List<Usuario> usuarios = usuarioDao.listar();
+        List<Usuario> usuarios = usuarioDao.listar();
         List<UserDetails> users = new ArrayList<>();
-        UserDetails user1 = User.withUsername("anmases").password("{noop}0385").roles("ADMIN").build();
-        UserDetails user2 = User.withUsername("alex").password("{noop}0000").roles("USER").build();
-        users.add(user1);
-        users.add(user2);
-        return new InMemoryUserDetailsManager(users);
+        for(Usuario usuario: usuarios) {
+            UserDetails user = User.withUsername(usuario.getEmail()).password("{noop}"+usuario.getContrasenya()).roles(usuario.getRol().toString()).build();
+            users.add(user);
+        }
+      return new InMemoryUserDetailsManager(users);
     }
 }
