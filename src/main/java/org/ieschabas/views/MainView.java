@@ -16,7 +16,9 @@ import org.ieschabas.clases.Usuario;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.daos.UsuarioDAO;
+import org.ieschabas.enums.Rol;
 import org.ieschabas.security.SecurityService;
+import org.ieschabas.views.cliente.ClienteView;
 import org.ieschabas.views.equipo.EquipoView;
 import org.ieschabas.views.alquileres.AlquileresView;
 import org.ieschabas.views.peliculas.PeliculasView;
@@ -30,6 +32,7 @@ import java.io.Serial;
  * The main view is a top-level placeholder for other views.
  */
 @Route("main")
+@RouteAlias("")
 @PermitAll
 public class MainView extends AppLayout implements BeforeEnterObserver {
     @Serial
@@ -48,7 +51,8 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
     }
 
     /**
-     * Crea el Header
+     * Crea el Header de la página
+     * @author Antonio Mas Esteve
      */
     private void addHeaderContent() {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -60,13 +64,9 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         VerticalLayout header = new VerticalLayout();
         HorizontalLayout usuario = new HorizontalLayout();
         header.setWidthFull();
-/**************************************************************************************************/
+
 //Lógica de comprobación de usuario:
-        int id = 1;
 
-
-
-        if(id != 0) {
             Usuario user = securityService.getUsuarioAutenticado();
             Icon admin = new Icon(VaadinIcon.USER_STAR);
             H4 nombreUsuario = new H4(user.getNombre() + " " + user.getApellidos());
@@ -75,10 +75,8 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
             usuario.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
             usuario.add(admin, nombreUsuario, logout);
             header.add(usuario);
-/*************************************************************************************************************/
 //Lógica de cierre de sesión:
             logout.addClickListener(e -> securityService.cerrarSesion() );
-        }
         addToNavbar(true, toggle,viewTitle, header);
     }
 
@@ -122,7 +120,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
     }
 
     /**
-     *
+     * Método after navigation.
      */
     @Override
     protected void afterNavigation() {
@@ -138,16 +136,17 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         PageTitle title = getContent().getClass().getAnnotation(PageTitle.class);
         return title == null ? "" : title.value();
     }
-
+    /**
+     * Método que redirige antes de entrar en la vista si el usuario es otro.
+     * @author Antonio Mas Esteve
+     */
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-    /**    if(LoginView.comprobarLogIn()){
-            if(!LoginView.comprobarAdmin()){
-                event.rerouteTo(ClienteView.class);
-            }
+        if(securityService.getUsuarioAutenticado().getRol() == Rol.ADMIN){
+            event.rerouteTo(PeliculasView.class);
+        } else if (securityService.getUsuarioAutenticado().getRol() == Rol.USER) {
+            event.rerouteTo(ClienteView.class);
+        }
 
-        }else {
-            event.rerouteTo(LoginView.class);
-        }**/
     }
 }

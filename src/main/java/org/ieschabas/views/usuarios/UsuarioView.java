@@ -35,7 +35,7 @@ import java.io.Serial;
  * @author Antonio Mas Esteve
  */
 @PageTitle("Usuarios")
-@Route(value = "Usuarios", layout = MainView.class)
+@Route(value = "usuarios", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class UsuarioView extends VerticalLayout {
     @Serial

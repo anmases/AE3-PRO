@@ -20459,3 +20459,1325 @@ Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
 24-04-2023 15:51:33 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
 24-04-2023 15:51:33 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
 24-04-2023 15:51:33 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 17:30:43 INFO  UsuarioDAO:89 - no hay datos
+24-04-2023 17:30:43 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a1216b0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c4404dd, org.springframework.security.web.context.SecurityContextPersistenceFilter@167da81d, org.springframework.security.web.header.HeaderWriterFilter@656dc20f, org.springframework.security.web.csrf.CsrfFilter@43c25e89, org.springframework.security.web.authentication.logout.LogoutFilter@64934acd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@75b57ecd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1fce17b8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@190677c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76a2db3f, org.springframework.security.web.session.SessionManagementFilter@37b0a724, org.springframework.security.web.access.ExceptionTranslationFilter@6d821475, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@439acac0]
+24-04-2023 17:30:44 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 17:30:44 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 17:30:44 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 17:30:44 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 17:30:44 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 17:30:44 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 17:30:44 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 17:30:44 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 17:30:44 INFO  Application:61 - Started Application in 16.215 seconds (JVM running for 19.097)
+24-04-2023 17:30:44 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 17:30:46 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 17:30:46 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 17:30:46 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+24-04-2023 17:30:47 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [119] milliseconds.
+24-04-2023 17:30:47 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 17:31:13 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 17:31:18 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 17:31:19 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:31:19 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 5757 ms
+24-04-2023 17:31:19 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:31:19 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:53505/VAADIN/
+24-04-2023 17:31:19 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 35210ms
+24-04-2023 17:31:27 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:31:27 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 17:32:25 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:32:26 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:32:26 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:32:26 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:32:26 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:32:26 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:32:26 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:32:26 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1c60bcf9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:32:26 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:32:26 INFO  UsuarioDAO:23 - Añadido el usuario:4
+24-04-2023 17:35:30 INFO  UsuarioDAO:89 - no hay datos
+24-04-2023 17:35:30 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@b079fa2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25198ead, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b71ccf2, org.springframework.security.web.header.HeaderWriterFilter@5ac3c6cd, org.springframework.security.web.csrf.CsrfFilter@6d398593, org.springframework.security.web.authentication.logout.LogoutFilter@12e5f7cb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3287cf03, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23e0ef68, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7207cb8b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b52f723, org.springframework.security.web.session.SessionManagementFilter@3c2b7322, org.springframework.security.web.access.ExceptionTranslationFilter@248227db, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@62a5e4c7]
+24-04-2023 17:35:31 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 17:35:31 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 17:35:31 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 17:35:31 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 17:35:31 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 17:35:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 17:35:31 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 17:35:31 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 17:35:32 INFO  Application:61 - Started Application in 13.868 seconds (JVM running for 15.866)
+24-04-2023 17:35:32 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 17:35:33 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 17:35:33 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 17:35:33 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+24-04-2023 17:35:34 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [146] milliseconds.
+24-04-2023 17:35:34 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 17:35:58 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 17:36:02 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 17:36:03 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:36:03 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 5124 ms
+24-04-2023 17:36:03 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:36:03 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 31591ms
+24-04-2023 17:36:03 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:53617/VAADIN/
+24-04-2023 17:36:14 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:36:14 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 17:37:10 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:37:10 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:37:10 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:37:10 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:37:10 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:37:10 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:37:10 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:37:11 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@170e568d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:37:11 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:37:11 INFO  UsuarioDAO:23 - Añadido el usuario:1
+24-04-2023 17:47:11 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 17:47:11 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ccf1819, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a6ac443, org.springframework.security.web.context.SecurityContextPersistenceFilter@62a9d176, org.springframework.security.web.header.HeaderWriterFilter@4ba04fb4, org.springframework.security.web.csrf.CsrfFilter@749ebc39, org.springframework.security.web.authentication.logout.LogoutFilter@30741e9b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7d7f49f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62ba4c62, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19fdcaba, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ab45d66, org.springframework.security.web.session.SessionManagementFilter@59294f29, org.springframework.security.web.access.ExceptionTranslationFilter@6af447b6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b6a20ce]
+24-04-2023 17:47:12 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 17:47:12 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 17:47:12 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 17:47:12 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 17:47:12 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 17:47:12 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 17:47:12 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 17:47:12 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 17:47:12 INFO  Application:61 - Started Application in 12.828 seconds (JVM running for 14.473)
+24-04-2023 17:47:12 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 17:47:14 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 17:47:14 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 17:47:14 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+24-04-2023 17:47:14 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [151] milliseconds.
+24-04-2023 17:47:14 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 17:47:38 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 17:47:42 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 17:47:43 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:47:43 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 4843 ms
+24-04-2023 17:47:43 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:47:43 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:53802/VAADIN/
+24-04-2023 17:47:43 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 30859ms
+24-04-2023 17:47:54 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:47:54 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 17:48:39 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:48:39 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:48:39 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:48:39 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:48:39 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:48:39 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:48:39 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:48:39 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4d700dd] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:48:39 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:48:39 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 17:48:39 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 17:48:39 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:48:40 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:48:40 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:48:40 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:48:40 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:48:40 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:48:40 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:48:40 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3dab6f6c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:48:40 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:48:40 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 17:48:40 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 17:48:40 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 17:48:40 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 17:48:40 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 17:48:40 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 17:48:40 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 17:49:26 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:49:26 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:49:26 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:49:26 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:49:26 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:49:26 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:49:26 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:49:26 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@32e44aa2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:49:26 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 1 -- Francis -- Ford Coppola -- 1939 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 2 -- Stanley -- Kubrick -- 1928 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 3 -- Billy -- Wilder -- 1906 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 4 -- John -- Carpenter -- 1948 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 5 -- James -- Cameron -- 1954 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 6 -- Pedro -- Almodovar -- 1949 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 7 -- Martin -- Scorsese -- 1942 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 8 -- Quentin -- Tarantino -- 1963 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 9 -- Woody -- Allen -- 1935 -- DIRECTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 10 -- Marlon -- Brandon -- 1924 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 11 -- Al -- Pacino -- 1940 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 12 -- Robert -- Duvall -- 1931 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 13 -- James -- Cann -- 1940 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 14 -- Diane -- Keaton -- 1946 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 15 -- Robert -- de Niro -- 1943 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 16 -- Kirk -- Douglas -- 1916 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 17 -- Ralph -- Meeker -- 1920 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 18 -- Adolphe -- Menjou -- 1890 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 19 -- Jack -- Lemmon -- 1925 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 20 -- Walter -- Matthau -- 1920 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 21 -- Susan -- Sarandon -- 1946 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
+24-04-2023 17:49:26 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR
+24-04-2023 17:49:28 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:49:28 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:49:28 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:49:28 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:49:28 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:49:28 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:49:29 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:49:29 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3f071c49] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:49:29 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:49:29 INFO  AlquilerDAO:88 - no hay datos
+24-04-2023 17:49:31 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:49:31 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:49:31 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:49:31 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:49:31 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:49:31 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:49:31 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:49:31 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6ee8537f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:49:31 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:49:31 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 17:50:52 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:50:52 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:50:52 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:50:52 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:50:52 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:50:52 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:50:52 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:50:52 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3510ad2b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:50:53 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:50:53 INFO  UsuarioDAO:23 - Añadido el usuario:2
+24-04-2023 17:52:36 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 17:52:36 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 17:52:37 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a6ac443, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ab45d66, org.springframework.security.web.context.SecurityContextPersistenceFilter@71ea9a0d, org.springframework.security.web.header.HeaderWriterFilter@11a8735d, org.springframework.security.web.csrf.CsrfFilter@7dc6ce7d, org.springframework.security.web.authentication.logout.LogoutFilter@1435b17, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@70d4c4ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19fdcaba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35738a92, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64236be, org.springframework.security.web.session.SessionManagementFilter@795d43d9, org.springframework.security.web.access.ExceptionTranslationFilter@47cce306, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79296ce0]
+24-04-2023 17:52:38 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 17:52:38 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 17:52:38 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 17:52:38 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 17:52:38 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 17:52:38 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 17:52:38 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 17:52:38 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 17:52:38 INFO  Application:61 - Started Application in 14.178 seconds (JVM running for 15.723)
+24-04-2023 17:52:39 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 17:52:41 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 17:52:41 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 17:52:41 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+24-04-2023 17:52:41 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [158] milliseconds.
+24-04-2023 17:52:41 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 17:53:05 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 17:53:09 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 17:53:10 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:53:10 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 4547 ms
+24-04-2023 17:53:10 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:53:10 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 31163ms
+24-04-2023 17:53:10 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:54010/VAADIN/
+24-04-2023 17:53:16 INFO  DevServerOutputTracker:124 - 
+24-04-2023 17:53:16 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 17:54:49 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:54:49 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:54:49 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:54:49 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:54:49 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:54:49 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:54:49 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:54:49 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1b8bfbba] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:54:50 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:54:50 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 17:54:50 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 17:54:50 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 17:54:58 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:54:58 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:54:58 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:54:58 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:54:58 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:54:58 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:54:58 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:54:58 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1b4d97ce] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:54:59 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:54:59 INFO  UsuarioDAO:39 - buscado el usuario:2
+24-04-2023 17:54:59 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 17:54:59 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 17:54:59 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 17:54:59 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 17:54:59 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 17:54:59 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 17:54:59 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 17:54:59 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7114980c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 17:54:59 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 17:54:59 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 17:54:59 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 17:54:59 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 17:54:59 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 17:54:59 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 17:54:59 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 17:54:59 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 17:59:39 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 17:59:39 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 17:59:40 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@48028e11, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36117f63, org.springframework.security.web.context.SecurityContextPersistenceFilter@4221663d, org.springframework.security.web.header.HeaderWriterFilter@40f53ea, org.springframework.security.web.csrf.CsrfFilter@39384ba6, org.springframework.security.web.authentication.logout.LogoutFilter@3ad142f0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@547d3e8e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e24af83, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34329e03, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1227862a, org.springframework.security.web.session.SessionManagementFilter@5c4404dd, org.springframework.security.web.access.ExceptionTranslationFilter@591be976, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@324c3ed5]
+24-04-2023 17:59:40 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 17:59:40 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 17:59:40 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 17:59:40 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 17:59:40 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 17:59:40 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 17:59:41 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 17:59:41 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 17:59:41 INFO  Application:61 - Started Application in 13.939 seconds (JVM running for 17.099)
+24-04-2023 17:59:41 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 17:59:41 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 17:59:41 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+24-04-2023 17:59:41 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 17:59:42 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [168] milliseconds.
+24-04-2023 17:59:43 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 18:00:12 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 18:00:16 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 18:00:17 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:00:17 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 5270 ms
+24-04-2023 18:00:17 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:00:17 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:54378/VAADIN/
+24-04-2023 18:00:17 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 36162ms
+24-04-2023 18:00:27 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:00:27 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 18:01:16 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:01:16 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:01:16 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:01:16 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:01:16 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:01:16 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:01:16 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:01:16 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@493ddba6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:01:16 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:01:16 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:01:16 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:01:16 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 18:01:16 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:01:16 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:01:16 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:01:16 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:01:16 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:01:16 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:01:17 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:01:17 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@430a3a26] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:01:17 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:01:17 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 18:01:17 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 18:01:17 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 18:01:17 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 18:01:17 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 18:01:17 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 18:01:17 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 18:13:47 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:13:47 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:13:47 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@102bce96, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3759ea4d, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ad142f0, org.springframework.security.web.header.HeaderWriterFilter@7c8d382e, org.springframework.security.web.csrf.CsrfFilter@20b56542, org.springframework.security.web.authentication.logout.LogoutFilter@7dc6ce7d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7acb0a44, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1098c1b1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4bba628, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c75f3a8, org.springframework.security.web.session.SessionManagementFilter@c3df740, org.springframework.security.web.access.ExceptionTranslationFilter@26abee34, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2845fd12]
+24-04-2023 18:13:48 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 18:13:48 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 18:13:48 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 18:13:48 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 18:13:48 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 18:13:48 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 18:13:48 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 18:13:48 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 18:13:48 INFO  Application:61 - Started Application in 13.745 seconds (JVM running for 17.219)
+24-04-2023 18:13:48 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 18:13:50 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 18:13:50 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 18:13:50 INFO  DispatcherServlet:547 - Completed initialization in 1 ms
+24-04-2023 18:13:50 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [183] milliseconds.
+24-04-2023 18:13:50 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 18:14:10 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 18:14:15 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 18:14:16 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:14:16 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 5029 ms
+24-04-2023 18:14:16 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:14:16 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 27363ms
+24-04-2023 18:14:16 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:56206/VAADIN/
+24-04-2023 18:14:26 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:14:26 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 18:26:23 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:26:23 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:26:23 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@547d3e8e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f823df7, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a1216b0, org.springframework.security.web.header.HeaderWriterFilter@35ec675e, org.springframework.security.web.csrf.CsrfFilter@774b798, org.springframework.security.web.authentication.logout.LogoutFilter@751e7d99, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7f5ba1bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76a2db3f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8cc5602, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4afdcdf6, org.springframework.security.web.session.SessionManagementFilter@591be976, org.springframework.security.web.access.ExceptionTranslationFilter@7d5a3b06, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@98dc042]
+24-04-2023 18:26:24 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 18:26:24 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 18:26:24 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 18:26:24 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 18:26:24 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 18:26:24 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 18:26:24 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 18:26:25 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 18:26:25 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 18:26:25 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 18:26:25 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 18:26:25 INFO  Application:61 - Started Application in 16.12 seconds (JVM running for 18.286)
+24-04-2023 18:26:25 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 18:26:25 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 18:26:25 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 18:26:25 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+24-04-2023 18:26:27 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 18:26:55 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 18:27:00 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 18:27:01 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:27:01 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 6078 ms
+24-04-2023 18:27:01 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:27:01 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 36003ms
+24-04-2023 18:27:01 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:56408/VAADIN/
+24-04-2023 18:27:08 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:27:08 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 18:28:10 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:28:10 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:28:10 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:28:10 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:28:10 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:28:10 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:28:10 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:28:10 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6007d173] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:28:11 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:28:11 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:28:11 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:28:11 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:28:11 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:28:11 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:28:11 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:28:11 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:28:11 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:28:11 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:28:11 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:28:11 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@21915957] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:28:11 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:28:11 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:28:11 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:28:11 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:28:12 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:28:12 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:28:12 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:28:12 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:28:12 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:28:12 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:28:12 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:28:12 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@616e4115] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:28:12 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:28:12 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 18:28:12 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 18:28:12 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 18:28:12 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 18:28:12 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 18:28:12 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 18:28:12 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 18:29:34 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:29:34 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:29:34 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:29:34 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:29:34 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:29:34 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:29:34 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:29:35 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6840625e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:29:35 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:29:35 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:29:35 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:29:35 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 18:29:35 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:29:35 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:29:35 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:29:35 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:29:35 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:29:35 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:29:35 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:29:35 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4d389323] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:29:35 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:29:35 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:29:35 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:29:35 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 18:29:35 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:29:35 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:29:35 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:29:35 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:29:35 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:29:35 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:29:35 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:29:35 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@41ab2b93] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:29:36 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:29:36 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:29:36 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:29:36 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 18:29:36 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:29:36 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:29:36 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:29:36 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:29:36 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:29:36 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:29:36 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:29:36 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@d2954af] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:29:36 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:29:36 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:29:36 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:29:36 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 18:29:36 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:29:36 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:29:36 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:29:36 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:29:36 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:29:36 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:29:36 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:29:37 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@c3c9de8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:29:37 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:29:37 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:29:37 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:29:37 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 18:29:37 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:29:37 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:29:37 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:29:37 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:29:37 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:29:37 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:29:37 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:29:37 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@18d7d16f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:29:37 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:29:37 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 18:29:37 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 18:29:37 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 18:29:37 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 18:29:37 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 18:29:37 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 18:29:37 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 18:41:11 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:41:11 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:41:11 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1bf8ea44, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ccf1819, org.springframework.security.web.context.SecurityContextPersistenceFilter@30c96ea9, org.springframework.security.web.header.HeaderWriterFilter@47cce306, org.springframework.security.web.csrf.CsrfFilter@751eb9a9, org.springframework.security.web.authentication.logout.LogoutFilter@6298dafb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4f03729f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71ea9a0d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62ba4c62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a6ac443, org.springframework.security.web.session.SessionManagementFilter@11a8735d, org.springframework.security.web.access.ExceptionTranslationFilter@37edb7fa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79beb8a0]
+24-04-2023 18:41:13 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 18:41:13 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 18:41:13 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 18:41:13 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 18:41:13 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 18:41:13 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 18:41:14 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 18:41:14 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 18:41:14 INFO  Application:61 - Started Application in 20.323 seconds (JVM running for 22.336)
+24-04-2023 18:41:14 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 18:41:17 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 18:41:17 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 18:41:17 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+24-04-2023 18:41:17 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [155] milliseconds.
+24-04-2023 18:41:17 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 18:41:40 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 18:41:45 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 18:41:46 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:41:46 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 6215 ms
+24-04-2023 18:41:46 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:41:46 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:56766/VAADIN/
+24-04-2023 18:41:46 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 32067ms
+24-04-2023 18:41:56 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:41:56 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 18:43:09 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:09 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:09 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:09 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:09 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:09 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:09 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:10 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4c29bae8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:10 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:10 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:43:10 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:43:10 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 18:43:10 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:10 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:10 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:10 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:10 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:10 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:10 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:10 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6361a93c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:11 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:11 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 18:43:11 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 18:43:11 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 18:43:11 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 18:43:11 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 18:43:11 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 18:43:11 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 18:43:47 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:47 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:47 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:47 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:47 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:47 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:47 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:47 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@a925192] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:48 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:48 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:43:48 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:43:48 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:43:48 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:48 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:48 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:48 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:48 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:48 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:48 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:48 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a068fa1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:48 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:48 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:43:48 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:43:48 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:43:50 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:50 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:50 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:50 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:50 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:50 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:50 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:51 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c75415f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:51 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:51 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:43:51 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:43:51 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:43:51 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:51 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:51 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:51 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:51 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:51 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:51 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:51 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@294ac901] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:52 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:52 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 18:43:52 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 18:43:52 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 18:43:52 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 18:43:52 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 18:43:52 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 18:43:52 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 18:43:55 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:55 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:55 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:55 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:55 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:55 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:55 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:55 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4b8facc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:55 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:55 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:43:55 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:43:55 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:43:55 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:55 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:56 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:56 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:56 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:56 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:56 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:56 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@483a0671] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:56 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 1 -- Francis -- Ford Coppola -- 1939 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 2 -- Stanley -- Kubrick -- 1928 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 3 -- Billy -- Wilder -- 1906 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 4 -- John -- Carpenter -- 1948 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 5 -- James -- Cameron -- 1954 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 6 -- Pedro -- Almodovar -- 1949 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 7 -- Martin -- Scorsese -- 1942 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 8 -- Quentin -- Tarantino -- 1963 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 9 -- Woody -- Allen -- 1935 -- DIRECTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 10 -- Marlon -- Brandon -- 1924 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 11 -- Al -- Pacino -- 1940 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 12 -- Robert -- Duvall -- 1931 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 13 -- James -- Cann -- 1940 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 14 -- Diane -- Keaton -- 1946 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 15 -- Robert -- de Niro -- 1943 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 16 -- Kirk -- Douglas -- 1916 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 17 -- Ralph -- Meeker -- 1920 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 18 -- Adolphe -- Menjou -- 1890 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 19 -- Jack -- Lemmon -- 1925 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 20 -- Walter -- Matthau -- 1920 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 21 -- Susan -- Sarandon -- 1946 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
+24-04-2023 18:43:56 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR
+24-04-2023 18:43:58 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:58 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:58 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:58 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:58 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:58 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:58 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:58 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@13649ce3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:58 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:58 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:43:58 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:43:58 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:43:58 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:43:58 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:43:58 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:43:58 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:43:58 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:43:58 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:43:58 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:43:59 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@166c2e2a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:43:59 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:43:59 INFO  AlquilerDAO:88 - no hay datos
+24-04-2023 18:44:00 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:44:00 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:44:00 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:44:00 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:44:00 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:44:00 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:44:00 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:44:00 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@36980640] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:44:00 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:44:00 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:44:00 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:44:00 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:44:01 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:44:01 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:44:01 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:44:01 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:44:01 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:44:01 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:44:01 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:44:01 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@47bd06e4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:44:01 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:44:01 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:44:01 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:44:04 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:44:04 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:44:04 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:44:04 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:44:04 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:44:04 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:44:04 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:44:05 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@137d6372] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:44:05 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:44:05 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:44:05 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:44:05 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:44:05 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:44:05 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:44:05 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:44:05 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:44:05 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:44:05 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:44:05 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:44:05 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7ee769c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:44:05 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:44:05 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 18:44:05 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 18:44:05 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 18:44:05 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 18:44:05 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 18:44:05 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 18:44:05 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 18:48:34 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:48:34 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:48:34 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4fbbfea6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1bf8ea44, org.springframework.security.web.context.SecurityContextPersistenceFilter@795d43d9, org.springframework.security.web.header.HeaderWriterFilter@6af447b6, org.springframework.security.web.csrf.CsrfFilter@60f9fb56, org.springframework.security.web.authentication.logout.LogoutFilter@10374cae, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@15b54cb7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62a9d176, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71ea9a0d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ccf1819, org.springframework.security.web.session.SessionManagementFilter@4ba04fb4, org.springframework.security.web.access.ExceptionTranslationFilter@980ac1f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@362ad436]
+24-04-2023 18:48:35 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 18:48:35 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 18:48:35 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 18:48:35 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 18:48:35 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 18:48:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 18:48:35 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 18:48:35 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 18:48:35 INFO  Application:61 - Started Application in 18.343 seconds (JVM running for 20.108)
+24-04-2023 18:48:36 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 18:48:38 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 18:48:38 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 18:48:38 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+24-04-2023 18:48:38 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [133] milliseconds.
+24-04-2023 18:48:39 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 18:49:00 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 18:49:04 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 18:49:05 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:49:05 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 5094 ms
+24-04-2023 18:49:05 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:49:05 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 29436ms
+24-04-2023 18:49:05 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:56989/VAADIN/
+24-04-2023 18:49:13 INFO  DevServerOutputTracker:124 - 
+24-04-2023 18:49:13 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 18:53:40 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:53:40 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:53:40 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:53:40 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:53:40 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:53:40 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:53:40 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:53:40 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@369ee928] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:53:40 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:53:41 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 18:53:41 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 18:53:41 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 18:53:41 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 18:53:41 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 18:53:41 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 18:53:41 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 18:53:41 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 18:53:41 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 18:53:41 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 18:53:41 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@98f4f11] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 18:53:41 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 18:53:41 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 18:53:41 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 18:53:41 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 18:53:41 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 18:53:41 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 18:53:41 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 18:53:41 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 19:39:34 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:39:34 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:39:34 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5ab45d66, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64236be, org.springframework.security.web.context.SecurityContextPersistenceFilter@62ba4c62, org.springframework.security.web.header.HeaderWriterFilter@59294f29, org.springframework.security.web.csrf.CsrfFilter@52caa9d8, org.springframework.security.web.authentication.logout.LogoutFilter@2b3b25ad, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4fbbfea6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35738a92, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10ec54c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62a9e9bf, org.springframework.security.web.session.SessionManagementFilter@30c96ea9, org.springframework.security.web.access.ExceptionTranslationFilter@4ba04fb4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19c28c97]
+24-04-2023 19:39:35 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+24-04-2023 19:39:35 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+24-04-2023 19:39:35 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+24-04-2023 19:39:35 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+24-04-2023 19:39:35 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+24-04-2023 19:39:35 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+24-04-2023 19:39:35 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+24-04-2023 19:39:35 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+24-04-2023 19:39:35 INFO  Application:61 - Started Application in 13.028 seconds (JVM running for 14.721)
+24-04-2023 19:39:35 INFO  AbstractDevServerRunner:205 - Starting Vite
+24-04-2023 19:39:37 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-04-2023 19:39:37 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+24-04-2023 19:39:37 INFO  DispatcherServlet:547 - Completed initialization in 3 ms
+24-04-2023 19:39:38 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [119] milliseconds.
+24-04-2023 19:39:38 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+24-04-2023 19:39:59 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+24-04-2023 19:40:04 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+24-04-2023 19:40:05 INFO  DevServerOutputTracker:124 - 
+24-04-2023 19:40:05 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 5196 ms
+24-04-2023 19:40:05 INFO  DevServerOutputTracker:124 - 
+24-04-2023 19:40:05 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:62392/VAADIN/
+24-04-2023 19:40:05 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 29544ms
+24-04-2023 19:40:15 INFO  DevServerOutputTracker:124 - 
+24-04-2023 19:40:15 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+24-04-2023 19:40:52 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:40:52 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:40:52 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:40:52 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:40:52 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:40:52 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:40:52 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:40:52 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@323a60e7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:40:52 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:40:52 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:40:52 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:40:52 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 19:40:52 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:40:53 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:40:53 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:40:53 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:40:53 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:40:53 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:40:53 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:40:53 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@997942a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:40:53 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:40:53 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:40:53 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:40:53 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 19:40:53 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:40:53 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:40:53 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:40:53 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:40:53 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:40:53 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:40:53 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:40:54 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@70ee0743] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:40:54 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:40:54 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:40:54 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:40:54 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 19:40:54 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:40:54 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:40:54 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:40:54 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:40:54 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:40:54 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:40:54 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:40:54 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@354ccd81] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:40:54 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:40:54 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:40:54 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:40:54 INFO  UsuarioDAO:111 - buscado el login: antoniomas33@hotmail.com---Antonio
+24-04-2023 19:40:55 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:40:55 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:40:55 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:40:55 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:40:55 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:40:55 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:40:55 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:40:55 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5edab35b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:40:55 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:40:55 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 19:40:55 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 19:40:55 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 19:40:55 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 19:40:55 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 19:40:55 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 19:40:55 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 19:41:28 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:41:28 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:41:28 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:41:28 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:41:28 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:41:28 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:41:28 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:41:28 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4c690fdb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:41:28 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:41:28 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:41:28 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:41:28 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 19:41:28 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:41:28 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:41:28 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:41:28 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:41:28 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:41:28 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:41:28 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:41:28 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@27f513d4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:41:29 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:41:29 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:41:29 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:41:29 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 19:41:29 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:41:29 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:41:29 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:41:29 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:41:29 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:41:29 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:41:29 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:41:29 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5d26e5b1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:41:29 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:41:29 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:41:29 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:41:29 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 19:41:29 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:41:29 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:41:29 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:41:29 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:41:29 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:41:29 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:41:29 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:41:29 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@77619bb6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:41:29 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:41:30 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+24-04-2023 19:41:30 INFO  UsuarioDAO:94 - Listar: 2 -- Alejandro -- Palacios Requena -- true
+24-04-2023 19:41:30 INFO  UsuarioDAO:111 - buscado el login: alejandro.palacios@ieschabas.org---Alejandro
+24-04-2023 19:41:30 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 19:41:30 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 19:41:30 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 19:41:30 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 19:41:30 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 19:41:30 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 19:41:30 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 19:41:30 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3962105b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 19:41:30 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 19:41:30 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 19:41:30 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 19:41:30 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 19:41:30 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 19:41:30 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 19:41:30 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 19:41:30 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic

@@ -1,6 +1,5 @@
 package org.ieschabas.views.login;
 
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -20,11 +19,10 @@ import org.ieschabas.clases.Cliente;
 import org.ieschabas.clases.Usuario;
 import org.ieschabas.daos.UsuarioDAO;
 import org.ieschabas.services.ServicioCorreo;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.io.*;
 import java.time.LocalDate;
-import java.util.Properties;
 import java.util.Random;
 
 /**
@@ -37,26 +35,40 @@ import java.util.Random;
 public class LoginView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = 272742160091975700L;
-    @Autowired
-    private UsuarioDAO usuarioDao;
-    @Autowired
-    private ServicioCorreo servicioCorreo;
-    private static File archivoConfig = new File("remember.properties");
-    private static Properties estado;
-    private static boolean logIn;
-    private static boolean esAdmin;
-    private static int idUsuario;
+    private final UsuarioDAO usuarioDao;
+    private final ServicioCorreo servicioCorreo;
     private LoginForm vistaLogin;
     private Dialog formularioCliente;
-    public LoginView() {
+
+    /**
+     * Constructor de la Vista login.
+     * @param usuarioDao
+     * @param servicioCorreo
+     */
+    public LoginView(UsuarioDAO usuarioDao, ServicioCorreo servicioCorreo) {
+        this.usuarioDao = usuarioDao;
+        this.servicioCorreo = servicioCorreo;
         setAlignItems(Alignment.CENTER);
       add(crearFormularioCliente(), vistaLogin(), crearUsuarioBoton());
     }
+
+    /**
+     * Crea el botón de registro de nuevo usuario
+     * @author Antonio Mas Esteve
+     * @return Button
+     */
     public Button crearUsuarioBoton(){
         Button nuevoUsuario = new Button("Registrarse");
         nuevoUsuario.addClickListener(e->formularioCliente.open());
         return nuevoUsuario;
     }
+
+    /**
+     * Método que crea el formulario de registro de nuevo cliente.
+     * Si se quiere crear un administrador se hará añadiendo un cliente y modificando su rol en la base de datos directamente.
+     * @author Antonio Mas Esteve
+     * @return Dialog
+     */
     public Dialog crearFormularioCliente(){
         formularioCliente = new Dialog();
         FormLayout formulario = new FormLayout();
@@ -69,8 +81,10 @@ public class LoginView extends VerticalLayout {
         Button guardar = new Button("Guardar");
         guardar.addClickListener(e->{
             if(nombre.getValue() != null && apellidos.getValue()!= null && direccion.getValue() != null && email.getValue() != null && contrasenya.getValue() != null) {
-                String rawPassword = contrasenya.getValue();
-                Usuario cliente = new Cliente(nombre.getValue(), apellidos.getValue(), email.getValue(), rawPassword, direccion.getValue(), true, LocalDate.now());
+                //Se encripta la contraseña:
+                BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+                String encodedPassword = encoder.encode(contrasenya.getValue());
+                Usuario cliente = new Cliente(nombre.getValue(), apellidos.getValue(), email.getValue(), encodedPassword, direccion.getValue(), true, LocalDate.now());
                 if (usuarioDao.insertar(cliente)) {
                     Notification notification = Notification.show("Usuario creado correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
@@ -95,6 +109,11 @@ public class LoginView extends VerticalLayout {
       return formularioCliente;
     }
 
+    /**
+     * Método que crea el formulario Login
+     * @return LoginForm
+     * @author Antonio Mas Esteve
+     */
     public LoginForm vistaLogin(){
         LoginI18n i18n = LoginI18n.createDefault();
         LoginI18n.Form form = i18n.getForm();
@@ -112,11 +131,6 @@ public class LoginView extends VerticalLayout {
         vistaLogin = new LoginForm();
         vistaLogin.setAction("login");
         vistaLogin.setI18n(i18n);
-       /** vistaLogin.addLoginListener(e-> {
-            inicioSesion(e.getUsername(),e.getPassword());
-            if(!Login.login(e.getUsername(), e.getPassword())){
-                vistaLogin.setError(true);
-            }});**/
         vistaLogin.setForgotPasswordButtonVisible(true);
         vistaLogin.addForgotPasswordListener(event->{
             recuperarContrasenya();
@@ -125,103 +139,6 @@ public class LoginView extends VerticalLayout {
         return vistaLogin;
     }
 
-/**
-    public void inicioSesion(String usuario, String contrasenya){
-        //Ponemos el estado como logeado:
-        logIn = Login.login(usuario, contrasenya);
-        esAdmin = Login.isAdmin(usuario,contrasenya);
-        idUsuario = Login.obtenerIdUsuario(usuario, contrasenya);
-        //Creamos una persistencia de datos como login para cuando se reinicie la página que recuerde tu sesión:
-        recordarEstado(logIn, esAdmin, idUsuario);
-        //Esto refresca la página
-        UI.getCurrent().getPage().reload();
-    }
-    public void cierreSesion(){
-        //Borramos el fichero, para que no almacene cada movimiento de login/cerrarSesion.
-
-        try {
-            FileWriter borrador = new FileWriter(archivoConfig, false);
-            borrador.write("");
-            borrador.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        //Ponemos el estado como logeado:
-        logIn = false;
-        esAdmin = false;
-        idUsuario = 0;
-        //Creamos una persistencia de datos como cerrarSesion para cuando se reinicie la página que recuerde tu sesión:
-        recordarEstado(logIn, esAdmin, idUsuario);
-        //Esto refresca la página
-        UI.getCurrent().getPage().reload();
-    }
-public void recordarEstado(boolean logIn, boolean esAdmin, int idUsuario){
-//Se crea el objeto properties y se rellena con datos, que son 3: Iniciado, Admin e id de usuario.
-    estado = new Properties();
-    //Guardamos las propiedades:
-    estado.setProperty("logIn", logIn+"");
-    estado.setProperty("esAdmin", esAdmin+"");
-    estado.setProperty("idUsuario", idUsuario+"");
-    //Lo escribimos en el fichero:
-    try {
-        FileOutputStream output = new FileOutputStream(archivoConfig, true);
-        estado.store(output, "Info de sesión");
-        output.close();
-    } catch (IOException e) {
-        throw new RuntimeException(e);
-    }
-}
-////////////Métodos para ser usados por otras clases para comprobar el estado o modificarlo///////////////////////////////////
-public static boolean comprobarLogIn(){
-        estado = new Properties();
-        //Leemos el estado actual del fichero properties:
-if(archivoConfig.exists()){
-    try {
-        FileInputStream input = new FileInputStream(archivoConfig);
-        estado.load(input);
-        logIn = Boolean.parseBoolean(estado.getProperty("logIn"));
-    } catch (IOException e) {
-        throw new RuntimeException(e);
-    }
-}
-    return logIn;
-}
-public static boolean comprobarAdmin(){
-    estado = new Properties();
-    //Leemos el estado actual del fichero properties:
-    if(archivoConfig.exists()){
-        try {
-            FileInputStream input = new FileInputStream(archivoConfig);
-            estado.load(input);
-            esAdmin = Boolean.parseBoolean(estado.getProperty("esAdmin"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    return esAdmin;
-}
-public static int comprobarIdUsuario(){
-    estado = new Properties();
-    //Leemos el estado actual del fichero properties:
-    if(archivoConfig.exists()){
-        try {
-            FileInputStream input = new FileInputStream(archivoConfig);
-            estado.load(input);
-            idUsuario = Integer.parseInt(estado.getProperty("idUsuario"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    return idUsuario;
-}
-
-
-public static void cerrarSesion(){
-        LoginView loginView = new LoginView();
-        loginView.cierreSesion();
-}
-**/
     /**
      * Método que crea una nueva contraseña y la envía por email.
      * @author Antonio Mas Esteve
@@ -238,7 +155,10 @@ public static void cerrarSesion(){
         if(usuarioDao.buscarPorMail(emailCampo.getValue()) != null){
         if(servicioCorreo.enviar(emailCampo.getValue(), contrasenya)){
             Usuario usuarioNuevo = usuarioDao.buscarPorMail(emailCampo.getValue());
-            usuarioNuevo.setContrasenya(contrasenya);
+            //Se encripta la contraseña:
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+            String encodedPassword = encoder.encode(contrasenya);
+            usuarioNuevo.setContrasenya(encodedPassword);
             usuarioDao.modificar(usuarioNuevo);
             Notification notification = Notification.show("Contraseña cambiada correctamente. Revise su bandeja de entrada");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
@@ -252,5 +172,7 @@ public static void cerrarSesion(){
     dialogo.add(titulo, emailCampo, send);
     dialogo.open();
 }
+
+
 
 }

@@ -47,8 +47,7 @@ import java.util.*;
  * @author Antonio Mas Esteve
  */
 @PageTitle("Películas")
-@Route(value = "Peliculas", layout = MainView.class)
-@RouteAlias(value = "", layout = MainView.class)
+@Route(value = "peliculas", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class PeliculasView extends VerticalLayout {
     @Serial

@@ -15,15 +15,13 @@ import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.StreamResource;
 import org.ieschabas.clases.*;
 import org.ieschabas.daos.AlquilerDAO;
 import org.ieschabas.daos.PeliculaDAO;
-import org.ieschabas.daos.UsuarioDAO;
 import org.ieschabas.enums.Valoracion;
-import org.ieschabas.views.login.LoginView;
+import org.ieschabas.security.SecurityService;
 
 import javax.annotation.security.RolesAllowed;
 import java.io.ByteArrayInputStream;
@@ -36,15 +34,15 @@ import java.util.List;
  * @author Antonio mas Esteve
  */
 @PageTitle("Cliente")
-@Route(value = "Cliente")
+@Route("clientes")
 @RolesAllowed("USER")
 public class ClienteView extends AppLayout {
     @Serial
     private static final long serialVersionUID = -5482598882200796969L;
     //DAOS:
     private final PeliculaDAO peliculaDAO;
-    private final UsuarioDAO usuarioDAO;
     private final AlquilerDAO alquilerDAO;
+    private final SecurityService securityService;
 
     private LocalDate fecha;
       private Div vistaPeliculas;
@@ -55,15 +53,12 @@ public class ClienteView extends AppLayout {
      * Constructor principal de la vista Clientes.
      * Aquí se inyectan las dependencias mediante SpringBoot IoC
      */
-    public ClienteView(PeliculaDAO peliculaDAO, UsuarioDAO usuarioDAO, AlquilerDAO alquilerDAO) {
+    public ClienteView(PeliculaDAO peliculaDAO, AlquilerDAO alquilerDAO, SecurityService securityService) {
         this.peliculaDAO = peliculaDAO;
-        this.usuarioDAO = usuarioDAO;
         this.alquilerDAO = alquilerDAO;
-/******************************************************************************************************************/
-        //Aquí hay que añadir lógica de comprobación de credenciales:
-        int idCliente = 2;
+        this.securityService = securityService;
 
-        Cliente cliente = (Cliente) this.usuarioDAO.buscar(idCliente);
+        Cliente cliente = (Cliente) this.securityService.getUsuarioAutenticado();
         //setSizeFull();
         addClassName("Cliente-View");
         vistaAlquiler = new HorizontalLayout();
@@ -97,9 +92,8 @@ public class ClienteView extends AppLayout {
         Button logout = new Button("Cerrar Sesión");
         usuario.add(user, nombreUsuario, logout);
         usuario.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
-/****************************************************************************************/
         //Aquí hay que añadir lógica de cierre de sesión:
-        logout.addClickListener(e-> {});
+        logout.addClickListener(e-> securityService.cerrarSesion());
         cabecera.add(usuario);
         return cabecera;
     }
@@ -266,7 +260,12 @@ public class ClienteView extends AppLayout {
         return vistaAlquiler;
     }
 
-public Image convertirImagenVaadin(Pelicula pelicula){
+    /**
+     * Método para sacar, de la carátula de una película, un componente imagen de Vaadin.
+     * @return Image
+     * @author Antonio Mas Esteve
+     */
+    public Image convertirImagenVaadin(Pelicula pelicula){
         Image imagen = new Image();
         imagen.setAlt("Carátula de "+pelicula.getTitulo());
         if (pelicula.getCaratula() != null) {
@@ -279,7 +278,13 @@ public Image convertirImagenVaadin(Pelicula pelicula){
 
    return imagen;
 }
-public String obtenerNombresActores(Pelicula pelicula){
+
+    /**
+     * Método que obtiene un texto de los actores de la película seleccionada
+     * @return String
+     * @author Antonio Mas Esteve
+     */
+    public String obtenerNombresActores(Pelicula pelicula){
                 String nombreActor ="Reparto: ";
         List<Actor> actores = pelicula.getActores();
         for(Actor actor:actores){
@@ -288,6 +293,11 @@ public String obtenerNombresActores(Pelicula pelicula){
         nombreActor = nombreActor.substring(0, nombreActor.length()-1) + ".\n ";
         return nombreActor;
 }
+    /**
+     * Método que obtiene un texto de los directores de la película seleccionada
+     * @return String
+     * @author Antonio Mas Esteve
+     */
     public String obtenerNombresDirectores(Pelicula pelicula){
         String nombreDirector="Directores: ";
         List<Director> directores = pelicula.getDirectores();
@@ -297,6 +307,12 @@ public String obtenerNombresActores(Pelicula pelicula){
         nombreDirector = nombreDirector.substring(0, nombreDirector.length()-1) + ".\n ";
         return nombreDirector;
     }
+
+    /**
+     * Método para comprobar si una película está o no alquilada por un cliente
+     * @author Antonio Mas Esteve
+     * @return boolean
+     */
     public boolean estaAlquilada(Pelicula pelicula, Cliente cliente){
         //Establecemos la lista de alquileres:
         List<Alquiler> alquileres = alquilerDAO.listar();

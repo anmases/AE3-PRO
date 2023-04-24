@@ -26,7 +26,7 @@ import java.util.List;
  * @author Antonio Mas Esteve
  */
 @PageTitle("Alquileres")
-@Route(value = "Alquileres", layout = MainView.class)
+@Route(value = "alquileres", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class AlquileresView extends VerticalLayout {
     @Serial

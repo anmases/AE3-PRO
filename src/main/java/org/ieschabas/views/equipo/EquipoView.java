@@ -57,7 +57,6 @@ public class EquipoView extends VerticalLayout {
 
     /**
      * Crea el componente tabla.
-     *
      * @return Grid
      * @author Antonio Mas Esteve
      */
@@ -191,6 +190,12 @@ public class EquipoView extends VerticalLayout {
 
         return formLayout;
     }
+
+    /**
+     * Se crea el buscador según el tipo de miembro.
+     * @author Antonio Mas Esteve
+     * @return Component
+     */
     public Component crearBuscador(){
         ComboBox<Puesto> buscador = new ComboBox<>("Tipo");
         buscador.setItems(Puesto.values());
@@ -219,7 +224,6 @@ public class EquipoView extends VerticalLayout {
 
     /**
      * Crea el menú edición título+formulario
-     *
      * @return VeticalLayout
      * @author Antonio Mas Esteve
      */
@@ -233,7 +237,6 @@ public class EquipoView extends VerticalLayout {
 
     /**
      * Método para rellenar la tabla desde el backend.
-     *
      * @author Antonio Mas Esteve
      */
     public void rellenarTabla() {
@@ -243,7 +246,6 @@ public class EquipoView extends VerticalLayout {
 
     /**
      * Método para refrescar la tabla
-     *
      * @author Antonio Mas Esteve
      */
     public void refrescarTabla() {
