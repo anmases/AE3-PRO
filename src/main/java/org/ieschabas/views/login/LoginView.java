@@ -137,7 +137,7 @@ public class LoginView extends VerticalLayout {
         UI.getCurrent().getPage().reload();
     }
     public void cierreSesion(){
-        //Borramos el fichero, para que no almacene cada movimiento de login/logout.
+        //Borramos el fichero, para que no almacene cada movimiento de login/cerrarSesion.
 
         try {
             FileWriter borrador = new FileWriter(archivoConfig, false);
@@ -151,7 +151,7 @@ public class LoginView extends VerticalLayout {
         logIn = false;
         esAdmin = false;
         idUsuario = 0;
-        //Creamos una persistencia de datos como logout para cuando se reinicie la página que recuerde tu sesión:
+        //Creamos una persistencia de datos como cerrarSesion para cuando se reinicie la página que recuerde tu sesión:
         recordarEstado(logIn, esAdmin, idUsuario);
         //Esto refresca la página
         UI.getCurrent().getPage().reload();

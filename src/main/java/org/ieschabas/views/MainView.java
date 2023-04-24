@@ -11,16 +11,14 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
-import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.clases.Usuario;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.daos.UsuarioDAO;
+import org.ieschabas.security.SecurityService;
 import org.ieschabas.views.equipo.EquipoView;
 import org.ieschabas.views.alquileres.AlquileresView;
-import org.ieschabas.views.cliente.ClienteView;
-import org.ieschabas.views.login.LoginView;
 import org.ieschabas.views.peliculas.PeliculasView;
 import org.ieschabas.views.usuarios.UsuarioView;
 
@@ -36,12 +34,14 @@ import java.io.Serial;
 public class MainView extends AppLayout implements BeforeEnterObserver {
     @Serial
     private static final long serialVersionUID = 6046822281493064403L;
+    private final SecurityService securityService;
     private H2 viewTitle;
 
     /**
      * Constructor principal de la vista principal.
      */
-    public MainView() {
+    public MainView(SecurityService securityService) {
+        this.securityService = securityService;
         setPrimarySection(Section.DRAWER);
         addDrawerContent();
         addHeaderContent();
@@ -62,12 +62,12 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         header.setWidthFull();
 /**************************************************************************************************/
 //Lógica de comprobación de usuario:
-        int id = 0;
+        int id = 1;
 
 
 
         if(id != 0) {
-            Usuario user = usuarioDAO.buscar(id);
+            Usuario user = securityService.getUsuarioAutenticado();
             Icon admin = new Icon(VaadinIcon.USER_STAR);
             H4 nombreUsuario = new H4(user.getNombre() + " " + user.getApellidos());
             header.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
@@ -77,7 +77,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
             header.add(usuario);
 /*************************************************************************************************************/
 //Lógica de cierre de sesión:
-            logout.addClickListener(e -> {});
+            logout.addClickListener(e -> securityService.cerrarSesion() );
         }
         addToNavbar(true, toggle,viewTitle, header);
     }
