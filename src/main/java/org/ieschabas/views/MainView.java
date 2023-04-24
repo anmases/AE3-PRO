@@ -24,6 +24,7 @@ import org.ieschabas.views.login.LoginView;
 import org.ieschabas.views.peliculas.PeliculasView;
 import org.ieschabas.views.usuarios.UsuarioView;
 
+import javax.annotation.security.PermitAll;
 import java.io.Serial;
 
 
@@ -31,7 +32,7 @@ import java.io.Serial;
  * The main view is a top-level placeholder for other views.
  */
 @Route("main")
-@AnonymousAllowed
+@PermitAll
 public class MainView extends AppLayout implements BeforeEnterObserver {
     @Serial
     private static final long serialVersionUID = 6046822281493064403L;
