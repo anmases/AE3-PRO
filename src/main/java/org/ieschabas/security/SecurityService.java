@@ -16,8 +16,6 @@ public class SecurityService {
     private final UsuarioDAO usuarioDao;
     /**
      * Constructor de la clase SecurityService
-     * @param authenticationContext
-     * @param usuarioDao
      */
     public SecurityService(AuthenticationContext authenticationContext, UsuarioDAO usuarioDao) {
         this.authenticationContext = authenticationContext;
