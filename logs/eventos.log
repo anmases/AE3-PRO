@@ -18290,3 +18290,10 @@ Caused by: org.hibernate.WrongClassException: Object [id=2] was not of the speci
 24-04-2023 12:09:23 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
 24-04-2023 12:09:23 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
 24-04-2023 12:09:23 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 12:14:28 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 12:14:28 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 12:14:28 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 12:14:28 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 12:14:28 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 12:14:28 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 12:14:28 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
