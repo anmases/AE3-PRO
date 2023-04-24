@@ -11,6 +11,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.clases.Usuario;
 import org.ieschabas.components.appnav.AppNav;
@@ -30,6 +31,7 @@ import java.io.Serial;
  * The main view is a top-level placeholder for other views.
  */
 @Route("main")
+@AnonymousAllowed
 public class MainView extends AppLayout implements BeforeEnterObserver {
     @Serial
     private static final long serialVersionUID = 6046822281493064403L;

@@ -115,6 +115,7 @@ public class LoginView extends VerticalLayout {
         mensaje.setMessage("Aviso: Se distingue entre mayúsculas y minúsculas, caracteres y símbolos especiales");
         i18n.setErrorMessage(mensaje);
         vistaLogin = new LoginForm();
+        vistaLogin.setAction("login");
         vistaLogin.setI18n(i18n);
         vistaLogin.addLoginListener(e-> {
             inicioSesion(e.getUsername(),e.getPassword());
