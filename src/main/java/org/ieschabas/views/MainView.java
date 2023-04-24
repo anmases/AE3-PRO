@@ -60,8 +60,12 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         VerticalLayout header = new VerticalLayout();
         HorizontalLayout usuario = new HorizontalLayout();
         header.setWidthFull();
+/**************************************************************************************************/
+//Lógica de comprobación de usuario:
+        int id = 0;
 
-        int id = LoginView.comprobarIdUsuario();
+
+
         if(id != 0) {
             Usuario user = usuarioDAO.buscar(id);
             Icon admin = new Icon(VaadinIcon.USER_STAR);
@@ -71,7 +75,9 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
             usuario.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
             usuario.add(admin, nombreUsuario, logout);
             header.add(usuario);
-            logout.addClickListener(e -> LoginView.cerrarSesion());
+/*************************************************************************************************************/
+//Lógica de cierre de sesión:
+            logout.addClickListener(e -> {});
         }
         addToNavbar(true, toggle,viewTitle, header);
     }

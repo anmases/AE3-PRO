@@ -18,9 +18,7 @@ import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.ieschabas.clases.Cliente;
 import org.ieschabas.clases.Usuario;
-import org.ieschabas.daos.LoginDAO;
 import org.ieschabas.daos.UsuarioDAO;
-import org.ieschabas.login.Login;
 import org.ieschabas.services.ServicioCorreo;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -40,9 +38,7 @@ public class LoginView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = 272742160091975700L;
     @Autowired
-    private UsuarioDAO usuarioDAO;
-    @Autowired
-    private LoginDAO loginDao;
+    private UsuarioDAO usuarioDao;
     @Autowired
     private ServicioCorreo servicioCorreo;
     private static File archivoConfig = new File("remember.properties");
@@ -73,10 +69,9 @@ public class LoginView extends VerticalLayout {
         Button guardar = new Button("Guardar");
         guardar.addClickListener(e->{
             if(nombre.getValue() != null && apellidos.getValue()!= null && direccion.getValue() != null && email.getValue() != null && contrasenya.getValue() != null) {
-                Usuario cliente = new Cliente(nombre.getValue(), apellidos.getValue(), direccion.getValue(), true, LocalDate.now());
-                usuarioDAO.insertar(cliente);
-                Login login = new Login(cliente, email.getValue(), contrasenya.getValue());
-                if (loginDao.insertar(login)) {
+                String rawPassword = contrasenya.getValue();
+                Usuario cliente = new Cliente(nombre.getValue(), apellidos.getValue(), email.getValue(), rawPassword, direccion.getValue(), true, LocalDate.now());
+                if (usuarioDao.insertar(cliente)) {
                     Notification notification = Notification.show("Usuario creado correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 }
@@ -130,9 +125,7 @@ public class LoginView extends VerticalLayout {
         return vistaLogin;
     }
 
-    /**
-     * Método que comprueba su existe el usuario o no.
-     */
+/**
     public void inicioSesion(String usuario, String contrasenya){
         //Ponemos el estado como logeado:
         logIn = Login.login(usuario, contrasenya);
@@ -228,8 +221,12 @@ public static void cerrarSesion(){
         LoginView loginView = new LoginView();
         loginView.cierreSesion();
 }
-
-public void recuperarContrasenya(){
+**/
+    /**
+     * Método que crea una nueva contraseña y la envía por email.
+     * @author Antonio Mas Esteve
+     */
+    public void recuperarContrasenya(){
     Random random = new Random();
     int numero = random.nextInt(10000);
     String contrasenya = numero+"";
@@ -238,11 +235,11 @@ public void recuperarContrasenya(){
     EmailField emailCampo = new EmailField("Escriba su Email:");
     Button send = new Button("Enviar");
     send.addClickListener(e->{
-        if(loginDao.buscarPorMail(emailCampo.getValue()) != null){
+        if(usuarioDao.buscarPorMail(emailCampo.getValue()) != null){
         if(servicioCorreo.enviar(emailCampo.getValue(), contrasenya)){
-            Login loginNuevo = loginDao.buscarPorMail(emailCampo.getValue());
-            loginNuevo.setContrasenya(contrasenya);
-            loginDao.modificar(loginNuevo);
+            Usuario usuarioNuevo = usuarioDao.buscarPorMail(emailCampo.getValue());
+            usuarioNuevo.setContrasenya(contrasenya);
+            usuarioDao.modificar(usuarioNuevo);
             Notification notification = Notification.show("Contraseña cambiada correctamente. Revise su bandeja de entrada");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
         }

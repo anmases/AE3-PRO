@@ -165,8 +165,12 @@ public class UsuarioView extends VerticalLayout {
             //Creamos el objeto a partir del editor y lo guardamos en la BD.
             editor.save();
             //Se rellenan todos los campos del objeto seleccionado:
-            Usuario usuario = new Usuario(textoNombre.getValue(), textoApellidos.getValue(), textoDireccion.getValue(), textoActivo.getValue(), textoFecha.getValue(), textoRol.getValue());
-            if (usuarioDAO.modificar(usuario)) {
+            Usuario usuario = usuarioDAO.buscar(textoId.getValue());
+            usuario.setNombre(textoNombre.getValue());
+            usuario.setApellidos(textoApellidos.getValue());
+            usuario.setDireccion(textoDireccion.getValue());
+            usuario.setActivo(textoActivo.getValue());
+           if (usuarioDAO.modificar(usuario)) {
                 Notification notification = Notification.show("Usuario modificado");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             } else {

@@ -59,8 +59,11 @@ public class ClienteView extends AppLayout {
         this.peliculaDAO = peliculaDAO;
         this.usuarioDAO = usuarioDAO;
         this.alquilerDAO = alquilerDAO;
+/******************************************************************************************************************/
+        //Aquí hay que añadir lógica de comprobación de credenciales:
+        int idCliente = 2;
 
-        Cliente cliente = (Cliente) this.usuarioDAO.buscar(LoginView.comprobarIdUsuario());
+        Cliente cliente = (Cliente) this.usuarioDAO.buscar(idCliente);
         //setSizeFull();
         addClassName("Cliente-View");
         vistaAlquiler = new HorizontalLayout();
@@ -94,7 +97,9 @@ public class ClienteView extends AppLayout {
         Button logout = new Button("Cerrar Sesión");
         usuario.add(user, nombreUsuario, logout);
         usuario.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
-        logout.addClickListener(e-> LoginView.cerrarSesion());
+/****************************************************************************************/
+        //Aquí hay que añadir lógica de cierre de sesión:
+        logout.addClickListener(e-> {});
         cabecera.add(usuario);
         return cabecera;
     }
