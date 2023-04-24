@@ -144,9 +144,6 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
     public void beforeEnter(BeforeEnterEvent event) {
         if(securityService.getUsuarioAutenticado().getRol() == Rol.USER){
             event.rerouteTo(ClienteView.class);
-        }// else if (securityService.getUsuarioAutenticado().getRol() == Rol.USER) {
-        //    event.rerouteTo(ClienteView.class);
-      //  }
-
+        }
     }
 }
