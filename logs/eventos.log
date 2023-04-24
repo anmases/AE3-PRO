@@ -17427,3 +17427,20 @@ Caused by: javax.mail.AuthenticationFailedException: 530 Invalid username or pas
 18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
 18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
 18-04-2023 23:26:48 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
+24-04-2023 02:28:23 INFO  UsuarioDAO:38 - buscado el usuario:1
+24-04-2023 02:28:23 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+24-04-2023 02:28:24 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+24-04-2023 02:28:24 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+24-04-2023 02:28:24 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+24-04-2023 02:28:24 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+24-04-2023 02:28:24 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+24-04-2023 02:28:24 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+24-04-2023 02:28:24 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@27980552] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+24-04-2023 02:28:24 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+24-04-2023 02:28:25 INFO  PeliculaDAO:92 - Listar: 1 -- El Padrino
+24-04-2023 02:28:25 INFO  PeliculaDAO:92 - Listar: 2 -- El Padrino 2
+24-04-2023 02:28:25 INFO  PeliculaDAO:92 - Listar: 3 -- Senderos de gloria
+24-04-2023 02:28:25 INFO  PeliculaDAO:92 - Listar: 4 -- Primera plana
+24-04-2023 02:28:25 INFO  PeliculaDAO:92 - Listar: 5 -- Resident Evil
+24-04-2023 02:28:25 INFO  PeliculaDAO:92 - Listar: 6 -- Resident Evil 2
+24-04-2023 02:28:25 INFO  PeliculaDAO:92 - Listar: 7 -- Titanic
