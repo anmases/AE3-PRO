@@ -142,11 +142,11 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
      */
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-        if(securityService.getUsuarioAutenticado().getRol() == Rol.ADMIN){
-            event.rerouteTo(PeliculasView.class);
-        } else if (securityService.getUsuarioAutenticado().getRol() == Rol.USER) {
+        if(securityService.getUsuarioAutenticado().getRol() == Rol.USER){
             event.rerouteTo(ClienteView.class);
-        }
+        }// else if (securityService.getUsuarioAutenticado().getRol() == Rol.USER) {
+        //    event.rerouteTo(ClienteView.class);
+      //  }
 
     }
 }

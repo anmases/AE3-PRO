@@ -84,7 +84,7 @@ public class LoginView extends VerticalLayout {
                 //Se encripta la contraseña:
                 BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
                 String encodedPassword = encoder.encode(contrasenya.getValue());
-                Usuario cliente = new Cliente(nombre.getValue(), apellidos.getValue(), email.getValue(), encodedPassword, direccion.getValue(), true, LocalDate.now());
+                Usuario cliente = new Cliente(0, nombre.getValue(), apellidos.getValue(), email.getValue(), encodedPassword, direccion.getValue(), true, LocalDate.now());
                 if (usuarioDao.insertar(cliente)) {
                     Notification notification = Notification.show("Usuario creado correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
