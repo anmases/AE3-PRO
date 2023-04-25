@@ -48,6 +48,17 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         setPrimarySection(Section.DRAWER);
         addDrawerContent();
         addHeaderContent();
+        setContent(contenido());
+    }
+
+    public VerticalLayout contenido(){
+        VerticalLayout content = new VerticalLayout();
+        content.setSizeFull();
+        content.setHorizontalComponentAlignment(FlexComponent.Alignment.CENTER);
+        Image portada = new Image("images/portada.png", "Portada");
+        H1 titulo = new H1("Bienvenido a VideoClub Pro, "+securityService.getUsuarioAutenticado().getNombre());
+        content.add(titulo, portada);
+        return content;
     }
 
     /**

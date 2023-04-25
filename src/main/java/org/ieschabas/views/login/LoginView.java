@@ -18,7 +18,7 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.ieschabas.clases.Cliente;
 import org.ieschabas.clases.Usuario;
 import org.ieschabas.daos.UsuarioDAO;
-import org.ieschabas.services.ServicioCorreo;
+import org.ieschabas.mailServices.ServicioCorreo;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.io.*;

@@ -1,4 +1,4 @@
-package org.ieschabas.services;
+package org.ieschabas.mailServices;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
