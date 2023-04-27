@@ -2,8 +2,6 @@ package org.ieschabas.views.cliente;
 
 
 import com.vaadin.flow.component.Html;
-import com.vaadin.flow.component.applayout.AppLayout;
-
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
@@ -22,6 +20,7 @@ import org.ieschabas.daos.AlquilerDAO;
 import org.ieschabas.daos.PeliculaDAO;
 import org.ieschabas.enums.Valoracion;
 import org.ieschabas.security.SecurityService;
+import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
 import java.io.ByteArrayInputStream;
@@ -34,9 +33,9 @@ import java.util.List;
  * @author Antonio mas Esteve
  */
 @PageTitle("Cliente")
-@Route("clientes")
+@Route(value = "clientes", layout = MainView.class)
 @RolesAllowed("USER")
-public class ClienteView extends AppLayout {
+public class ClienteView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = -5482598882200796969L;
     //DAOS:
@@ -59,43 +58,14 @@ public class ClienteView extends AppLayout {
         this.securityService = securityService;
 
         Cliente cliente = (Cliente) this.securityService.getUsuarioAutenticado();
-        //setSizeFull();
+        setSizeFull();
         addClassName("Cliente-View");
         vistaAlquiler = new HorizontalLayout();
         vistaAlquiler.setVisible(false);
 
-        Div contenido = new Div(listadoLayout(cliente), vistaAlquiler);
+        add(listadoLayout(cliente), vistaAlquiler);
 
 
-        Image logo = new Image("images/PRO_LOGO.png", "VideoClub");
-        logo.setMaxWidth("140px");
-        logo.setMaxHeight("90px");
-
-        addToNavbar(true, logo, crearCabecera(cliente));
-        setContent(contenido);
-
-    }
-
-    /**
-     * Método que crea la cabecera de la página.
-     * @author Antonio Mas Esteve.
-     * @return VerticalLayout
-     */
-    private VerticalLayout crearCabecera(Cliente cliente){
-        VerticalLayout cabecera = new VerticalLayout();
-        HorizontalLayout usuario = new HorizontalLayout();
-        cabecera.setWidthFull();
-        cabecera.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
-
-        Icon user = new Icon(VaadinIcon.USER);
-        H4 nombreUsuario = new H4(cliente.getNombre()+" "+cliente.getApellidos());
-        Button logout = new Button("Cerrar Sesión");
-        usuario.add(user, nombreUsuario, logout);
-        usuario.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
-        //Aquí hay que añadir lógica de cierre de sesión:
-        logout.addClickListener(e-> securityService.cerrarSesion());
-        cabecera.add(usuario);
-        return cabecera;
     }
 
     /**

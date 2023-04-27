@@ -34,7 +34,7 @@ import java.io.Serial;
 @Route("main")
 @RouteAlias("")
 @PermitAll
-public class MainView extends AppLayout implements BeforeEnterObserver {
+public class MainView extends AppLayout {
     @Serial
     private static final long serialVersionUID = 6046822281493064403L;
     private final SecurityService securityService;
@@ -110,12 +110,14 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
         // AppNav is not yet an official component.
         // For documentation, visit https://github.com/vaadin/vcf-nav#readme
         AppNav nav = new AppNav();
-
+    if(securityService.getUsuarioAutenticado().getRol() == Rol.ADMIN) {
         nav.addItem(new AppNavItem("Películas", PeliculasView.class, "la la-film"));
         nav.addItem(new AppNavItem("Equipo", EquipoView.class, "la la-user-tie"));
         nav.addItem(new AppNavItem("Alquileres", AlquileresView.class, "la la-file"));
         nav.addItem(new AppNavItem("Usuarios", UsuarioView.class, "la la-users"));
-
+    }else{
+        nav.addItem(new AppNavItem("Catálogo", ClienteView.class, "la la-film"));
+    }
 
         return nav;
     }
@@ -146,15 +148,16 @@ public class MainView extends AppLayout implements BeforeEnterObserver {
     private String getCurrentPageTitle() {
         PageTitle title = getContent().getClass().getAnnotation(PageTitle.class);
         return title == null ? "" : title.value();
-    }
+   }
+
     /**
      * Método que redirige antes de entrar en la vista si el usuario es otro.
      * @author Antonio Mas Esteve
      */
-    @Override
+   /** @Override
     public void beforeEnter(BeforeEnterEvent event) {
         if(securityService.getUsuarioAutenticado().getRol() == Rol.USER){
             event.rerouteTo(ClienteView.class);
         }
-    }
+    }**/
 }
