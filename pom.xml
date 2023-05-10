@@ -7,7 +7,7 @@
     <artifactId>ae3-pro-frontend</artifactId>
     <name>ae3-pro-frontend</name>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <java.version>17</java.version>
@@ -99,6 +99,21 @@
         </dependency>    -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
@@ -160,7 +175,6 @@
             <groupId>org.ieschabas</groupId>
             <artifactId>AE3-PRO-BACKEND</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
 
     </dependencies>
@@ -171,13 +185,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- Clean build and startup time for Vaadin apps sometimes may exceed
-                     the default Spring Boot's 30sec timeout.  -->
-                <configuration>
-                    <jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5290</jvmArguments>
-                    <wait>500</wait>
-                    <maxAttempts>240</maxAttempts>
-                </configuration>
+
             </plugin>
 
             <!--
@@ -268,6 +276,7 @@
                             <enableAssertions>true</enableAssertions>
                         </configuration>
                     </plugin>
+
                 </plugins>
             </build>
         </profile>

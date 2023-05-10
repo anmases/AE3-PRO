@@ -129,8 +129,8 @@ public class ClienteView extends VerticalLayout {
         //Se inicializa el contenedor de la imagen:
         vistaAlquiler.removeAll();
         Div contenedorImagen = new Div();
-        contenedorImagen.setMaxHeight("1000px");
-        contenedorImagen.setWidth("750px");
+        contenedorImagen.setMaxHeight("700px");
+        contenedorImagen.setWidth("500px");
         caratula = convertirImagenVaadin(pelicula);
         caratula.setSizeFull();
         contenedorImagen.add(caratula);
