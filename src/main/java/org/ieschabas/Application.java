@@ -24,7 +24,10 @@ import org.springframework.context.annotation.Bean;
 @NpmPackage(value = "@vaadin-component-factory/vcf-nav", version = "1.0.6")
 @PWA(name="videoclub pro app", shortName = "VC Pro")
 public class Application implements AppShellConfigurator {
-
+    /**
+     * Método main principal y punto de inicio de la app SpringBoot.
+     * @param args
+     */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

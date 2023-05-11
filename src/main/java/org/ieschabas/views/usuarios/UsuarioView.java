@@ -21,9 +21,9 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.ieschabas.clases.Usuario;
-import org.ieschabas.daos.UsuarioDAO;
-import org.ieschabas.enums.Rol;
+import org.ieschabas.backend.clases.Usuario;
+import org.ieschabas.backend.daos.UsuarioDAO;
+import org.ieschabas.backend.enums.Rol;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
