@@ -26,6 +26,9 @@ public class Equipo extends PersonaAbstracta {
     @Enumerated(EnumType.STRING)
     protected Puesto puesto;
 
+    /**
+     * Constructor vacío
+     */
     public Equipo(){super();}
 
     /**
@@ -109,4 +112,12 @@ public class Equipo extends PersonaAbstracta {
                 '}';
     }
 
+    /**
+     * Devuelve el hash del objeto.
+     * @return int
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(anyoNacimiento, pais, puesto);
+    }
 }

@@ -9,6 +9,7 @@ import java.time.LocalDate;
 
 /**
  * Subclase de usuario para instanciar Adminsitradores.
+ * @author Antonio Mas Esteve
  */
 @Entity
 @DiscriminatorValue(value = "ADMIN")

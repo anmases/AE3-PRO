@@ -1,0 +1,14 @@
+org.ieschabas
+org.ieschabas.backend.clases
+org.ieschabas.backend.daos
+org.ieschabas.backend.enums
+org.ieschabas.components.appnav
+org.ieschabas.mailServices
+org.ieschabas.security
+org.ieschabas.views
+org.ieschabas.views.alquileres
+org.ieschabas.views.cliente
+org.ieschabas.views.equipo
+org.ieschabas.views.login
+org.ieschabas.views.peliculas
+org.ieschabas.views.usuarios

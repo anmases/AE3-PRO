@@ -4,13 +4,21 @@ import org.ieschabas.backend.clases.EntidadAbstracta;
 import org.ieschabas.backend.clases.Pelicula;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
+
+/**
+ * Clase de acceso a datos de Película
+ * @author Antonio Mas Esteve
+ */
 @Repository
 public class PeliculaDAO extends AbstractDAO{
     //definimos el logger:
     private final Logger LOGGER = Logger.getLogger(PeliculaDAO.class);
     private static final String CONSULTA = "SELECT e FROM Pelicula e";
+
+    /**
+     * Constructor vacío
+     */
     public PeliculaDAO(){super();}
     @Override
     public boolean insertar(EntidadAbstracta ea) {

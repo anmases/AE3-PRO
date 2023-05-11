@@ -9,13 +9,18 @@ import java.time.LocalDate;
 
 /**
  * Subclase de Usuario, para instanciar los clientes.
+ * @author Antonio Mas Esteve
  */
 @Entity
 @DiscriminatorValue(value = "USER")
 public class Cliente extends Usuario{
     @Serial
     private static final long serialVersionUID = 4136881135296009295L;
-    public Cliente(){}
+
+    /**
+     * Constructor vacío
+     */
+    public Cliente(){super();}
     /**
      * Constructor de cliente.
      */

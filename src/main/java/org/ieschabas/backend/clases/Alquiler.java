@@ -133,6 +133,10 @@ public class Alquiler extends EntidadAbstracta{
     return usuario.getNombre()+" "+usuario.getApellidos();
     }
 
+    /**
+     * devuelve la información del alquiler en forma de texto.
+     * @return String
+     */
     @Override
     public String toString() {
         return "Alquiler{" +
@@ -146,6 +150,10 @@ public class Alquiler extends EntidadAbstracta{
                 '}';
     }
 
+    /**
+     * Compara dos alquileres, si sus propiedades son idénticas.
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -153,6 +161,10 @@ public class Alquiler extends EntidadAbstracta{
         return Objects.equals(fechaAlquiler, alquiler.fechaAlquiler) && Objects.equals(cliente, alquiler.cliente) && Objects.equals(pelicula, alquiler.pelicula) && Objects.equals(fechaRetorno, alquiler.fechaRetorno);
     }
 
+    /**
+     * devuelve el código hash de un objeto.
+     * @return int
+     */
     @Override
     public int hashCode() {
         return Objects.hash(fechaAlquiler, cliente, pelicula, fechaRetorno);

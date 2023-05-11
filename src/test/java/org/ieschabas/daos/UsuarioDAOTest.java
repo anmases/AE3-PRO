@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Pruebas unitarias de la gestión de datos de los usuarios.
+ * Pruebas unitarias de la gestiÃ³n de datos de los usuarios.
  * @author Antonio Mas Esteve
  */
 class UsuarioDAOTest {

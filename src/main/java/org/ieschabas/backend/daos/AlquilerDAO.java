@@ -4,13 +4,21 @@ import org.ieschabas.backend.clases.Alquiler;
 import org.ieschabas.backend.clases.EntidadAbstracta;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
+
+/**
+ * Clase de objetos de acceso a datos de Alquiler
+ * @author Antonio Mas Esteve
+ */
 @Repository
 public class AlquilerDAO extends AbstractDAO {
     //definimos el logger:
     private final Logger LOGGER = Logger.getLogger(AlquilerDAO.class);
     private static final String CONSULTA = "SELECT e FROM Alquiler e";
+
+    /**
+     * Constructor vacío
+     */
     public AlquilerDAO(){super();}
 
     @Override

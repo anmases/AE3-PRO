@@ -298,7 +298,10 @@ public class Pelicula extends EntidadAbstracta{
         return directoresRestantes;
     }
 
-
+    /**
+     * Convierte la info de la película a cadena de caracteres.
+     * @return String
+     */
     @Override
     public String toString() {
         return "Pelicula{" +
@@ -316,6 +319,10 @@ public class Pelicula extends EntidadAbstracta{
                 '}';
     }
 
+    /**
+     * Compara si dos películas son iguales.
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -323,6 +330,10 @@ public class Pelicula extends EntidadAbstracta{
         return anyoPublicacion == pelicula.anyoPublicacion && Objects.equals(titulo, pelicula.titulo) && Objects.equals(descripcion, pelicula.descripcion) && Objects.equals(duracion, pelicula.duracion) && categoria == pelicula.categoria && formato == pelicula.formato && valoracion == pelicula.valoracion && Arrays.equals(caratula, pelicula.caratula) && Objects.equals(url, pelicula.url) && Objects.equals(equipos, pelicula.equipos);
     }
 
+    /**
+     * devuelve el hash del objeto.
+     * @return int
+     */
     @Override
     public int hashCode() {
         int result = Objects.hash(titulo, descripcion, anyoPublicacion, duracion, categoria, formato, valoracion, url, equipos);

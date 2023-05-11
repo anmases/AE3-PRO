@@ -10,6 +10,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Pruebas unitarias de la gestiÃ³n de datos del Equipo.
+ * @author Antonio Mas Esteve
+ */
 class EquipoDAOTest {
     private static EquipoDAO equipoDAO = new EquipoDAO();
 
@@ -17,14 +21,7 @@ class EquipoDAOTest {
     @Disabled
     void insertar() {
         boolean check;
-        //Actor:
-       /** Equipo actor = new Actor(0, "Antonio", "Banderas", 1959, "España");
-        check = equipoDAO.insertar(actor);
-        Equipo actor1 = equipoDAO.buscar(25);
-        assertTrue(check);
-        assertEquals(actor, actor1);**/
-        //Director:
-        Equipo director = new Director(0, "vsdvvdz", "fdvszv", 1959, "España");
+        Equipo director = new Director(0, "vsdvvdz", "fdvszv", 1959, "EspaÃ±a");
         check = equipoDAO.insertar(director);
         Equipo director1 = equipoDAO.buscar(26);
         assertTrue(check);
@@ -55,7 +52,7 @@ class EquipoDAOTest {
     @Disabled
     void modificar() {
         boolean check;
-        Equipo director = new Director(26, "vsdv", "fdvszv", 1959, "España");
+        Equipo director = new Director(26, "vsdv", "fdvszv", 1959, "EspaÃ±a");
         check = equipoDAO.modificar(director);
         assertTrue(check);
         Equipo director1 = equipoDAO.buscar(26);

@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Pruebas unitarias de la gestión de datos de los alquileres.
+ * Pruebas unitarias de la gestiÃ³n de datos de los alquileres.
  * @author Antonio Mas Esteve
  */
 class AlquilerDAOTest {
@@ -41,7 +41,7 @@ private static final PeliculaDAO peliculaDao = new PeliculaDAO();
     @Disabled
     void insertarTest() {
         boolean check;
-        //Debemos buscar un cliente y una película:
+        //Debemos buscar un cliente y una pelÃ­cula:
         Cliente cliente = (Cliente) usuarioDao.buscar(3);
         Pelicula pelicula =peliculaDao.buscar(1);
         Alquiler alquiler = new Alquiler(0, LocalDate.now(), cliente, pelicula, LocalDate.now());
@@ -54,7 +54,7 @@ private static final PeliculaDAO peliculaDao = new PeliculaDAO();
     @Disabled
     void modificarTest() {
         boolean check;
-        //Debemos buscar un cliente y una película:
+        //Debemos buscar un cliente y una pelÃ­cula:
         Cliente cliente = (Cliente) usuarioDao.buscar(3);
         Pelicula pelicula =peliculaDao.buscar(4);
         Alquiler alquiler = new Alquiler(2, LocalDate.now().plusDays(5), cliente, pelicula, LocalDate.now().plusDays(8));

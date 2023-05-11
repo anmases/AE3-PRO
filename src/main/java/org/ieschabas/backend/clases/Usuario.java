@@ -52,48 +52,93 @@ public class Usuario extends PersonaAbstracta {
     }
 //Generamos getters y setters:
 
+    /**
+     * Devuelve el email del usuario.
+     * @return String
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * añade el email del usuario.
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * devuelve la contraseña del usuario
+     * @return String
+     */
     public String getContrasenya() {
         return contrasenya;
     }
 
+    /**
+     * Añade la contraseña del usuario
+     */
     public void setContrasenya(String contrasenya) {
         this.contrasenya = contrasenya;
     }
 
+    /**
+     * Devuelve la dirección de un usuario.
+     * @return String
+     */
     public String getDireccion() {
         return direccion;
     }
 
+    /**
+     * Añade la dirección de un usuario.
+     */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
+    /**
+     * Devuelve el estado de alta de un usuario.
+     * @return boolean
+     */
     public boolean getActivo() {
         return activo;
     }
 
+    /**
+     * Cambia el estado de alta de un usuario.
+     */
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
 
+    /**
+     * Devuelve la fecha de registro de un usuario.
+     * @return LocalDate
+     */
     public LocalDate getFecha_registro() {
         return fecha_registro;
     }
 
+    /**
+     * Añade la fecha de registro de un usuario.
+     */
     public void setFecha_registro(LocalDate fecha_registro) {
         this.fecha_registro = fecha_registro;
     }
+
+    /**
+     * Devuelve el rol del usuario
+     * @return Rol
+     */
     public Rol getRol() {
         return rol;
     }
+
+    /**
+     * Añade el rol de un usuario.
+     * @param rol
+     */
     public void setRol(Rol rol) {
         this.rol = rol;
     }
@@ -101,7 +146,7 @@ public class Usuario extends PersonaAbstracta {
 
     /**
      * Método para convertir los campos de Usuario (o de sus sublases) a String.
-     * @return
+     * @return String
      */
     @Override
     public String toString() {
@@ -120,8 +165,7 @@ public class Usuario extends PersonaAbstracta {
 
     /**
      * Método que compara la igualdad de contenido de dos instancias distintas.
-     * @param o
-     * @return
+     * @return boolean
      */
     @Override
     public boolean equals(Object o) {
@@ -132,7 +176,7 @@ public class Usuario extends PersonaAbstracta {
 
     /**
      * Método que devuelve el hash de la clase.
-     * @return
+     * @return int
      */
     @Override
     public int hashCode() {

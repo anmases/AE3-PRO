@@ -6,14 +6,23 @@ import org.ieschabas.backend.clases.Equipo;
 import org.ieschabas.backend.clases.EntidadAbstracta;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Clase de acceso a datos de Equipo
+ * @author Antonio Mas Esteve
+ */
 @Repository
 public class EquipoDAO extends AbstractDAO {
     //definimos el logger:
     private final Logger LOGGER = Logger.getLogger(UsuarioDAO.class);
     private static final String CONSULTA = "SELECT e FROM Equipo e";
+
+    /**
+     * Constructor vacío
+     */
+    public EquipoDAO() {super();}
 
     @Override
     public boolean insertar(EntidadAbstracta ea) {

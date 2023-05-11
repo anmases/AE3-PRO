@@ -10,12 +10,18 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test bajo el contexto de la aplicación SpringBoot
+ * @author Antonio Mas Esteve
+ */
 @SpringBootTest
 class ApplicationTest {
     @Autowired
     private EquipoDAO equipoDAO;
 
-
+    /**
+     * Prueba de inyección de dependencias SpringBoot
+     */
     @Test
     void pruebaInyeccion() {
         //Se comprueba que se inyectan las dependencias correctamente:

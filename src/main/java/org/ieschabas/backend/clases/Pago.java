@@ -5,9 +5,8 @@ import java.io.Serial;
 import java.util.Objects;
 
 /**
- * Clase para crear los pagos.
+ * Clase para crear los pagos. No en uso.
  * @author Antonio Mas Esteve
- * jsnbdvikcnksldmc
  */
 @Entity
 @Table(name = "pago")
@@ -134,6 +133,10 @@ public class Pago extends EntidadAbstracta{
                 '}';
     }
 
+    /**
+     * Compara dos pagos si son el mismo
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -141,6 +144,10 @@ public class Pago extends EntidadAbstracta{
         return Double.compare(pago.cantidad, cantidad) == 0 && completado == pago.completado && Objects.equals(cliente, pago.cliente) && Objects.equals(alquiler, pago.alquiler) && Objects.equals(fechaPago, pago.fechaPago);
     }
 
+    /**
+     * devuelve el hash de una transacción
+     * @return int
+     */
     @Override
     public int hashCode() {
         return Objects.hash(cliente, alquiler, cantidad, fechaPago, completado);

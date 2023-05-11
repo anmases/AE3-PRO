@@ -17,7 +17,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test del DAO de películas
+ * Pruebas unitarias de la gestiÃ³n de datos de las pelÃ­culas
  * @author Antonio Mas Esteve
  */
 class PeliculaDAOTest {
@@ -27,13 +27,13 @@ class PeliculaDAOTest {
     @Test
     @Disabled
     void insertar() {
-        //Introducir una nueva película:
-        String titulo = "Lo que el viento se llevó";
+        //Introducir una nueva pelÃ­cula:
+        String titulo = "Lo que el viento se llevÃ³";
         boolean check;
-        Pelicula pelicula = new Pelicula(0, "Lo que el viento se llevó", "jksdnklcnkc", 1978, "200", Categoria.COMEDIA, Formato.FLV, Valoracion.CINCO);
+        Pelicula pelicula = new Pelicula(0, "Lo que el viento se llevÃ³", "jksdnklcnkc", 1978, "200", Categoria.COMEDIA, Formato.FLV, Valoracion.CINCO);
         //Comprueba que se ha hecho:
         check = peliculaDAO.insertar(pelicula);
-        //Busca la misma película y la compara para ver si se ha guardado correctamente:
+        //Busca la misma pelÃ­cula y la compara para ver si se ha guardado correctamente:
         Pelicula pelicula1 = peliculaDAO.buscar(8);
         assertTrue(check);
         assertEquals(pelicula, pelicula1);
@@ -64,7 +64,7 @@ class PeliculaDAOTest {
     @Test
     @Disabled
     void modificar() {
-        //Se añade una película igual con otro título:
+        //Se aï¿½ade una pelï¿½cula igual con otro tÃ­tulo:
         boolean check;
         Pelicula pelicula = new Pelicula(8, "Terminator", "jksdnklcnkc", 1978, "200", Categoria.COMEDIA, Formato.FLV, Valoracion.CINCO);
         check = peliculaDAO.modificar(pelicula);
@@ -85,7 +85,7 @@ class PeliculaDAOTest {
     @Disabled
     void relacionarActor(){
         boolean check;
-        //Buscamos una película y un actor
+        //Buscamos una pelÃ­cula y un actor
         Pelicula pelicula = peliculaDAO.buscar(1);
         Equipo equipo = equipoDAO.buscar(10);
         List<Equipo> actores = new ArrayList<>();
@@ -103,7 +103,7 @@ class PeliculaDAOTest {
     @Test
     @Disabled
     void eliminarActor(){
-        //Se busca la relación:
+        //Se busca la relaciÃ³n:
         Pelicula pelicula = peliculaDAO.buscar(1);
         Actor actor = pelicula.getActores().get(0);
         //Se elimina del objeto en memoria:

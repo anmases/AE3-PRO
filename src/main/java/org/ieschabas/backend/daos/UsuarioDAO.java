@@ -4,13 +4,23 @@ import org.ieschabas.backend.clases.EntidadAbstracta;
 import org.ieschabas.backend.clases.Usuario;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
+
+/**
+ * Clase de acceso a datos de Usuario.
+ * @author Antonio Mas Esteve
+ */
 @Repository
 public class UsuarioDAO extends AbstractDAO {
     //definimos el logger:
     private final Logger LOGGER = Logger.getLogger(UsuarioDAO.class);
     private static final String CONSULTA = "SELECT e FROM Usuario e";
+
+    /**
+     * Constructor vacío
+     */
+    public UsuarioDAO() {super();}
+
     @Override
     public boolean insertar(EntidadAbstracta ea) {
         if(ea instanceof Usuario) {
