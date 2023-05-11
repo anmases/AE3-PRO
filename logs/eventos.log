@@ -26452,3 +26452,70 @@ Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
 11-05-2023 10:43:06 INFO  DevServerOutputTracker:124 -     23 | const routes = [
 11-05-2023 10:43:06 INFO  DevServerOutputTracker:124 - 
 11-05-2023 10:43:06 INFO  DevServerOutputTracker:124 - [TypeScript] Found 1 error. Watching for file changes.
+11-05-2023 13:13:07 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+11-05-2023 13:13:07 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@247added, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d7fe300, org.springframework.security.web.context.SecurityContextPersistenceFilter@59b5251d, org.springframework.security.web.header.HeaderWriterFilter@751e7d99, org.springframework.security.web.csrf.CsrfFilter@35ec675e, org.springframework.security.web.authentication.logout.LogoutFilter@52caa9d8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@139862ca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4bba628, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@344db28d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75375bb0, org.springframework.security.web.session.SessionManagementFilter@297c0311, org.springframework.security.web.access.ExceptionTranslationFilter@74aa29c7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@257f1509]
+11-05-2023 13:13:08 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+11-05-2023 13:13:08 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+11-05-2023 13:13:08 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+11-05-2023 13:13:08 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+11-05-2023 13:13:08 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+11-05-2023 13:13:08 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+11-05-2023 13:13:08 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+11-05-2023 13:13:08 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+11-05-2023 13:13:08 INFO  Application:61 - Started Application in 14.549 seconds (JVM running for 17.378)
+11-05-2023 13:13:08 INFO  AbstractDevServerRunner:205 - Starting Vite
+11-05-2023 13:13:15 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-05-2023 13:13:15 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+11-05-2023 13:13:15 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+11-05-2023 13:13:16 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [348] milliseconds.
+11-05-2023 13:13:16 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+11-05-2023 13:13:37 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+11-05-2023 13:13:43 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+11-05-2023 13:13:47 INFO  DevServerOutputTracker:124 - 
+11-05-2023 13:13:47 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 9670 ms
+11-05-2023 13:13:47 INFO  DevServerOutputTracker:124 - 
+11-05-2023 13:13:47 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 38228ms
+11-05-2023 13:13:47 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:51310/VAADIN/
+11-05-2023 13:13:50 INFO  DevServerOutputTracker:124 - 
+11-05-2023 13:13:50 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.

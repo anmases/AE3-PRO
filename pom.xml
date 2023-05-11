@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <!-- Project from https://start.vaadin.com/project/ee1078c4-4c9b-4d35-9636-f697cd868f72 -->
     <groupId>org.ieschabas</groupId>
-    <artifactId>ae3-pro-frontend</artifactId>
-    <name>ae3-pro-frontend</name>
+    <artifactId>ae3-pro</artifactId>
+    <name>ae3-pro</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
