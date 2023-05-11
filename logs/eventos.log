@@ -26519,3 +26519,522 @@ Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
 11-05-2023 13:13:47 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:51310/VAADIN/
 11-05-2023 13:13:50 INFO  DevServerOutputTracker:124 - 
 11-05-2023 13:13:50 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+11-05-2023 19:25:30 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+11-05-2023 19:25:30 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5e60e639, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6bab65b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a461744, org.springframework.security.web.header.HeaderWriterFilter@445265b0, org.springframework.security.web.csrf.CsrfFilter@2005d3e0, org.springframework.security.web.authentication.logout.LogoutFilter@76093fa9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@776ae580, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@173e4b75, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78f2cab9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f6b3f4c, org.springframework.security.web.session.SessionManagementFilter@1440a166, org.springframework.security.web.access.ExceptionTranslationFilter@62d10834, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f9009d3]
+11-05-2023 19:25:31 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+11-05-2023 19:25:31 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+11-05-2023 19:25:31 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+11-05-2023 19:25:31 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+11-05-2023 19:25:31 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+11-05-2023 19:25:31 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+11-05-2023 19:25:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+11-05-2023 19:25:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+11-05-2023 19:25:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:25:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:25:31 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:25:32 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:25:32 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+11-05-2023 19:25:32 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+11-05-2023 19:25:32 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+11-05-2023 19:25:32 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+11-05-2023 19:25:32 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+11-05-2023 19:25:32 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+11-05-2023 19:25:32 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+11-05-2023 19:25:32 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+11-05-2023 19:25:32 INFO  Application:61 - Started Application in 15.014 seconds (JVM running for 16.749)
+11-05-2023 19:25:37 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-05-2023 19:25:37 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+11-05-2023 19:25:37 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+11-05-2023 19:25:37 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [404] milliseconds.
+11-05-2023 19:25:37 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+11-05-2023 19:26:09 INFO  TaskUpdatePackages:363 - using 'C:\Program Files\nodejs\npm.cmd --no-update-notifier --no-audit --scripts-prepend-node-path=true --ignore-scripts install' for frontend package installation
+11-05-2023 19:26:16 INFO  TaskUpdatePackages:412 - Frontend dependencies resolved successfully.
+11-05-2023 19:26:26 INFO  TaskCopyFrontendFiles:66 - Copying frontend resources from jar files ...
+11-05-2023 19:26:26 INFO  TaskCopyFrontendFiles:91 - Visited 20 resources. Took 104 ms.
+11-05-2023 19:26:26 INFO  AbstractDevServerRunner:205 - Starting Vite
+11-05-2023 19:27:23 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+11-05-2023 19:29:00 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+11-05-2023 19:29:00 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@69f24965, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4eab9aec, org.springframework.security.web.context.SecurityContextPersistenceFilter@18fa5af6, org.springframework.security.web.header.HeaderWriterFilter@af007d6, org.springframework.security.web.csrf.CsrfFilter@4b74a67a, org.springframework.security.web.authentication.logout.LogoutFilter@eb6ccbc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@73230721, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b881f1f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51efdb72, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a45c218, org.springframework.security.web.session.SessionManagementFilter@22d47f09, org.springframework.security.web.access.ExceptionTranslationFilter@4b4228cf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c25deb0]
+11-05-2023 19:29:03 INFO  ApplicationTest:61 - Started ApplicationTest in 21.253 seconds (JVM running for 25.088)
+11-05-2023 19:29:04 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+11-05-2023 19:29:04 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+11-05-2023 19:29:04 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+11-05-2023 19:29:04 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+11-05-2023 19:29:04 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+11-05-2023 19:29:04 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+11-05-2023 19:29:04 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+11-05-2023 19:29:05 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@72924f19] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+11-05-2023 19:29:05 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 1 -- Francis -- Ford Coppola -- 1939 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 2 -- Stanley -- Kubrick -- 1928 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 3 -- Billy -- Wilder -- 1906 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 4 -- John -- Carpenter -- 1948 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 5 -- James -- Cameron -- 1954 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 6 -- Pedro -- Almodovar -- 1949 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 7 -- Martin -- Scorsese -- 1942 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 8 -- Quentin -- Tarantino -- 1963 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 9 -- Woody -- Allen -- 1935 -- DIRECTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 10 -- Marlon -- Brandon -- 1924 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 11 -- Al -- Pacino -- 1940 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 12 -- Robert -- Duvall -- 1931 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 13 -- James -- Cann -- 1940 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 14 -- Diane -- Keaton -- 1946 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 15 -- Robert -- de Niro -- 1943 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 16 -- Kirk -- Douglas -- 1916 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 17 -- Ralph -- Meeker -- 1920 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 18 -- Adolphe -- Menjou -- 1890 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 19 -- Jack -- Lemmon -- 1925 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 20 -- Walter -- Matthau -- 1920 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 21 -- Susan -- Sarandon -- 1946 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
+11-05-2023 19:29:05 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR
+11-05-2023 19:31:24 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+11-05-2023 19:31:25 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@78e7b83, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6761f75b, org.springframework.security.web.context.SecurityContextPersistenceFilter@15a0f9, org.springframework.security.web.header.HeaderWriterFilter@77ad2767, org.springframework.security.web.csrf.CsrfFilter@54780c40, org.springframework.security.web.authentication.logout.LogoutFilter@237c8718, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63896cf7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@210e2f2f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c31419f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c8a91e2, org.springframework.security.web.session.SessionManagementFilter@608c2042, org.springframework.security.web.access.ExceptionTranslationFilter@446981a4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49322d04]
+11-05-2023 19:31:28 INFO  ApplicationTest:61 - Started ApplicationTest in 16.403 seconds (JVM running for 20.634)
+11-05-2023 19:31:28 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+11-05-2023 19:31:29 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+11-05-2023 19:31:29 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+11-05-2023 19:31:29 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+11-05-2023 19:31:29 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+11-05-2023 19:31:29 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+11-05-2023 19:31:29 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+11-05-2023 19:31:29 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@bb3487c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+11-05-2023 19:31:29 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 1 -- Francis -- Ford Coppola -- 1939 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 2 -- Stanley -- Kubrick -- 1928 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 3 -- Billy -- Wilder -- 1906 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 4 -- John -- Carpenter -- 1948 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 5 -- James -- Cameron -- 1954 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 6 -- Pedro -- Almodovar -- 1949 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 7 -- Martin -- Scorsese -- 1942 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 8 -- Quentin -- Tarantino -- 1963 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 9 -- Woody -- Allen -- 1935 -- DIRECTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 10 -- Marlon -- Brandon -- 1924 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 11 -- Al -- Pacino -- 1940 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 12 -- Robert -- Duvall -- 1931 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 13 -- James -- Cann -- 1940 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 14 -- Diane -- Keaton -- 1946 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 15 -- Robert -- de Niro -- 1943 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 16 -- Kirk -- Douglas -- 1916 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 17 -- Ralph -- Meeker -- 1920 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 18 -- Adolphe -- Menjou -- 1890 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 19 -- Jack -- Lemmon -- 1925 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 20 -- Walter -- Matthau -- 1920 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 21 -- Susan -- Sarandon -- 1946 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
+11-05-2023 19:31:30 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR
+11-05-2023 19:37:05 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+11-05-2023 19:37:05 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c7443f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74e175c7, org.springframework.security.web.context.SecurityContextPersistenceFilter@210e2f2f, org.springframework.security.web.header.HeaderWriterFilter@608c2042, org.springframework.security.web.csrf.CsrfFilter@12811f95, org.springframework.security.web.authentication.logout.LogoutFilter@1e38e8b6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@31f5ffb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22c0344e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7267006e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c528f2f, org.springframework.security.web.session.SessionManagementFilter@5693d1d2, org.springframework.security.web.access.ExceptionTranslationFilter@60e5eed0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56b48163]
+11-05-2023 19:37:08 INFO  ApplicationTest:61 - Started ApplicationTest in 17.937 seconds (JVM running for 21.988)
+11-05-2023 19:37:09 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: videoclub_pro]
+11-05-2023 19:37:09 WARN  pooling:75 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+11-05-2023 19:37:09 INFO  pooling:119 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/videoclub_pro]
+11-05-2023 19:37:09 INFO  pooling:128 - HHH10001001: Connection properties: {password=****, user=root}
+11-05-2023 19:37:09 INFO  pooling:132 - HHH10001003: Autocommit mode: false
+11-05-2023 19:37:09 INFO  DriverManagerConnectionProviderImpl:322 - HHH000115: Hibernate connection pool size: 20 (min=1)
+11-05-2023 19:37:09 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+11-05-2023 19:37:10 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@bb3487c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+11-05-2023 19:37:10 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 1 -- Francis -- Ford Coppola -- 1939 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 2 -- Stanley -- Kubrick -- 1928 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 3 -- Billy -- Wilder -- 1906 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 4 -- John -- Carpenter -- 1948 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 5 -- James -- Cameron -- 1954 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 6 -- Pedro -- Almodovar -- 1949 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 7 -- Martin -- Scorsese -- 1942 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 8 -- Quentin -- Tarantino -- 1963 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 9 -- Woody -- Allen -- 1935 -- DIRECTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 10 -- Marlon -- Brandon -- 1924 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 11 -- Al -- Pacino -- 1940 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 12 -- Robert -- Duvall -- 1931 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 13 -- James -- Cann -- 1940 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 14 -- Diane -- Keaton -- 1946 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 15 -- Robert -- de Niro -- 1943 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 16 -- Kirk -- Douglas -- 1916 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 17 -- Ralph -- Meeker -- 1920 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 18 -- Adolphe -- Menjou -- 1890 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 19 -- Jack -- Lemmon -- 1925 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 20 -- Walter -- Matthau -- 1920 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 21 -- Susan -- Sarandon -- 1946 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 22 -- Leonardo -- DiCaprio -- 1974 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 23 -- Mila -- Jovovich -- 1975 -- ACTOR
+11-05-2023 19:37:10 INFO  UsuarioDAO:94 - Listar: 24 -- Kate -- Winslet -- 1975 -- ACTOR
+11-05-2023 19:37:46 INFO  UsuarioDAO:94 - Listar: 1 -- Antonio -- Mas Esteve -- true
+11-05-2023 19:37:46 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@521981d9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53e780d7, org.springframework.security.web.context.SecurityContextPersistenceFilter@50aa482f, org.springframework.security.web.header.HeaderWriterFilter@665fb1d8, org.springframework.security.web.csrf.CsrfFilter@4ed096cc, org.springframework.security.web.authentication.logout.LogoutFilter@64c009b8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@751eb9a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63fcbf75, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@663d59ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@181909f0, org.springframework.security.web.session.SessionManagementFilter@43376a03, org.springframework.security.web.access.ExceptionTranslationFilter@3b6d94fc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a98983b]
+11-05-2023 19:37:47 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+11-05-2023 19:37:47 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+11-05-2023 19:37:47 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+11-05-2023 19:37:47 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+11-05-2023 19:37:47 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+11-05-2023 19:37:47 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+11-05-2023 19:37:47 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+11-05-2023 19:37:47 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+11-05-2023 19:37:47 INFO  AbstractDevServerRunner:205 - Starting Vite
+11-05-2023 19:37:47 INFO  Application:61 - Started Application in 13.396 seconds (JVM running for 14.79)
+11-05-2023 19:37:51 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-05-2023 19:37:51 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+11-05-2023 19:37:51 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+11-05-2023 19:37:52 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [441] milliseconds.
+11-05-2023 19:37:52 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+11-05-2023 19:38:15 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+11-05-2023 19:38:19 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+11-05-2023 19:38:24 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:38:24 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 8388 ms
+11-05-2023 19:38:24 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:38:24 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:60909/VAADIN/
+11-05-2023 19:38:24 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 36668ms
+11-05-2023 19:38:26 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:38:26 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+11-05-2023 19:44:51 WARN  AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'VaadinSecurityFilterChainBean' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Unsatisfied dependency expressed through method 'filterChain' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'users' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.core.userdetails.UserDetailsService]: Factory method 'users' threw exception; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+11-05-2023 19:44:51 INFO  StandardService:173 - Stopping service [Tomcat]
+11-05-2023 19:44:51 WARN  WebappClassLoaderBase:173 - The web application [ROOT] appears to have started a thread named [Thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Thread.sleep(Native Method)
+ app//com.vaadin.base.devserver.startup.DevModeInitializer.lambda$initDevModeHandler$0(DevModeInitializer.java:356)
+ app//com.vaadin.base.devserver.startup.DevModeInitializer$$Lambda$742/0x0000000801016710.run(Unknown Source)
+ java.base@17.0.6/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+11-05-2023 19:44:51 INFO  ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+11-05-2023 19:44:51 ERROR SpringApplication:821 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'VaadinSecurityFilterChainBean' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Unsatisfied dependency expressed through method 'filterChain' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'users' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.core.userdetails.UserDetailsService]: Factory method 'users' threw exception; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:720)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.ieschabas.Application.main(Application.java:29)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'VaadinSecurityFilterChainBean' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Unsatisfied dependency expressed through method 'filterChain' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'users' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.core.userdetails.UserDetailsService]: Factory method 'users' threw exception; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:760)
+	... 20 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'users' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.core.userdetails.UserDetailsService]: Factory method 'users' threw exception; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:353)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 36 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'users' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.core.userdetails.UserDetailsService]: Factory method 'users' threw exception; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 48 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'users' defined in class path resource [org/ieschabas/security/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.core.userdetails.UserDetailsService]: Factory method 'users' threw exception; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1160)
+	at org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer.getBeanOrNull(InitializeUserDetailsBeanManagerConfigurer.java:89)
+	at org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer.configure(InitializeUserDetailsBeanManagerConfigurer.java:62)
+	at org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer.configure(InitializeUserDetailsBeanManagerConfigurer.java:55)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.configure(AbstractConfiguredSecurityBuilder.java:349)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:303)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38)
+	at org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration.getAuthenticationManager(AuthenticationConfiguration.java:121)
+	at org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.authenticationManager(HttpSecurityConfiguration.java:112)
+	at org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity(HttpSecurityConfiguration.java:89)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 49 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.core.userdetails.UserDetailsService]: Factory method 'users' threw exception; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 73 more
+Caused by: java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:757)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:848)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:23)
+	at org.ieschabas.daos.UsuarioDAO.listar(UsuarioDAO.java:83)
+	at org.ieschabas.security.SecurityConfig.users(SecurityConfig.java:66)
+	at org.ieschabas.security.SecurityConfig$$EnhancerBySpringCGLIB$$997a232b.CGLIB$users$2(<generated>)
+	at org.ieschabas.security.SecurityConfig$$EnhancerBySpringCGLIB$$997a232b$$FastClassBySpringCGLIB$$6cb8996d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at org.ieschabas.security.SecurityConfig$$EnhancerBySpringCGLIB$$997a232b.users(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 74 more
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped [SELECT e FROM Usuario e]
+	at org.hibernate.hql.internal.ast.QuerySyntaxException.generateQueryException(QuerySyntaxException.java:79)
+	at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:103)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:220)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:636)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:748)
+	... 88 more
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: Usuario is not mapped
+	at org.hibernate.hql.internal.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:170)
+	at org.hibernate.hql.internal.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:91)
+	at org.hibernate.hql.internal.ast.tree.FromClause.addFromElement(FromClause.java:77)
+	at org.hibernate.hql.internal.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:334)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3782)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3671)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:746)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:602)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:339)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:287)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:276)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:192)
+	... 94 more
+11-05-2023 19:49:05 INFO  UsuarioDAO:93 - Listar: 1 -- Antonio -- Mas Esteve -- true
+11-05-2023 19:49:06 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70c6860, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ef6a063, org.springframework.security.web.context.SecurityContextPersistenceFilter@247added, org.springframework.security.web.header.HeaderWriterFilter@165a78d4, org.springframework.security.web.csrf.CsrfFilter@324c3ed5, org.springframework.security.web.authentication.logout.LogoutFilter@3759ea4d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f514364, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75375bb0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22b8eaf0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cd7bc66, org.springframework.security.web.session.SessionManagementFilter@7dbe9654, org.springframework.security.web.access.ExceptionTranslationFilter@3bfab643, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2b53d6fc]
+11-05-2023 19:49:06 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+11-05-2023 19:49:06 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+11-05-2023 19:49:06 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+11-05-2023 19:49:06 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+11-05-2023 19:49:06 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+11-05-2023 19:49:06 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+11-05-2023 19:49:06 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+11-05-2023 19:49:07 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+11-05-2023 19:49:07 INFO  Application:61 - Started Application in 12.68 seconds (JVM running for 15.68)
+11-05-2023 19:49:07 INFO  AbstractDevServerRunner:205 - Starting Vite
+11-05-2023 19:49:10 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-05-2023 19:49:10 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+11-05-2023 19:49:10 INFO  DispatcherServlet:547 - Completed initialization in 5 ms
+11-05-2023 19:49:11 WARN  SessionIdGeneratorBase:173 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [537] milliseconds.
+11-05-2023 19:49:11 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+11-05-2023 19:49:31 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+11-05-2023 19:49:35 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+11-05-2023 19:49:38 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:49:38 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 7029 ms
+11-05-2023 19:49:38 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:49:38 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 31430ms
+11-05-2023 19:49:38 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:61252/VAADIN/
+11-05-2023 19:49:42 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:49:42 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.
+11-05-2023 19:51:06 INFO  UsuarioDAO:93 - Listar: 1 -- Antonio -- Mas Esteve -- true
+11-05-2023 19:51:06 INFO  DefaultSecurityFilterChain:55 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f514364, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@99e03a9, org.springframework.security.web.context.SecurityContextPersistenceFilter@139862ca, org.springframework.security.web.header.HeaderWriterFilter@257f1509, org.springframework.security.web.csrf.CsrfFilter@98dc042, org.springframework.security.web.authentication.logout.LogoutFilter@63088bbd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b30409, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31fd3db2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74a46f81, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a07088b, org.springframework.security.web.session.SessionManagementFilter@3bfab643, org.springframework.security.web.access.ExceptionTranslationFilter@24484dfb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@15c48119]
+11-05-2023 19:51:07 INFO  AtmosphereFramework:606 - Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+11-05-2023 19:51:07 INFO  AtmosphereFramework:607 - Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2835 - Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+11-05-2023 19:51:07 INFO  ForkJoinPool:48 - Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1756 - Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+11-05-2023 19:51:07 INFO  JSR356AsyncSupport:76 - JSR 356 Mapping path /VAADIN/push
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1215 - Installing Default AtmosphereInterceptors
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1221 - Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1234 - 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1224 - Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1030 - Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1039 - Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1044 - Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1045 - Broadcaster Shared List Resources: false
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1046 - Broadcaster Polling Wait Time 100
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1047 - Shared ExecutorService supported: true
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1056 - Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1063 - Async I/O Thread Pool Size: 200
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1069 - Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1070 - Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1071 - Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1081 - Invoke AtmosphereInterceptor on WebSocket message true
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1082 - HttpSession supported: true
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1084 - Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1085 - Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.71 using javax.servlet/3.0 and jsr356/WebSocket API
+11-05-2023 19:51:07 INFO  AtmosphereFramework:1087 - Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+11-05-2023 19:51:07 INFO  AtmosphereFramework:2626 - Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+11-05-2023 19:51:08 INFO  DefaultDeploymentConfiguration:150 - 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+11-05-2023 19:51:08 INFO  TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+11-05-2023 19:51:08 INFO  Application:61 - Started Application in 12.734 seconds (JVM running for 14.187)
+11-05-2023 19:51:08 INFO  AbstractDevServerRunner:205 - Starting Vite
+11-05-2023 19:51:10 INFO  [/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-05-2023 19:51:10 INFO  DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+11-05-2023 19:51:10 INFO  DispatcherServlet:547 - Completed initialization in 2 ms
+11-05-2023 19:51:10 INFO  SpringInstantiator:81 - The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+11-05-2023 19:51:39 INFO  AbstractDevServerRunner:394 - Running Vite to compile frontend resources. This may take a moment, please stand by...
+11-05-2023 19:51:42 INFO  DevServerOutputTracker:124 - @vaadin/bundles npm package is not found, Vaadin component dependency bundles are disabled.
+11-05-2023 19:51:46 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:51:46 INFO  DevServerOutputTracker:124 -   VITE v3.2.5  ready in 7599 ms
+11-05-2023 19:51:46 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:51:46 INFO  AbstractDevServerRunner:223 - Started Vite. Time: 38520ms
+11-05-2023 19:51:46 INFO  DevServerOutputTracker:124 -   ?  Local:   http://127.0.0.1:61361/VAADIN/
+11-05-2023 19:51:50 INFO  DevServerOutputTracker:124 - 
+11-05-2023 19:51:50 INFO  DevServerOutputTracker:124 - [TypeScript] Found 0 errors. Watching for file changes.

@@ -30,7 +30,6 @@ public class SecurityConfig extends VaadinWebSecurity {
 
     /**
      * Constructor de la clase SecurityConfig, donde se inyectan las dependencias Spring de los usuarios.
-     * @param usuarioDao
      */
     public SecurityConfig(UsuarioDAO usuarioDao) {
         this.usuarioDao = usuarioDao;
