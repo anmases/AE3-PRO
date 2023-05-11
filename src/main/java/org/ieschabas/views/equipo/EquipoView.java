@@ -17,10 +17,10 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.ieschabas.clases.Actor;
-import org.ieschabas.clases.Equipo;
-import org.ieschabas.daos.EquipoDAO;
-import org.ieschabas.enums.Puesto;
+import org.ieschabas.backend.clases.Actor;
+import org.ieschabas.backend.clases.Equipo;
+import org.ieschabas.backend.daos.EquipoDAO;
+import org.ieschabas.backend.enums.Puesto;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;

@@ -1,8 +1,8 @@
 package org.ieschabas.security;
 
 import com.vaadin.flow.spring.security.AuthenticationContext;
-import org.ieschabas.clases.Usuario;
-import org.ieschabas.daos.UsuarioDAO;
+import org.ieschabas.backend.clases.Usuario;
+import org.ieschabas.backend.daos.UsuarioDAO;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package org.ieschabas;
 
-import org.ieschabas.clases.Equipo;
-import org.ieschabas.daos.EquipoDAO;
+import org.ieschabas.backend.clases.Equipo;
+import org.ieschabas.backend.daos.EquipoDAO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -15,9 +15,9 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import org.ieschabas.clases.Cliente;
-import org.ieschabas.clases.Usuario;
-import org.ieschabas.daos.UsuarioDAO;
+import org.ieschabas.backend.clases.Cliente;
+import org.ieschabas.backend.clases.Usuario;
+import org.ieschabas.backend.daos.UsuarioDAO;
 import org.ieschabas.mailServices.ServicioCorreo;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -42,8 +42,6 @@ public class LoginView extends VerticalLayout {
 
     /**
      * Constructor de la Vista login.
-     * @param usuarioDao
-     * @param servicioCorreo
      */
     public LoginView(UsuarioDAO usuarioDao, ServicioCorreo servicioCorreo) {
         this.usuarioDao = usuarioDao;

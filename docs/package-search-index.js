@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.ieschabas"},{"l":"org.ieschabas.components.appnav"},{"l":"org.ieschabas.views"},{"l":"org.ieschabas.views.equipo"},{"l":"org.ieschabas.views.alquileres"},{"l":"org.ieschabas.views.directores"},{"l":"org.ieschabas.views.peliculas"}];updateSearchResults();

@@ -15,10 +15,10 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.StreamResource;
-import org.ieschabas.clases.*;
-import org.ieschabas.daos.AlquilerDAO;
-import org.ieschabas.daos.PeliculaDAO;
-import org.ieschabas.enums.Valoracion;
+import org.ieschabas.backend.clases.*;
+import org.ieschabas.backend.daos.AlquilerDAO;
+import org.ieschabas.backend.daos.PeliculaDAO;
+import org.ieschabas.backend.enums.Valoracion;
 import org.ieschabas.security.SecurityService;
 import org.ieschabas.views.MainView;
 
