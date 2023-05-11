@@ -14,7 +14,9 @@
         <vaadin.version>23.3.6</vaadin.version>
         <!-- this parameter is needed as spring-boot bom overwrites it -->
         <selenium.version>4.5.3</selenium.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
