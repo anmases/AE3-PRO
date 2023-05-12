@@ -1,6 +1,7 @@
 package org.ieschabas.views.login;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H3;
@@ -13,6 +14,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.ieschabas.backend.clases.Cliente;
@@ -38,7 +40,7 @@ public class LoginView extends VerticalLayout {
     private final UsuarioDAO usuarioDao;
     private final ServicioCorreo servicioCorreo;
     private LoginForm vistaLogin;
-    private Dialog formularioCliente;
+    private Dialog dialogoCliente;
 
     /**
      * Constructor de la Vista login.
@@ -46,8 +48,10 @@ public class LoginView extends VerticalLayout {
     public LoginView(UsuarioDAO usuarioDao, ServicioCorreo servicioCorreo) {
         this.usuarioDao = usuarioDao;
         this.servicioCorreo = servicioCorreo;
+        dialogoCliente = new Dialog();
+        dialogoCliente.setResizable(true);
         setAlignItems(Alignment.CENTER);
-      add(crearFormularioCliente(), vistaLogin(), crearUsuarioBoton());
+      add(dialogoCliente, vistaLogin(), crearUsuarioBoton());
     }
 
     /**
@@ -57,7 +61,10 @@ public class LoginView extends VerticalLayout {
      */
     public Button crearUsuarioBoton(){
         Button nuevoUsuario = new Button("Registrarse");
-        nuevoUsuario.addClickListener(e->formularioCliente.open());
+        nuevoUsuario.addClickListener(e->{
+            dialogoCliente.add(crearFormularioCliente());
+            dialogoCliente.open();
+        });
         return nuevoUsuario;
     }
 
@@ -67,9 +74,9 @@ public class LoginView extends VerticalLayout {
      * @author Antonio Mas Esteve
      * @return Dialog
      */
-    public Dialog crearFormularioCliente(){
-        formularioCliente = new Dialog();
+    public VerticalLayout crearFormularioCliente(){
         FormLayout formulario = new FormLayout();
+        H3 titulo = new H3("Crear nuevo usuario");
         TextField nombre = new TextField("nombre");
         TextField apellidos = new TextField("Apellidos");
         TextField direccion = new TextField("Dirección");
@@ -77,6 +84,8 @@ public class LoginView extends VerticalLayout {
         PasswordField contrasenya = new PasswordField("Contraseña");
 
         Button guardar = new Button("Guardar");
+        guardar.addThemeVariants(ButtonVariant.LUMO_SUCCESS);
+        guardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         guardar.addClickListener(e->{
             if(nombre.getValue() != null && apellidos.getValue()!= null && direccion.getValue() != null && email.getValue() != null && contrasenya.getValue() != null) {
                 //Se encripta la contraseña:
@@ -87,8 +96,8 @@ public class LoginView extends VerticalLayout {
                     Notification notification = Notification.show("Usuario creado correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 }
-                formularioCliente.removeAll();
-                formularioCliente.close();
+                dialogoCliente.removeAll();
+                dialogoCliente.close();
             }
             else{
                 Notification notification = Notification.show("Todos los campos deben rellenarse");
@@ -96,15 +105,22 @@ public class LoginView extends VerticalLayout {
             }
         });
         Button cancelar = new Button("Cancelar");
+        cancelar.addThemeVariants(ButtonVariant.LUMO_ERROR);
         cancelar.addClickListener(e->{
-            formularioCliente.removeAll();
-            formularioCliente.close();
+            dialogoCliente.removeAll();
+            dialogoCliente.close();
 
         });
+        dialogoCliente.addDialogCloseActionListener(e -> {
+            dialogoCliente.close();
+            dialogoCliente.removeAll();
+        });
         HorizontalLayout botones = new HorizontalLayout(guardar, cancelar);
-        formulario.add(nombre, apellidos, direccion, email, contrasenya, botones);
-        formularioCliente.add(formulario);
-      return formularioCliente;
+        botones.setWidthFull();
+        Style layoutStyle = botones.getStyle();
+        layoutStyle.set("justify-content", "flex-end");
+        formulario.add(nombre, apellidos, direccion, email, contrasenya);
+      return new VerticalLayout(titulo, formulario, botones);
     }
 
     /**
