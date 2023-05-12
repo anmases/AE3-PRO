@@ -1,7 +1,6 @@
 package org.ieschabas.security;
 
 import com.vaadin.flow.spring.security.VaadinWebSecurity;
-import org.ieschabas.backend.clases.Usuario;
 import org.ieschabas.backend.daos.UsuarioDAO;
 import org.ieschabas.views.login.LoginView;
 import org.springframework.context.annotation.Bean;
