@@ -162,8 +162,6 @@ public class UsuarioView extends VerticalLayout {
 
         Button botonGuardar = new Button();
         botonGuardar.addClickListener(e -> {
-            //Creamos el objeto a partir del editor y lo guardamos en la BD.
-            editor.save();
             //Se rellenan todos los campos del objeto seleccionado:
             Usuario usuario = usuarioDAO.buscar(textoId.getValue());
             usuario.setNombre(textoNombre.getValue());
@@ -179,6 +177,8 @@ public class UsuarioView extends VerticalLayout {
             }
             //Forzamos el editor a cerrarse pase lo que pase:
             editor.cancel();
+           rellenarTabla();
+           refrescarTabla();
         });
         botonGuardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         botonGuardar.setIcon(new Icon(VaadinIcon.ADD_DOCK));
