@@ -109,7 +109,7 @@ public class EquipoDAO extends AbstractDAO {
     ////////////////////////////Métodos para instancias hijas////////////////////////////////////////////
 
     /**
-     * Devuelve la lista de equipo
+     * Devuelve la lista de actores
      *
      * @return List
      */

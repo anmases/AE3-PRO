@@ -19,6 +19,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.data.value.ValueChangeMode;
@@ -29,6 +31,7 @@ import org.ieschabas.backend.clases.Actor;
 import org.ieschabas.backend.clases.Director;
 import org.ieschabas.backend.clases.Equipo;
 import org.ieschabas.backend.clases.Pelicula;
+import org.ieschabas.backend.daos.EquipoDAO;
 import org.ieschabas.backend.daos.PeliculaDAO;
 import org.ieschabas.backend.enums.Categoria;
 import org.ieschabas.backend.enums.Formato;
@@ -36,6 +39,8 @@ import org.ieschabas.backend.enums.Valoracion;
 import org.ieschabas.views.MainView;
 
 import javax.annotation.security.RolesAllowed;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serial;
 import java.util.*;
 
@@ -52,7 +57,7 @@ public class PeliculasView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = -1413643061670701677L;
     private final PeliculaDAO peliculaDao;
-
+    private final EquipoDAO equipoDAO;
     private Grid<Pelicula> tabla;
     private Dialog anyadirVentana;
     private VerticalLayout anyadirTabla = new VerticalLayout();
@@ -63,8 +68,9 @@ public class PeliculasView extends VerticalLayout {
      * Aquí se inyectan las dependencias de PeliculaDAO mediante SpringBoot IoC
      * @author Antonio Mas Esteve
      */
-    public PeliculasView(PeliculaDAO peliculaDao) {
+    public PeliculasView(PeliculaDAO peliculaDao, EquipoDAO equipoDAO) {
         this.peliculaDao = peliculaDao;
+        this.equipoDAO = equipoDAO;
         setSizeFull();
         addClassName("Peliculas-View");
 
@@ -116,7 +122,7 @@ public class PeliculasView extends VerticalLayout {
 
 
 /////////////////////////////////////////Creación del formulario Añadir/////////////////////////////////////////////////
-        //Información para los equipo:
+        //Información para los actores:
         List<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
         List<Actor> listaActoresRestantes = pelicula.getActoresRestantes();
 
@@ -128,10 +134,12 @@ public class PeliculasView extends VerticalLayout {
 
         //Creamos los MultiSelect:
         HorizontalLayout botones2 = new HorizontalLayout();
-        MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>("Añadir equipo a la película");
-        opcionActor.setPlaceholder("Añada los equipo");
+        MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>("Añadir actores a la película");
+        opcionActor.setPlaceholder("Añada los actores");
+        opcionActor.setClearButtonVisible(true);
         MultiSelectComboBox<Director> opcionDirector = new MultiSelectComboBox<>("Añadir directores a la película");
-        opcionDirector.setPlaceholder("Añada los equipo");
+        opcionDirector.setPlaceholder("Añada los directores");
+        opcionDirector.setClearButtonVisible(true);
         opcionActor.setItems(listaActoresRestantes);
         opcionActor.setItemLabelGenerator(actor -> actor.getNombre() + " " + actor.getApellidos());
         opcionDirector.setItems(listaDirectoresRestantes);
@@ -614,6 +622,21 @@ public class PeliculasView extends VerticalLayout {
         ComboBox<Categoria> categoria = new ComboBox<>("Categoría");
         ComboBox<Formato> formato = new ComboBox<>("Formato");
         ComboBox<Valoracion> valoracion = new ComboBox<>("Estrellas");
+        TextField url = new TextField("URL");
+
+        //Campos de las relaciones:
+        MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>("Añadir actores a la película");
+        MultiSelectComboBox<Director> opcionDirector = new MultiSelectComboBox<>("Añadir directores a la película");
+        opcionActor.setItems(equipoDAO.listarActores());
+        opcionActor.setItemLabelGenerator(actor -> actor.getNombre() + " " + actor.getApellidos());
+        opcionDirector.setItems(equipoDAO.listarDirectores());
+        opcionDirector.setItemLabelGenerator(director -> director.getNombre() + " " + director.getApellidos());
+        //campo de subida:
+
+        MemoryBuffer buffer = new MemoryBuffer();
+        Upload upload = new Upload(buffer);
+        upload.setAcceptedFileTypes("image/jpeg", "image/png", "image/gif", "image/bmp");
+
         //Se crean los botones:
         Button cancelar = new Button("Cancelar");
         Button guardar = new Button("Guardar");
@@ -632,6 +655,9 @@ public class PeliculasView extends VerticalLayout {
         categoria.setPlaceholder("seleccione la categoría");
         formato.setPlaceholder("seleccione el formato");
         valoracion.setPlaceholder("seleccione la clasificación");
+        url.setPlaceholder("añada la url de la película");
+        opcionActor.setPlaceholder("Añada los actores");
+        opcionDirector.setPlaceholder("Añada los directores");
         titulo.setClearButtonVisible(true);
         descripcion.setClearButtonVisible(true);
         anyoPublicacion.setClearButtonVisible(true);
@@ -639,6 +665,9 @@ public class PeliculasView extends VerticalLayout {
         categoria.setClearButtonVisible(true);
         formato.setClearButtonVisible(true);
         valoracion.setClearButtonVisible(true);
+        url.setClearButtonVisible(true);
+        opcionActor.setClearButtonVisible(true);
+        opcionDirector.setClearButtonVisible(true);
 
         cancelar.addClickListener(e -> {
             //volver a la tabla:
@@ -652,6 +681,10 @@ public class PeliculasView extends VerticalLayout {
             categoria.clear();
             formato.clear();
             valoracion.clear();
+            url.clear();
+            opcionActor.clear();
+            opcionDirector.clear();
+            upload.clearFileList();
             //Se muestra la notificación:
             Notification notification = Notification.show("No se ha añadido ninguna película");
             notification.addThemeVariants(NotificationVariant.LUMO_CONTRAST);
@@ -659,9 +692,19 @@ public class PeliculasView extends VerticalLayout {
         });
         guardar.addClickListener(e -> {
 
-            if (titulo.getValue() != null && descripcion.getValue() != null && anyoPublicacion.getValue() != null && duracion.getValue() != null && categoria.getValue() != null && formato.getValue() != null) {
+            if (titulo.getValue() != null && descripcion.getValue() != null && anyoPublicacion.getValue() != null && duracion.getValue() != null && categoria.getValue() != null && formato.getValue() != null && url.getValue() != null && !opcionActor.isEmpty() && !opcionDirector.isEmpty() && buffer.getInputStream() != null) {
+                byte[] imagen;
+                try {
+                     imagen = buffer.getInputStream().readAllBytes();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                //Añade todos los actores y directores a una misma lista:
+                List<Equipo> equipos = new ArrayList<>();
+                equipos.addAll(opcionActor.getSelectedItems());
+                equipos.addAll(opcionDirector.getSelectedItems());
                 //Añade al fichero el contenido del formulario:
-                Pelicula pelicula = new Pelicula(0, titulo.getValue(), descripcion.getValue(), anyoPublicacion.getValue(), duracion.getValue(), categoria.getValue(), formato.getValue(), valoracion.getValue());
+                Pelicula pelicula = new Pelicula(0, titulo.getValue(), descripcion.getValue(), anyoPublicacion.getValue(), duracion.getValue(), categoria.getValue(), formato.getValue(), valoracion.getValue(), imagen, url.getValue(), equipos);
                 peliculaDao.insertar(pelicula);
                 //Se muestra la notificación:
                 Notification notification = Notification.show("película guardada correcamente");
@@ -686,11 +729,15 @@ public class PeliculasView extends VerticalLayout {
             categoria.clear();
             formato.clear();
             valoracion.clear();
+            url.clear();
+            opcionActor.clear();
+            opcionDirector.clear();
+            upload.clearFileList();
 
         });
         botones.add(guardar, cancelar);
         //Se añaden al formulario:
-        formLayout.add(titulo, descripcion, anyoPublicacion, duracion, categoria, formato, valoracion, botones);
+        formLayout.add(titulo, descripcion, anyoPublicacion, duracion, categoria, formato, valoracion, url, opcionActor, opcionDirector, upload, botones);
         //Lo añadimos a la vista:
         anyadirPelicula.add(formLayout);
         anyadirPelicula.setVisible(false);
