@@ -529,9 +529,15 @@ public class PeliculasView extends VerticalLayout {
 
         Button botonGuardar = new Button();
         botonGuardar.addClickListener(e -> {
-            Pelicula pelicula;
-            editor.save();
-            pelicula = new Pelicula(textoId.getValue(), textoTitulo.getValue(), textoDescripcion.getValue(), textoAnyoPublicacion.getValue(), textoDuracion.getValue(), textoCategoria.getValue(), textoFormato.getValue(), textoValoracion.getValue());
+            Pelicula pelicula = peliculaDao.buscar(textoId.getValue());
+            pelicula.setTitulo(textoTitulo.getValue());
+            pelicula.setDescripcion(textoDescripcion.getValue());
+            pelicula.setAnyoPublicacion(textoAnyoPublicacion.getValue());
+            pelicula.setDuracion(textoDuracion.getValue());
+            pelicula.setCategoria(textoCategoria.getValue());
+            pelicula.setFormato(textoFormato.getValue());
+            pelicula.setValoracion(textoValoracion.getValue());
+
             if (peliculaDao.modificar(pelicula)) {
                 Notification notification = Notification.show("película modificada");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
@@ -541,6 +547,8 @@ public class PeliculasView extends VerticalLayout {
             }
             //Forzamos el editor a cerrarse pase lo que pase:
             editor.cancel();
+            rellenarTabla();
+            refrescarTabla();
         });
         botonGuardar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         botonGuardar.setIcon(new Icon(VaadinIcon.ADD_DOCK));
