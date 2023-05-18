@@ -166,6 +166,7 @@ public class EquipoView extends VerticalLayout {
         eliminar.addClickListener(event -> {
             //Volcamos los datos actualmente presentes en el formulario en on objeto ad-hoc:
             Equipo equipo = binder.getBean();
+            if(equipo != null) {
                 //Como el método es booleano, si lo hace muestra un mensaje de aceptación y si no lo hace, de error.
                 if (equipoDao.eliminar(equipo.getId())) {
                     Notification notification = Notification.show("Actor Borrado correctamente");
@@ -174,16 +175,17 @@ public class EquipoView extends VerticalLayout {
                     Notification notification = Notification.show("Actor no borrado");
                     notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
                 }
-            //Volvemos a rellenar la tabla:
-            rellenarTabla();
-            //Refrescamos la tabla
-            refrescarTabla();
-            //Vaciamos el formulario:
-            textId.clear();
-            textNombre.clear();
-            textApellidos.clear();
-            textAnyo.clear();
-            textPais.clear();
+                //Volvemos a rellenar la tabla:
+                rellenarTabla();
+                //Refrescamos la tabla
+                refrescarTabla();
+                //Vaciamos el formulario:
+                textId.clear();
+                textNombre.clear();
+                textApellidos.clear();
+                textAnyo.clear();
+                textPais.clear();
+            }
         });
         vistaBoton.add(guardar, cancelar, eliminar);
         formLayout.add(textId, textNombre, textApellidos, textAnyo, textPais, vistaBoton);
