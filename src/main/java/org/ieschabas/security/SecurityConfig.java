@@ -1,7 +1,6 @@
 package org.ieschabas.security;
 
 import com.vaadin.flow.spring.security.VaadinWebSecurity;
-import org.ieschabas.backend.daos.UsuarioDAO;
 import org.ieschabas.views.login.LoginView;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,14 +17,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends VaadinWebSecurity {
-    private final UsuarioDAO usuarioDao;
     private final PersonalUserDetailsService personalUserDetailsService;
 
     /**
      * Constructor de la clase SecurityConfig, donde se inyectan las dependencias Spring de los usuarios.
      */
-    public SecurityConfig(UsuarioDAO usuarioDao, PersonalUserDetailsService personalUserDetailsService) {
-        this.usuarioDao = usuarioDao;
+    public SecurityConfig(PersonalUserDetailsService personalUserDetailsService) {
         this.personalUserDetailsService = personalUserDetailsService;
     }
 

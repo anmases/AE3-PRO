@@ -79,12 +79,18 @@ public class MainView extends AppLayout {
 //Lógica de comprobación de usuario:
 
             Usuario user = securityService.getUsuarioAutenticado();
-            Icon admin = new Icon(VaadinIcon.USER_STAR);
+            if(user.getRol() == Rol.ADMIN) {
+                Icon admin = new Icon(VaadinIcon.USER_STAR);
+                usuario.add(admin);
+            }else{
+                Icon client = new Icon(VaadinIcon.USER);
+                usuario.add(client);
+            }
             H4 nombreUsuario = new H4(user.getNombre() + " " + user.getApellidos());
             header.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.END);
             Button logout = new Button("Cerrar Sesión");
             usuario.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
-            usuario.add(admin, nombreUsuario, logout);
+            usuario.add(nombreUsuario, logout);
             header.add(usuario);
 //Lógica de cierre de sesión:
             logout.addClickListener(e -> securityService.cerrarSesion() );

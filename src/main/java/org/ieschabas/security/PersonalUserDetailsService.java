@@ -31,7 +31,7 @@ public class PersonalUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario usuario = usuarioDao.buscarPorMail(email);
-        if (usuario == null) {
+        if (usuario == null || !usuario.getActivo()) {
             throw new UsernameNotFoundException("Usuario no encontrado");
         }
         return User.withUsername(usuario.getEmail())
