@@ -34,6 +34,7 @@ Once the WAR file is built, you can run it using
 
 ## Useful links
 
+- Read the JAVA documentation from this project at [Documentation](https://anmases.github.io/AE3-PRO/)
 - Read the documentation at [vaadin.com/docs](https://vaadin.com/docs).
 - Follow the tutorials at [vaadin.com/tutorials](https://vaadin.com/tutorials).
 - Watch training videos and get certified at [vaadin.com/learn/training](https://vaadin.com/learn/training).
