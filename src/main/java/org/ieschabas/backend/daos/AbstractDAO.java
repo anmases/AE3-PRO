@@ -35,7 +35,7 @@ public abstract class AbstractDAO{
         //Compienza la transacción.
         em.getTransaction().begin();
         //indicamos al logger el fichero de propiedades:
-        PropertyConfigurator.configure("src/main/resources/log4.properties");
+        PropertyConfigurator.configure("src/main/resources/log4j.properties");
     }
 
     /**

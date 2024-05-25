@@ -7,8 +7,9 @@
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <!--Change credentials-->
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="0385"/>
+            <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/videoclub_pro"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
