@@ -1,4 +1,4 @@
-package org.ieschabas.backend.clases;
+package org.ieschabas.backend.model;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;

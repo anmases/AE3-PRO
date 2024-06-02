@@ -1,15 +1,17 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
     <persistence-unit name="videoclub_pro" transaction-type="RESOURCE_LOCAL">
-        <class>org.ieschabas.backend.clases.Pelicula</class>
-        <class>org.ieschabas.backend.clases.Usuario</class>
-        <class>org.ieschabas.backend.clases.Alquiler</class>
-        <class>org.ieschabas.backend.clases.Equipo</class>
+        <class>org.ieschabas.backend.model.Pelicula</class>
+        <class>org.ieschabas.backend.model.Usuario</class>
+        <class>org.ieschabas.backend.model.Alquiler</class>
+        <class>org.ieschabas.backend.model.Equipo</class>
+        <class>org.ieschabas.backend.model.Alquiler</class>
+        <class>org.ieschabas.backend.model.Cliente</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <!--Change credentials-->
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.connection.password" value="53633393S"/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/videoclub_pro"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>

@@ -1,8 +1,8 @@
 package org.ieschabas.daos;
 
-import org.ieschabas.backend.clases.Alquiler;
-import org.ieschabas.backend.clases.Cliente;
-import org.ieschabas.backend.clases.Pelicula;
+import org.ieschabas.backend.model.Alquiler;
+import org.ieschabas.backend.model.Cliente;
+import org.ieschabas.backend.model.Pelicula;
 import org.ieschabas.backend.daos.AlquilerDAO;
 import org.ieschabas.backend.daos.PeliculaDAO;
 import org.ieschabas.backend.daos.UsuarioDAO;

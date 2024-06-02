@@ -1,7 +1,7 @@
 package org.ieschabas.daos;
 
-import org.ieschabas.backend.clases.Cliente;
-import org.ieschabas.backend.clases.Usuario;
+import org.ieschabas.backend.model.Cliente;
+import org.ieschabas.backend.model.Usuario;
 import org.ieschabas.backend.daos.UsuarioDAO;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

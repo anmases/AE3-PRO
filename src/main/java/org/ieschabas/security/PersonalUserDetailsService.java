@@ -1,6 +1,6 @@
 package org.ieschabas.security;
 
-import org.ieschabas.backend.clases.Usuario;
+import org.ieschabas.backend.model.Usuario;
 import org.ieschabas.backend.daos.UsuarioDAO;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,8 +1,8 @@
 package org.ieschabas.daos;
 
-import org.ieschabas.backend.clases.Actor;
-import org.ieschabas.backend.clases.Equipo;
-import org.ieschabas.backend.clases.Pelicula;
+import org.ieschabas.backend.model.Actor;
+import org.ieschabas.backend.model.Equipo;
+import org.ieschabas.backend.model.Pelicula;
 import org.ieschabas.backend.daos.EquipoDAO;
 import org.ieschabas.backend.daos.PeliculaDAO;
 import org.ieschabas.backend.enums.Categoria;

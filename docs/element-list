@@ -1,5 +1,5 @@
 org.ieschabas
-org.ieschabas.backend.clases
+org.ieschabas.backend.model
 org.ieschabas.backend.daos
 org.ieschabas.backend.enums
 org.ieschabas.components.appnav

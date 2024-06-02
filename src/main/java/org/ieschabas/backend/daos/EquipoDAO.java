@@ -1,9 +1,9 @@
 package org.ieschabas.backend.daos;
 
-import org.ieschabas.backend.clases.Actor;
-import org.ieschabas.backend.clases.Director;
-import org.ieschabas.backend.clases.Equipo;
-import org.ieschabas.backend.clases.EntidadAbstracta;
+import org.ieschabas.backend.model.Actor;
+import org.ieschabas.backend.model.Director;
+import org.ieschabas.backend.model.Equipo;
+import org.ieschabas.backend.model.EntidadAbstracta;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;

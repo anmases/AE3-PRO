@@ -1,6 +1,6 @@
 package org.ieschabas;
 
-import org.ieschabas.backend.clases.Equipo;
+import org.ieschabas.backend.model.Equipo;
 import org.ieschabas.backend.daos.EquipoDAO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

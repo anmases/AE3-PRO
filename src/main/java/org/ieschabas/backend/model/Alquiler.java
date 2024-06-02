@@ -1,4 +1,4 @@
-package org.ieschabas.backend.clases;
+package org.ieschabas.backend.model;
 
 import org.ieschabas.backend.daos.PeliculaDAO;
 import org.ieschabas.backend.daos.UsuarioDAO;

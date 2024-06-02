@@ -1,7 +1,7 @@
 package org.ieschabas.backend.daos;
 
 import org.apache.log4j.PropertyConfigurator;
-import org.ieschabas.backend.clases.EntidadAbstracta;
+import org.ieschabas.backend.model.EntidadAbstracta;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

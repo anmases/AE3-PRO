@@ -12,7 +12,7 @@ import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-import org.ieschabas.backend.clases.Usuario;
+import org.ieschabas.backend.model.Usuario;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
 import org.ieschabas.backend.daos.UsuarioDAO;

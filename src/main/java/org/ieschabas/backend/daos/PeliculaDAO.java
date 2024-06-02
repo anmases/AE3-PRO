@@ -1,7 +1,7 @@
 package org.ieschabas.backend.daos;
 
-import org.ieschabas.backend.clases.EntidadAbstracta;
-import org.ieschabas.backend.clases.Pelicula;
+import org.ieschabas.backend.model.EntidadAbstracta;
+import org.ieschabas.backend.model.Pelicula;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
 import java.util.List;
