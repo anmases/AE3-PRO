@@ -19,7 +19,7 @@ import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.ieschabas.backend.model.Cliente;
 import org.ieschabas.backend.model.Usuario;
-import org.ieschabas.backend.daos.UsuarioDAO;
+import org.ieschabas.backend.services.UserService;
 import org.ieschabas.mailServices.ServicioCorreo;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -37,7 +37,7 @@ import java.util.Random;
 public class LoginView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = 272742160091975700L;
-    private final UsuarioDAO usuarioDao;
+    private final UserService userService;
     private final ServicioCorreo servicioCorreo;
     private LoginForm vistaLogin;
     private Dialog dialogoCliente;
@@ -45,8 +45,8 @@ public class LoginView extends VerticalLayout {
     /**
      * Constructor de la Vista login.
      */
-    public LoginView(UsuarioDAO usuarioDao, ServicioCorreo servicioCorreo) {
-        this.usuarioDao = usuarioDao;
+    public LoginView(UserService userService, ServicioCorreo servicioCorreo) {
+        this.userService = userService;
         this.servicioCorreo = servicioCorreo;
         dialogoCliente = new Dialog();
         dialogoCliente.setResizable(true);
@@ -92,7 +92,7 @@ public class LoginView extends VerticalLayout {
                 BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
                 String encodedPassword = encoder.encode(contrasenya.getValue());
                 Usuario cliente = new Cliente(0, nombre.getValue(), apellidos.getValue(), email.getValue(), encodedPassword, direccion.getValue(), true, LocalDate.now());
-                if (usuarioDao.insertar(cliente)) {
+                if (userService.insert(cliente)) {
                     Notification notification = Notification.show("Usuario creado correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 }
@@ -166,14 +166,14 @@ public class LoginView extends VerticalLayout {
     EmailField emailCampo = new EmailField("Escriba su Email:");
     Button send = new Button("Enviar");
     send.addClickListener(e->{
-        if(usuarioDao.buscarPorMail(emailCampo.getValue()) != null){
+        if(userService.findByEmail(emailCampo.getValue()) != null){
         if(servicioCorreo.enviar(emailCampo.getValue(), contrasenya)){
-            Usuario usuarioNuevo = usuarioDao.buscarPorMail(emailCampo.getValue());
+            Usuario usuarioNuevo = userService.findByEmail(emailCampo.getValue());
             //Se encripta la contraseña:
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
             String encodedPassword = encoder.encode(contrasenya);
             usuarioNuevo.setContrasenya(encodedPassword);
-            usuarioDao.modificar(usuarioNuevo);
+            userService.update(usuarioNuevo);
             Notification notification = Notification.show("Contraseña cambiada correctamente. Revise su bandeja de entrada");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
         }

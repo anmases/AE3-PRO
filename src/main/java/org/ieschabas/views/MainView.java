@@ -15,7 +15,6 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.ieschabas.backend.model.Usuario;
 import org.ieschabas.components.appnav.AppNav;
 import org.ieschabas.components.appnav.AppNavItem;
-import org.ieschabas.backend.daos.UsuarioDAO;
 import org.ieschabas.backend.enums.Rol;
 import org.ieschabas.security.SecurityService;
 import org.ieschabas.views.cliente.ClienteView;
@@ -66,7 +65,6 @@ public class MainView extends AppLayout {
      * @author Antonio Mas Esteve
      */
     private void addHeaderContent() {
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
         DrawerToggle toggle = new DrawerToggle();
         toggle.getElement().setAttribute("aria-label", "Menu toggle");
         viewTitle = new H2();

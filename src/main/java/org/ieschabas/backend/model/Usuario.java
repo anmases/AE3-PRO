@@ -50,7 +50,6 @@ public class Usuario extends PersonaAbstracta {
         this.fecha_registro = fecha_registro;
         this.rol = rol;
     }
-//Generamos getters y setters:
 
     /**
      * Devuelve el email del usuario.

@@ -22,7 +22,7 @@ import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.backend.model.Usuario;
-import org.ieschabas.backend.daos.UsuarioDAO;
+import org.ieschabas.backend.services.UserService;
 import org.ieschabas.backend.enums.Rol;
 import org.ieschabas.views.MainView;
 
@@ -40,16 +40,16 @@ import java.io.Serial;
 public class UsuarioView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = -2553389613089065660L;
-    private final UsuarioDAO usuarioDAO;
+    private final UserService userService;
 
     private Grid<Usuario> tabla;
 
     /**
      * Constructor principal de la vista de usuarios.
-     * Aquí se inyectan las dependencias de UsuarioDAO mediante SpringBoot IoC
+     * Aquí se inyectan las dependencias de UserService mediante SpringBoot IoC
      */
-    public UsuarioView(UsuarioDAO usuarioDAO){
-        this.usuarioDAO = usuarioDAO;
+    public UsuarioView(UserService userService){
+        this.userService = userService;
         setSizeFull();
         addClassName("Usuarios-View");
         add(crearTabla());
@@ -95,7 +95,7 @@ public class UsuarioView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 //Elimina la película y las relaciones asociadas;
-                if (usuarioDAO.eliminar(usuario.getId())) {
+                if (userService.remove(usuario.getId())) {
                     Notification notification = Notification.show("Usuario borrado correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 } else {
@@ -163,12 +163,12 @@ public class UsuarioView extends VerticalLayout {
         Button botonGuardar = new Button();
         botonGuardar.addClickListener(e -> {
             //Se rellenan todos los campos del objeto seleccionado:
-            Usuario usuario = usuarioDAO.buscar(textoId.getValue());
+            Usuario usuario = userService.findById(textoId.getValue());
             usuario.setNombre(textoNombre.getValue());
             usuario.setApellidos(textoApellidos.getValue());
             usuario.setDireccion(textoDireccion.getValue());
             usuario.setActivo(textoActivo.getValue());
-           if (usuarioDAO.modificar(usuario)) {
+           if (userService.update(usuario)) {
                 Notification notification = Notification.show("Usuario modificado");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             } else {
@@ -215,7 +215,7 @@ public class UsuarioView extends VerticalLayout {
      */
     public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(usuarioDAO.listar());
+        tabla.setItems(userService.findAll());
     }
 
 

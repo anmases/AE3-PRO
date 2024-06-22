@@ -31,8 +31,8 @@ import org.ieschabas.backend.model.Actor;
 import org.ieschabas.backend.model.Director;
 import org.ieschabas.backend.model.Equipo;
 import org.ieschabas.backend.model.Pelicula;
-import org.ieschabas.backend.daos.EquipoDAO;
-import org.ieschabas.backend.daos.PeliculaDAO;
+import org.ieschabas.backend.services.FilmService;
+import org.ieschabas.backend.services.TeamService;
 import org.ieschabas.backend.enums.Categoria;
 import org.ieschabas.backend.enums.Formato;
 import org.ieschabas.backend.enums.Valoracion;
@@ -55,8 +55,8 @@ import java.util.*;
 public class PeliculasView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = -1413643061670701677L;
-    private final PeliculaDAO peliculaDao;
-    private final EquipoDAO equipoDAO;
+    private final FilmService filmService;
+    private final TeamService teamService;
     private Grid<Pelicula> tabla;
     private Dialog anyadirVentana;
     private VerticalLayout anyadirTabla = new VerticalLayout();
@@ -67,9 +67,9 @@ public class PeliculasView extends VerticalLayout {
      * Aquí se inyectan las dependencias de PeliculaDAO mediante SpringBoot IoC
      * @author Antonio Mas Esteve
      */
-    public PeliculasView(PeliculaDAO peliculaDao, EquipoDAO equipoDAO) {
-        this.peliculaDao = peliculaDao;
-        this.equipoDAO = equipoDAO;
+    public PeliculasView(FilmService filmService, TeamService teamService) {
+        this.filmService = filmService;
+        this.teamService = teamService;
         setSizeFull();
         addClassName("Peliculas-View");
 
@@ -123,12 +123,14 @@ public class PeliculasView extends VerticalLayout {
 /////////////////////////////////////////Creación del formulario Añadir/////////////////////////////////////////////////
         //Información para los actores:
         List<Actor> actoresSeleccionados = new ArrayList<>();   //Actores seleccionados en el Multiselect:
-        List<Actor> listaActoresRestantes = pelicula.getActoresRestantes();
+        List<Actor> listaActoresRestantes = teamService.findActors();
+        listaActoresRestantes.removeAll(pelicula.getActores());
 
 
         //Información para los directores:
         List<Director> directoresSeleccionados = new ArrayList<>();   //Directores seleccionados en el Multiselect:
-        List<Director> listaDirectoresRestantes = pelicula.getDirectoresRestantes();
+        List<Director> listaDirectoresRestantes = teamService.findDirectors();
+        listaDirectoresRestantes.removeAll(pelicula.getDirectores());
 
 
         //Creamos los MultiSelect:
@@ -153,13 +155,13 @@ public class PeliculasView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 pelicula.eliminarRelacion(actor);
-                peliculaDao.modificar(pelicula);
+                filmService.update(pelicula);
                 //Rellenar la tabla:
                 tablaActores.setItems(pelicula.getActores());
                 //Refrescar la tabla:
                 tablaActores.getDataProvider().refreshAll();
                 //Rellenamos el multiselect;
-                opcionActor.setItems(pelicula.getActoresRestantes());
+                opcionActor.setItems(listaActoresRestantes);
                 //Refrescamos el multiSelect:
                 opcionActor.getDataProvider().refreshAll();
             });
@@ -177,13 +179,13 @@ public class PeliculasView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 pelicula.eliminarRelacion(director);
-                peliculaDao.modificar(pelicula);;
+                filmService.update(pelicula);;
                 //Rellenar la tabla:
                 tablaDirectores.setItems(pelicula.getDirectores());
                 //Refrescar la tabla:
                 tablaDirectores.getDataProvider().refreshAll();
                 //Rellenamos el multiselect;
-                opcionDirector.setItems(pelicula.getDirectoresRestantes());
+                opcionDirector.setItems(listaDirectoresRestantes);
                 //Refrescamos el multiSelect:
                 opcionDirector.getDataProvider().refreshAll();
             });
@@ -204,14 +206,14 @@ public class PeliculasView extends VerticalLayout {
                 List<Equipo> directores = pelicula.getEquipos();
                 directores.addAll(directoresSeleccionados);
                 pelicula.setEquipos(directores);
-                peliculaDao.modificar(pelicula);
+                filmService.update(pelicula);
             }
             if (!opcionActor.isEmpty()) {
                 actoresSeleccionados.addAll(opcionActor.getSelectedItems());
                 List<Equipo> actores = pelicula.getEquipos();
                 actores.addAll(actoresSeleccionados);
                 pelicula.setEquipos(actores);
-                peliculaDao.modificar(pelicula);
+                filmService.update(pelicula);
             }
             //Rellenar la tabla:
             tablaActores.setItems(pelicula.getActores());
@@ -223,8 +225,8 @@ public class PeliculasView extends VerticalLayout {
             tablaActores.getDataProvider().refreshAll();
             tablaDirectores.getDataProvider().refreshAll();
             //Rellenamos el multiselect;
-            opcionActor.setItems(pelicula.getActoresRestantes());
-            opcionDirector.setItems(pelicula.getDirectoresRestantes());
+            opcionActor.setItems(listaActoresRestantes);
+            opcionDirector.setItems(listaDirectoresRestantes);
             //Refrescamos el multiSelect:
             opcionActor.getDataProvider().refreshAll();
             opcionDirector.getDataProvider().refreshAll();
@@ -243,8 +245,8 @@ public class PeliculasView extends VerticalLayout {
             tablaActores.getDataProvider().refreshAll();
             tablaDirectores.getDataProvider().refreshAll();
             //Rellenamos el multiselect;
-            opcionActor.setItems(pelicula.getActoresRestantes());
-            opcionDirector.setItems(pelicula.getDirectoresRestantes());
+            opcionActor.setItems(listaActoresRestantes);
+            opcionDirector.setItems(listaDirectoresRestantes);
             //Refrescamos el multiSelect:
             opcionActor.setItems(listaActoresRestantes);
             opcionDirector.setItems(listaDirectoresRestantes);
@@ -326,7 +328,7 @@ public class PeliculasView extends VerticalLayout {
             String tituloPelicula = e.getValue().toLowerCase();
             ArrayList<Pelicula> listaActualizada = new ArrayList<>();
             Collection<Pelicula> lista;
-            lista = peliculaDao.listar();
+            lista = filmService.findAll();
             Pelicula pelicula;
             for (Pelicula valor : lista) {
                 pelicula = valor;
@@ -344,7 +346,7 @@ public class PeliculasView extends VerticalLayout {
                 String anyoEstreno = e.getValue().toString();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 List<Pelicula> lista;
-                lista = peliculaDao.listar();
+                lista = filmService.findAll();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;
@@ -365,7 +367,7 @@ public class PeliculasView extends VerticalLayout {
             if (e.getValue() != null) {
                 Categoria categoria = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
-                List<Pelicula> lista = peliculaDao.listar();
+                List<Pelicula> lista = filmService.findAll();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;
@@ -385,7 +387,7 @@ public class PeliculasView extends VerticalLayout {
                 Formato formato = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 Collection<Pelicula> lista;
-                lista = peliculaDao.listar();
+                lista = filmService.findAll();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;
@@ -405,7 +407,7 @@ public class PeliculasView extends VerticalLayout {
                 Valoracion valoracion = e.getValue();
                 ArrayList<Pelicula> listaActualizada = new ArrayList<>();
                 Collection<Pelicula> lista;
-                lista = peliculaDao.listar();
+                lista = filmService.findAll();
                 Pelicula pelicula;
                 for (Pelicula valor : lista) {
                     pelicula = valor;
@@ -465,7 +467,7 @@ public class PeliculasView extends VerticalLayout {
             button.setIcon(new Icon(VaadinIcon.TRASH));
             button.addClickListener(event -> {
                 //Elimina la película y las relaciones asociadas;
-                if (peliculaDao.eliminar(pelicula.getId())) {
+                if (filmService.remove(pelicula.getId())) {
                     Notification notification = Notification.show("película borrada correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 } else {
@@ -536,7 +538,7 @@ public class PeliculasView extends VerticalLayout {
 
         Button botonGuardar = new Button();
         botonGuardar.addClickListener(e -> {
-            Pelicula pelicula = peliculaDao.buscar(textoId.getValue());
+            Pelicula pelicula = filmService.findById(textoId.getValue());
             pelicula.setTitulo(textoTitulo.getValue());
             pelicula.setDescripcion(textoDescripcion.getValue());
             pelicula.setAnyoPublicacion(textoAnyoPublicacion.getValue());
@@ -545,7 +547,7 @@ public class PeliculasView extends VerticalLayout {
             pelicula.setFormato(textoFormato.getValue());
             pelicula.setValoracion(textoValoracion.getValue());
 
-            if (peliculaDao.modificar(pelicula)) {
+            if (filmService.update(pelicula)) {
                 Notification notification = Notification.show("película modificada");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
             } else {
@@ -596,7 +598,7 @@ public class PeliculasView extends VerticalLayout {
      */
     public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(peliculaDao.listar());
+        tabla.setItems(filmService.findAll());
     }
 
 
@@ -626,9 +628,9 @@ public class PeliculasView extends VerticalLayout {
         //Campos de las relaciones:
         MultiSelectComboBox<Actor> opcionActor = new MultiSelectComboBox<>("Añadir actores a la película");
         MultiSelectComboBox<Director> opcionDirector = new MultiSelectComboBox<>("Añadir directores a la película");
-        opcionActor.setItems(equipoDAO.listarActores());
+        opcionActor.setItems(teamService.findActors());
         opcionActor.setItemLabelGenerator(actor -> actor.getNombre() + " " + actor.getApellidos());
-        opcionDirector.setItems(equipoDAO.listarDirectores());
+        opcionDirector.setItems(teamService.findDirectors());
         opcionDirector.setItemLabelGenerator(director -> director.getNombre() + " " + director.getApellidos());
         //campo de subida:
 
@@ -704,7 +706,7 @@ public class PeliculasView extends VerticalLayout {
                 equipos.addAll(opcionDirector.getSelectedItems());
                 //Añade al fichero el contenido del formulario:
                 Pelicula pelicula = new Pelicula(0, titulo.getValue(), descripcion.getValue(), anyoPublicacion.getValue(), duracion.getValue(), categoria.getValue(), formato.getValue(), valoracion.getValue(), imagen, url.getValue(), equipos);
-                peliculaDao.insertar(pelicula);
+                filmService.insert(pelicula);
                 //Se muestra la notificación:
                 Notification notification = Notification.show("película guardada correcamente");
                 notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);

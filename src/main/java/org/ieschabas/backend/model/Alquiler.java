@@ -1,9 +1,7 @@
 package org.ieschabas.backend.model;
 
-import org.ieschabas.backend.daos.PeliculaDAO;
-import org.ieschabas.backend.daos.UsuarioDAO;
-
 import javax.persistence.*;
+
 import java.io.Serial;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -116,10 +114,7 @@ public class Alquiler extends EntidadAbstracta{
      * @return string
      */
     public String getTituloPelicula () {
-        PeliculaDAO peliculaDAO = new PeliculaDAO();
-        Pelicula pelicula;
-        pelicula = peliculaDAO.buscar(this.pelicula.getId());
-        return pelicula.getTitulo();
+        return this.pelicula.getTitulo();
     }
 
     /**
@@ -127,10 +122,7 @@ public class Alquiler extends EntidadAbstracta{
      * @return string
      */
     public String getNombreCliente(){
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        Usuario usuario;
-          usuario = usuarioDAO.buscar(this.cliente.getId());
-    return usuario.getNombre()+" "+usuario.getApellidos();
+        return this.cliente.nombre+" "+this.cliente.apellidos;
     }
 
     /**

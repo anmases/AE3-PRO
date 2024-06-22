@@ -1,6 +1,5 @@
 package org.ieschabas.backend.model;
 
-import org.ieschabas.backend.daos.EquipoDAO;
 import org.ieschabas.backend.enums.Categoria;
 import org.ieschabas.backend.enums.Formato;
 import org.ieschabas.backend.enums.Valoracion;
@@ -276,28 +275,7 @@ public class Pelicula extends EntidadAbstracta{
         return directores;
     }
 
-    /**
-     * Devuelve los equipo que no están relacionados
-     * @return List
-     */
-    public List<Actor> getActoresRestantes(){
-        EquipoDAO equipoDAO = new EquipoDAO();
-        List<Actor> actoresRestantes = equipoDAO.listarActores();
-        actoresRestantes.removeAll(getActores());
-        return actoresRestantes;
-    }
-
-    /**
-     * Devuelve los equipo que no están relacionados
-     *@return List
-     */
-    public List<Director> getDirectoresRestantes(){
-        EquipoDAO equipoDAO = new EquipoDAO();
-        List<Director> directoresRestantes = equipoDAO.listarDirectores();
-        directoresRestantes.removeAll(getDirectores());
-        return directoresRestantes;
-    }
-
+    
     /**
      * Convierte la info de la película a cadena de caracteres.
      * @return String

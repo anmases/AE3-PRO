@@ -19,7 +19,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.ieschabas.backend.model.Actor;
 import org.ieschabas.backend.model.Equipo;
-import org.ieschabas.backend.daos.EquipoDAO;
+import org.ieschabas.backend.services.TeamService;
 import org.ieschabas.backend.enums.Puesto;
 import org.ieschabas.views.MainView;
 
@@ -36,16 +36,16 @@ import java.util.List;
 @Route(value = "equipo", layout = MainView.class)
 @RolesAllowed("ADMIN")
 public class EquipoView extends VerticalLayout {
-    private final EquipoDAO equipoDao;
+    private final TeamService teamService;
     //tabla:
     private Grid<Equipo> tabla;
 
     /**
      * Constructor de la vista equipo
-     * Aquí se inyectan las dependencias de EquipoDAO mediante SpringBoot IoC
+     * Aquí se inyectan las dependencias de teamService mediante SpringBoot IoC
      */
-    public EquipoView(EquipoDAO equipoDao) throws IOException {
-        this.equipoDao = equipoDao;
+    public EquipoView(TeamService teamService) throws IOException {
+        this.teamService = teamService;
         addClassName("equipo-view");
         SplitLayout splitLayout = new SplitLayout();
 
@@ -131,7 +131,7 @@ public class EquipoView extends VerticalLayout {
                 if (textNombre.getValue() != null && textApellidos.getValue() != null && textAnyo.getValue() != null && textPais.getValue() != null) {
                     //Se crea un actor con los campos del formuario como argumentos. El "id" es por defecto 0, luego la BD lo rellenará automáticamente.
                     equipo = new Actor(0, textNombre.getValue(), textApellidos.getValue(), textAnyo.getValue(), textPais.getValue());
-                    if (equipoDao.insertar(equipo)) {
+                    if (teamService.insert(equipo)) {
                         Notification notification = Notification.show("elemento añadido correcamente");
                         notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                     }
@@ -142,8 +142,8 @@ public class EquipoView extends VerticalLayout {
                 }
             } else {
                 //Modificar:
-                equipoDao.modificar(equipo);
-                if (equipoDao.modificar(equipo)) {
+                teamService.update(equipo);
+                if (teamService.update(equipo)) {
                     Notification notification = Notification.show("elemento modificado correcamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 } else {
@@ -168,7 +168,7 @@ public class EquipoView extends VerticalLayout {
             Equipo equipo = binder.getBean();
             if(equipo != null) {
                 //Como el método es booleano, si lo hace muestra un mensaje de aceptación y si no lo hace, de error.
-                if (equipoDao.eliminar(equipo.getId())) {
+                if (teamService.remove(equipo.getId())) {
                     Notification notification = Notification.show("Actor Borrado correctamente");
                     notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
                 } else {
@@ -206,12 +206,12 @@ public class EquipoView extends VerticalLayout {
             List<Equipo> listaNueva = new ArrayList<>();
             if(e.getValue() != null){
                     if (e.getValue() == Puesto.ACTOR) {
-                        listaNueva.addAll(equipoDao.listarActores());
+                        listaNueva.addAll(teamService.findActors());
                         tabla.setItems(listaNueva);
                         refrescarTabla();
                     }
                     if (e.getValue() == Puesto.DIRECTOR) {
-                        listaNueva.addAll(equipoDao.listarDirectores());
+                        listaNueva.addAll(teamService.findDirectors());
                         tabla.setItems(listaNueva);
                         refrescarTabla();
                     }
@@ -243,7 +243,7 @@ public class EquipoView extends VerticalLayout {
      */
     public void rellenarTabla() {
         //añadimos los valores tipo objeto lista a la tabla:
-        tabla.setItems(equipoDao.listar());
+        tabla.setItems(teamService.findAll());
     }
 
     /**

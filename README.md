@@ -1,7 +1,6 @@
 # AE3-PRO
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This is a PWA application about online video-club. You can login as an admin or customer.
 
 ## Running the application
 
@@ -35,6 +34,7 @@ Once the WAR file is built, you can run it using
 ## Useful links
 
 - Read the JAVA documentation from this project at [Documentation](https://anmases.github.io/AE3-PRO/)
+
 - Read the documentation at [vaadin.com/docs](https://vaadin.com/docs).
 - Follow the tutorials at [vaadin.com/tutorials](https://vaadin.com/tutorials).
 - Watch training videos and get certified at [vaadin.com/learn/training](https://vaadin.com/learn/training).

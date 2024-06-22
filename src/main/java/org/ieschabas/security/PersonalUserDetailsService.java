@@ -1,7 +1,7 @@
 package org.ieschabas.security;
 
 import org.ieschabas.backend.model.Usuario;
-import org.ieschabas.backend.daos.UsuarioDAO;
+import org.ieschabas.backend.services.UserService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,13 +14,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PersonalUserDetailsService implements UserDetailsService {
-    private final UsuarioDAO usuarioDao;
+    private final UserService userService;
 
     /**
      * Constructor de la clase PersonalUserDetailsService
      */
-    public PersonalUserDetailsService(UsuarioDAO usuarioDao) {
-        this.usuarioDao = usuarioDao;
+    public PersonalUserDetailsService(UserService userService) {
+        this.userService = userService;
     }
 
     /**
@@ -30,7 +30,7 @@ public class PersonalUserDetailsService implements UserDetailsService {
      */
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Usuario usuario = usuarioDao.buscarPorMail(email);
+        Usuario usuario = userService.findByEmail(email);
         if (usuario == null || !usuario.getActivo()) {
             throw new UsernameNotFoundException("Usuario no encontrado");
         }

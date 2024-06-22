@@ -16,8 +16,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.StreamResource;
 import org.ieschabas.backend.model.*;
-import org.ieschabas.backend.daos.AlquilerDAO;
-import org.ieschabas.backend.daos.PeliculaDAO;
+import org.ieschabas.backend.services.RentService;
+import org.ieschabas.backend.services.FilmService;
 import org.ieschabas.backend.enums.Valoracion;
 import org.ieschabas.security.SecurityService;
 import org.ieschabas.views.MainView;
@@ -39,8 +39,8 @@ public class ClienteView extends VerticalLayout {
     @Serial
     private static final long serialVersionUID = -5482598882200796969L;
     //DAOS:
-    private final PeliculaDAO peliculaDAO;
-    private final AlquilerDAO alquilerDAO;
+    private final FilmService filmService;
+    private final RentService rentService;
     private final SecurityService securityService;
 
     private LocalDate fecha;
@@ -52,9 +52,9 @@ public class ClienteView extends VerticalLayout {
      * Constructor principal de la vista Clientes.
      * Aquí se inyectan las dependencias mediante SpringBoot IoC
      */
-    public ClienteView(PeliculaDAO peliculaDAO, AlquilerDAO alquilerDAO, SecurityService securityService) {
-        this.peliculaDAO = peliculaDAO;
-        this.alquilerDAO = alquilerDAO;
+    public ClienteView(FilmService filmService, RentService rentService, SecurityService securityService) {
+        this.filmService = filmService;
+        this.rentService = rentService;
         this.securityService = securityService;
 
         Cliente cliente = (Cliente) this.securityService.getUsuarioAutenticado();
@@ -74,7 +74,7 @@ public class ClienteView extends VerticalLayout {
      * @return Div
      */
     public Div listadoLayout(Cliente cliente){
-        List<Pelicula> listaPeliculas = peliculaDAO.listar();
+        List<Pelicula> listaPeliculas = filmService.findAll();
 
            vistaPeliculas = new Div();
            vistaPeliculas.setWidthFull();
@@ -171,7 +171,7 @@ public class ClienteView extends VerticalLayout {
             //Se añaden 2 meses:
             alquiler.setFechaRetorno(fecha.plusMonths(2));
             //Se añade a la BD:
-        if(alquilerDAO.insertar(alquiler)) {
+        if(rentService.insert(alquiler)) {
             Notification notification = Notification.show("Se ha alquilado correctamente");
             notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
         }
@@ -285,7 +285,7 @@ public class ClienteView extends VerticalLayout {
      */
     public boolean estaAlquilada(Pelicula pelicula, Cliente cliente){
         //Establecemos la lista de alquileres:
-        List<Alquiler> alquileres = alquilerDAO.listar();
+        List<Alquiler> alquileres = rentService.findAll();
         //establecemos la fecha.
         fecha = LocalDate.now();
         //Buscaremos en la lista si cumple los requisitos de: 1. la fecha de retorno ser mayor que la actual, 2.el cliente, 3.la película:
