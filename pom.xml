@@ -79,6 +79,12 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-core</artifactId>
@@ -152,17 +158,7 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!--Registra en ficheros Log información sobre el comportamiento de la aplicación, lo que ayuda a depurar y desarrollar la misma-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>2.0.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>2.0.7</version>
-        </dependency>
+    
         <!--Dependencia al driver mySQL connector en el directorio local-->
         <dependency>
             <groupId>mysql</groupId>
