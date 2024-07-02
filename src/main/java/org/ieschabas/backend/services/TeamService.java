@@ -9,6 +9,12 @@ import org.ieschabas.backend.model.Equipo;
 import org.ieschabas.backend.repositories.TeamRepository;
 import org.springframework.stereotype.Service;
 
+/**
+ * This class includes all methods to request and serve data from repositories in an appropiate way.
+ * It also may include logic business related with data transform.
+ * for actors and directors entity
+ * @author Antonio Mas Esteve
+ */
 @Service
 public class TeamService {
     private final TeamRepository teamRepository;

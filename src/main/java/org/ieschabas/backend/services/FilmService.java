@@ -5,6 +5,12 @@ import org.ieschabas.backend.model.Pelicula;
 import org.ieschabas.backend.repositories.FilmRepository;
 import org.springframework.stereotype.Service;
 
+/**
+ * This class includes all methods to request and serve data from repositories in an appropiate way.
+ * It also may include logic business related with data transform.
+ * for films entity
+ * @author Antonio Mas Esteve
+ */
 @Service
 public class FilmService {
     private final FilmRepository filmRepository;

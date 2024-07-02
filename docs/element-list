@@ -1,7 +1,8 @@
 org.ieschabas
-org.ieschabas.backend.model
-org.ieschabas.backend.daos
 org.ieschabas.backend.enums
+org.ieschabas.backend.model
+org.ieschabas.backend.repositories
+org.ieschabas.backend.services
 org.ieschabas.components.appnav
 org.ieschabas.mailServices
 org.ieschabas.security

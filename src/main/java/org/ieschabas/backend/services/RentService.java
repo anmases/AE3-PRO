@@ -6,6 +6,12 @@ import org.ieschabas.backend.model.Alquiler;
 import org.ieschabas.backend.repositories.RentRepository;
 import org.springframework.stereotype.Service;
 
+/**
+ * This class includes all methods to request and serve data from repositories in an appropiate way.
+ * It also may include logic business related with data transform.
+ * for rents entity
+ * @author Antonio Mas Esteve
+ */
 @Service
 public class RentService {
 
