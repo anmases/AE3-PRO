@@ -1,9 +1,10 @@
 # AE3-PRO
 
-This is a PWA application about online video-club. You can login as an admin or customer.
+This is a PWA application about online video-club. You can login as an admin in order to access the control panel or as customer to rent the available films.
 
 ## Running the application
 
+This is a full stack SpringBoot application which frontend is made with Vaadin, a framework that works over Node.js. Data is provided by MySQL connection through JPA SpringData ORM and films (only trailers as a sample) provided with Google Drive.
 The project is a standard Maven project. To run it from the command line,
 type `mvnw` (Windows), or `./mvnw` (Mac & Linux), then open
 http://localhost:8080 in your browser.
