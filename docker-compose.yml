@@ -1,0 +1,29 @@
+version: "1.0"
+services:
+  db:
+    image: mysql:8.4
+    container_name: videoclubdb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 53633393S
+      MYSQL_DATABASE: videoclub_pro
+    Volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqliadmin ping -proot -h localhost"]
+  app:
+    build: .
+    container_name: ae3-pro
+    depends_on:
+      - db:
+          condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/videoclub_pro
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 53633393S
+      SPRING_JPA_HIBERNATE_DLL_AUTO: update
+      TZ: Europe/Madrid
+volumes:
+  db_data:
