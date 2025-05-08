@@ -2,7 +2,7 @@ version: "3.9"
 services:
   db:
     image: mysql:8.4
-    container_name: videoclubdb
+    container_name: videoclub-pro-db
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: 53633393S
@@ -14,7 +14,7 @@ services:
       test: ["CMD-SHELL", "mysqliadmin ping -proot -h localhost"]
   app:
     build: .
-    container_name: ae3-pro
+    container_name: videoclub-pro
     depends_on:
       - db
     ports:
