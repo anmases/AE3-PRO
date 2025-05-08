@@ -9,6 +9,7 @@ services:
       MYSQL_DATABASE: videoclub_pro
     volumes:
       - db_data:/var/lib/mysql
+      - ./creacion_db.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "mysqliadmin ping -proot -h localhost"]
   app:
