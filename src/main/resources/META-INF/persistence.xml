@@ -12,7 +12,7 @@
             <!--Change credentials-->
             <property name="hibernate.connection.username" value="root"/>
             <property name="hibernate.connection.password" value="53633393S"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/videoclub_pro"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://db:3306/videoclub_pro"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
         </properties>
