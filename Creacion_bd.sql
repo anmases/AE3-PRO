@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS videoclub_pro;
-CREATE DATABASE videoclub_pro;
-/*CREATE DATABASE IF NOT EXISTS videoclub_pro;*/
+/*CREATE DATABASE videoclub_pro;*/
+CREATE DATABASE IF NOT EXISTS videoclub_pro;
 USE videoclub_pro;
 CREATE TABLE pelicula(
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -28,9 +28,9 @@ nombre VARCHAR(50) NOT NULL,
 apellidos VARCHAR(50) NOT NULL,
 email VARCHAR(100) NOT NULL UNIQUE,
 contrasenya TEXT NOT NULL,
-direccion VARCHAR(100) NOT NULL,
-activo BOOLEAN NOT NULL,
-fecha_registro DATE NOT NULL,
+direccion VARCHAR(100),
+activo BOOLEAN NOT NULL DEFAULT TRUE,
+fecha_registro DATE NOT NULL DEFAULT CURRENT_DATE,
 rol ENUM ("ADMIN","USER")
 );
 CREATE TABLE alquiler(
@@ -50,6 +50,9 @@ completado BOOLEAN NOT NULL
 );
 
 /*Valores de muestra*/
+INSERT INTO usuario (nombre, apellidos, email, contrasenya, rol)
+VALUES ("admin", "admin", "admin@admin.com", "$2y$10$/zY780DscVJryXd7Ij5VFu/rrfaDgsl7B32pMBVfWF9Z.AgfW5eHG", "ADMIN");
+
 INSERT INTO pelicula (titulo, descripcion, anyo_publicacion, duracion, categoria, formato, valoracion, caratula, url) 
 VALUES ("El Padrino","América, años 40. Don Vito Corleone (Marlon Brando) es el respetado y temido jefe de una de las cinco familias de la mafia de Nueva York. Tiene cuatro hijos: Connie (Talia Shire), el impulsivo Sonny (James Caan), el pusilánime Fredo (John Cazale) y Michael (Al Pacino), que no quiere saber nada de los negocios de su padre. Cuando Corleone, en contra de los consejos de Il consigliere Tom Hagen (Robert Duvall), se niega a participar en el negocio de las drogas, el jefe de otra banda ordena su asesinato. Empieza entonces una violenta y cruenta guerra entre las familias mafiosas",1972,175,'DRAMA','DIVX','CINCO',
  LOAD_FILE("C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\padrino.jpg"), "https://drive.google.com/u/0/uc?id=14_fyqRFbgTyg2MRRK_axI_rIV6hqAEdX");
